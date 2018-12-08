@@ -14,38 +14,41 @@
 	<version>1</version>
 
 	<properties>
-		<!-- HIBERNATE versions -->
-		<hibernate.version>5.3.5.Final</hibernate.version>
+		<!-- HIBERNATE version -->
+		<hibernate.version>5.3.7.Final</hibernate.version>
+		<!-- ENT-API version -->
 		<ent-api.version>1</ent-api.version>
 	</properties>
+	
 	<dependencyManagement>
-	
-	<dependencies>	
-	
-			<!-- HIBERNATE DEPENDENCIES -->
+
+		<dependencies>
+			<!-- ENT-API DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>ent-api</artifactId>
+				<version>${ent-api.version}</version>
+			</dependency>
+			<!-- HIBERNATE DEPENDENCY -->
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-core</artifactId>
 				<version>${hibernate.version}</version>
+				<scope>provided</scope>
 			</dependency>
-			
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>ent-api</artifactId>
-				<version>${ent-api.version}</version>
-		</dependency>
-			
-	</dependencies>
-	
+
+
+		</dependencies>
+
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- HIBERNATE DEPENDENCIES -->
+		<!-- HIBERNATE DEPENDENCY -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
-
+		<!-- ENT-API DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>ent-api</artifactId>
