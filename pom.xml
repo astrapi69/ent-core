@@ -10,8 +10,31 @@
 	</parent>
 
 	<artifactId>ent-core</artifactId>
-
 	<version>1.1</version>
+
+	<name>${project.artifactId}</name>
+
+	<description>
+		Project that holds base entities for al kind of entity types 
+	</description>
+
+	<url>https://github.com/astrapi69/${project.artifactId}</url>
+
+	<scm>
+		<connection>scm:git:git:@github.com:astrapi69/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:astrapi69/${project.artifactId}.git</developerConnection>
+		<url>git:@github.com:astrapi69/${project.artifactId}.git</url>
+	</scm>
+	
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/astrapi69/${project.artifactId}/issues</url>
+	</issueManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/astrapi69/${project.artifactId}</url>
+	</ciManagement>	
 
 	<properties>
 		<!-- HIBERNATE version -->
@@ -19,7 +42,7 @@
 		<!-- ENT-API version -->
 		<ent-api.version>1</ent-api.version>
 	</properties>
-	
+
 	<dependencyManagement>
 
 		<dependencies>
