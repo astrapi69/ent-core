@@ -6,16 +6,16 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.4</version>
+		<version>4.5</version>
 	</parent>
 
 	<artifactId>ent-core</artifactId>
 
-	<version>1</version>
+	<version>1.1</version>
 
 	<properties>
 		<!-- HIBERNATE version -->
-		<hibernate.version>5.3.7.Final</hibernate.version>
+		<hibernate.version>5.4.0.Final</hibernate.version>
 		<!-- ENT-API version -->
 		<ent-api.version>1</ent-api.version>
 	</properties>

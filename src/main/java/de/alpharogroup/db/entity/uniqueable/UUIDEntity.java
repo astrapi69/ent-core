@@ -33,13 +33,14 @@ import javax.persistence.MappedSuperclass;
 import lombok.NoArgsConstructor;
 
 /**
- * The abstract class {@link UUIDEntity} is a concrete class of
- * {@link UniqueableEntity} and holds an {@link UUID} as primary key.
+ * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds
+ * an {@link UUID} as primary key.
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)
 @NoArgsConstructor
-public abstract class UUIDEntity extends UniqueableEntity<UUID> {
+public abstract class UUIDEntity extends UniqueableEntity<UUID>
+{
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 }

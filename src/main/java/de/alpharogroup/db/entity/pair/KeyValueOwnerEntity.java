@@ -26,11 +26,7 @@ package de.alpharogroup.db.entity.pair;
 
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Column;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
 import de.alpharogroup.db.entity.BaseEntity;
@@ -42,25 +38,28 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The abstract entity class {@link KeyValueOwnerEntity} holds a generic key
- * value pair with his owner which can be also the parent if it is from the same
- * type.
+ * The abstract entity class {@link KeyValueOwnerEntity} holds a generic key value pair with his
+ * owner which can be also the parent if it is from the same type.
  *
- * @param <PK> the generic type of the technical primary key
- * @param <O> the generic type of the owner
- * @param <K> the generic type of the key
- * @param <V> the generic type of the value
+ * @param <PK>
+ *            the generic type of the technical primary key
+ * @param <O>
+ *            the generic type of the owner
+ * @param <K>
+ *            the generic type of the key
+ * @param <V>
+ *            the generic type of the value
  */
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V> extends BaseEntity<PK>
-		implements IdentifiableKeyValueOwner<PK, O, K, V> {
+	implements
+		IdentifiableKeyValueOwner<PK, O, K, V>
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

@@ -45,7 +45,8 @@ import lombok.experimental.FieldDefaults;
 /**
  * The class {@link UniqueableEntity} holds an UUID as primary key.
  *
- * @param <PK> the generic type of the UUID technical primary key.
+ * @param <PK>
+ *            the generic type of the UUID technical primary key.
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)
@@ -54,7 +55,11 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class UniqueableEntity<PK extends Serializable> implements Serializable, Uniqueable<PK> {
+public abstract class UniqueableEntity<PK extends Serializable>
+	implements
+		Serializable,
+		Uniqueable<PK>
+{
 
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -71,7 +76,8 @@ public abstract class UniqueableEntity<PK extends Serializable> implements Seria
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return getClass().getSimpleName() + ": uuid=" + uuid;
 	}
 

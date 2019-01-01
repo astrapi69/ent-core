@@ -44,7 +44,8 @@ import lombok.experimental.FieldDefaults;
 /**
  * The class {@link BaseEntity} holds the primary key.
  *
- * @param <PK> the generic type of the technical primary key.
+ * @param <PK>
+ *            the generic type of the technical primary key.
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)
@@ -53,7 +54,8 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK> {
+public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
+{
 
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -69,7 +71,8 @@ public abstract class BaseEntity<PK extends Serializable> implements Serializabl
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return getClass().getSimpleName() + ": id=" + id;
 	}
 

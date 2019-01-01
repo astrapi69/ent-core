@@ -29,8 +29,6 @@ import java.io.Serializable;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
 import de.alpharogroup.db.entity.BaseEntity;
@@ -40,20 +38,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The class {@link ActivatableEntity} is a base entity with a flag 'active'
- * that indicates if an entity is active(enabled) or not.
+ * The class {@link ActivatableEntity} is a base entity with a flag 'active' that indicates if an
+ * entity is active(enabled) or not.
  *
- * @param <PK> the generic type of the id
+ * @param <PK>
+ *            the generic type of the id
  */
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class ActivatableEntity<PK extends Serializable> extends BaseEntity<PK>
-		implements IdentifiableActivatable<PK> {
+	implements
+		IdentifiableActivatable<PK>
+{
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
