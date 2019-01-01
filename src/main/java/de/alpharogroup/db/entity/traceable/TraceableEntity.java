@@ -26,10 +26,6 @@ package de.alpharogroup.db.entity.traceable;
 
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 
 import de.alpharogroup.db.entity.BaseEntity;
@@ -42,25 +38,28 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * The entity class {@link TraceableEntity} is keeping the information for the
- * creation, last modification and for the deletion of an entity. <br>
+ * The entity class {@link TraceableEntity} is keeping the information for the creation, last
+ * modification and for the deletion of an entity. <br>
  *
- * @param <PK> the generic type of the id
- * @param <T> the generic type of time measurement
- * @param <U> the generic type of the user or account
+ * @param <PK>
+ *            the generic type of the id
+ * @param <T>
+ *            the generic type of time measurement
+ * @param <U>
+ *            the generic type of the user or account
  * @see Creation
  * @see Deletion
  * @see LastModification
  */
 @MappedSuperclass
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class TraceableEntity<PK extends Serializable, T, U> extends BaseEntity<PK>
-		implements IdentifiableTraceable<PK, T, U> {
+	implements
+		IdentifiableTraceable<PK, T, U>
+{
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
