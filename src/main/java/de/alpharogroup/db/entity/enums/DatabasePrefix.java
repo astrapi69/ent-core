@@ -30,7 +30,7 @@ import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The enum {@link DatabasePrefix} holds some useful prefixes forn sequences and indexes
+ * The enum {@link DatabasePrefix} holds some useful prefixes for sequences and indexes
  */
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
