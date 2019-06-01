@@ -4,6 +4,9 @@
 Version 1.3-SNAPSHOT
 -------------
 
+Version 1.2.1
+-------------
+
 CHANGED:
 
 - added new constants for prefixes in the BaseEntity class
