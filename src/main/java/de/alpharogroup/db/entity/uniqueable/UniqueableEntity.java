@@ -33,8 +33,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -68,7 +66,6 @@ public abstract class UniqueableEntity<PK extends Serializable>
 	@Id
 	@EqualsAndHashCode.Include
 	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
 	@Column(name = "uuid", updatable = false, nullable = false)
 	PK uuid;
 

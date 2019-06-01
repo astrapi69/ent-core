@@ -30,19 +30,24 @@ import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The enum {@link DatabasePrefix} holds some useful prefixes for sequences and indexes
+ * The enum {@link DatabasePrefix} holds some useful prefixes for sequences, sequence generators,
+ * unique constraints, foreign keys and indexes names
  */
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public enum DatabasePrefix
 {
-	/** The prefix for the sequence name */
-	SEQUENCE_NAME("seq_nm_"),
-	/** The prefix for the sequence generator name */
-	SEQUENCE_GENERATOR_NAME("seq_gen_nm_"),
+	/** The prefix for the foreign key name */
+	FOREIGN_KEY_NAME("fk_"),
 	/** The prefix for the index */
-	INDEX("idx_");
+	INDEX_NAME("idx_"),
+	/** The prefix for the sequence generator name */
+	SEQUENCE_GENERATOR_NAME("seq_gen_"),
+	/** The prefix for the sequence name */
+	SEQUENCE_NAME("seq_"),
+	/** The prefix for the unique constraint name */
+	UNIQUE_CONSTRAINT_NAME("uk_");
 
 	/** The prefix. */
 	String prefix;
