@@ -4,6 +4,10 @@
 Version 1.3-SNAPSHOT
 -------------
 
+CHANGED:
+
+- added new constants for prefixes in the BaseEntity class
+
 Version 1.2
 -------------
 
