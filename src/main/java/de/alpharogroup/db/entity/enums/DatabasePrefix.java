@@ -22,60 +22,33 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.uniqueable;
-
-import java.io.Serializable;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+package de.alpharogroup.db.entity.enums;
 
 import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link UniqueableEntity} holds an UUID as primary key.
- *
- * @param <PK>
- *            the generic type of the UUID technical primary key.
+ * The enum {@link DatabasePrefix} holds some useful prefixes for sequences, sequence generators,
+ * unique constraints, foreign keys and indexes names
  */
-@MappedSuperclass
-@Access(AccessType.FIELD)
 @Getter
-@Setter
-@NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class UniqueableEntity<PK extends Serializable>
-	implements
-		Serializable,
-		Uniqueable<PK>
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public enum DatabasePrefix
 {
+	/** The prefix for the foreign key name */
+	FOREIGN_KEY_NAME("fk_"),
+	/** The prefix for the index */
+	INDEX_NAME("idx_"),
+	/** The prefix for the sequence generator name */
+	SEQUENCE_GENERATOR_NAME("seq_gen_"),
+	/** The prefix for the sequence name */
+	SEQUENCE_NAME("seq_"),
+	/** The prefix for the unique constraint name */
+	UNIQUE_CONSTRAINT_NAME("uk_");
 
-	/** The serialVersionUID. */
-	private static final long serialVersionUID = 1L;
-
-	/** The technical primary key. */
-	@Id
-	@EqualsAndHashCode.Include
-	@GeneratedValue(generator = "UUID")
-	@Column(name = "uuid", updatable = false, nullable = false)
-	PK uuid;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString()
-	{
-		return getClass().getSimpleName() + ": uuid=" + uuid;
-	}
-
+	/** The prefix. */
+	String prefix;
 }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -6,11 +7,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.5</version>
+		<version>5</version>
 	</parent>
 
 	<artifactId>ent-core</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 
 	<name>${project.artifactId}</name>
 
@@ -25,7 +26,7 @@
 		<developerConnection>scm:git:git@github.com:astrapi69/${project.artifactId}.git</developerConnection>
 		<url>git:@github.com:astrapi69/${project.artifactId}.git</url>
 	</scm>
-	
+
 	<issueManagement>
 		<system>github</system>
 		<url>https://github.com/astrapi69/${project.artifactId}/issues</url>
@@ -34,13 +35,13 @@
 	<ciManagement>
 		<system>travis-ci</system>
 		<url>https://travis-ci.org/astrapi69/${project.artifactId}</url>
-	</ciManagement>	
+	</ciManagement>
 
 	<properties>
 		<!-- HIBERNATE version -->
-		<hibernate.version>5.4.0.Final</hibernate.version>
+		<javax.persistence-api.version>2.2</javax.persistence-api.version>
 		<!-- ENT-API version -->
-		<ent-api.version>1</ent-api.version>
+		<ent-api.version>1.1</ent-api.version>
 	</properties>
 
 	<dependencyManagement>
@@ -52,24 +53,24 @@
 				<artifactId>ent-api</artifactId>
 				<version>${ent-api.version}</version>
 			</dependency>
-			<!-- HIBERNATE DEPENDENCY -->
+			<!-- JAVAX.PERSISTENCE-API DEPENDENCY -->
 			<dependency>
-				<groupId>org.hibernate</groupId>
-				<artifactId>hibernate-core</artifactId>
-				<version>${hibernate.version}</version>
+				<groupId>javax.persistence</groupId>
+				<artifactId>javax.persistence-api</artifactId>
+				<version>${javax.persistence-api.version}</version>
 				<scope>provided</scope>
 			</dependency>
-
 
 		</dependencies>
 
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- HIBERNATE DEPENDENCY -->
+		<!-- JAVAX.PERSISTENCE-API DEPENDENCY -->
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<!-- ENT-API DEPENDENCY -->
 		<dependency>
