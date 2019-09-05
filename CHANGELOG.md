@@ -1,6 +1,24 @@
 ## Change log
 ----------------------
 
+Version 1.3
+-------------
+
+ADDED:
+ 
+- new abstract entity for store a variable length of text values 
+
+CHANGED:
+
+- update of ent-api dependency to version 1.2
+
+Version 1.2.1
+-------------
+
+CHANGED:
+
+- added new constants for prefixes in the BaseEntity class
+
 Version 1.2
 -------------
 

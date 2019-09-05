@@ -22,76 +22,43 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity;
+package de.alpharogroup.db.entity.text;
 
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import de.alpharogroup.db.entity.BaseEntity;
 import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link BaseEntity} holds the primary key.
+ * The class {@link TextEntity} is a base entity for a table with a single value
  *
  * @param <PK>
- *            the generic type of the technical primary key.
+ *            the generic type of the id
  */
 @MappedSuperclass
-@Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
+public abstract class TextEntity<PK extends Serializable> extends BaseEntity<PK>
+	implements
+		IdentifiableTextable<PK>
 {
 
-	/** The constant for the foreign key prefix */
-	public static final String FOREIGN_KEY_PREFIX = "fk_";
-
-	/** The constant for the index prefix */
-	public static final String INDEX_PREFIX = "idx_";
-
-	/** The constant for the sequence generator prefix */
-	public static final String SEQUENCE_GENERATOR_PREFIX = "seq_gen_";
-
-	/** The constant for the sequence prefix */
-	public static final String SEQUENCE_PREFIX = "seq_";
-
-	/** The serialVersionUID. */
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The constant for the underscore */
-	public static final String UNDERSCORE = "_";
-
-	/** The constant for the unique constraint prefix */
-	public static final String UNIQUE_CONSTRAINT_PREFIX = "uk_";
-
-	/** The technical primary key. */
-	@Id
-	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id", nullable = false)
-	PK id;
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString()
-	{
-		return getClass().getSimpleName() + ": id=" + id;
-	}
+	/** The name. */
+	@Column(unique = false, name = "text", columnDefinition = "TEXT")
+	String text;
 
 }

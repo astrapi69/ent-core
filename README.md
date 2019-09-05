@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Build Status](https://travis-ci.org/astrapi69/ent-core.svg?branch=master)](https://travis-ci.org/astrapi69/ent-core) 
+[![Build Status](https://travis-ci.org/astrapi69/ent-core.svg?branch=develop)](https://travis-ci.org/astrapi69/ent-core) 
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/ent-core.svg?style=flat)](https://github.com/astrapi69/ent-core/issues) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/ent-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/ent-core)
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/ent-core.svg)](http://www.javadoc.io/doc/de.alpharogroup/ent-core)
@@ -51,7 +51,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>1.2</ent-core.version>
+		<ent-core.version>1.3</ent-core.version>
 			...
 	</properties>
 			...
