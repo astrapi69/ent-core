@@ -51,7 +51,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>1.3</ent-core.version>
+		<ent-core.version>1.3.1</ent-core.version>
 			...
 	</properties>
 			...
@@ -65,6 +65,24 @@ Than you can add the dependency to your dependencies:
 			</dependency>
 			...
 		</dependencies>
+
+	
+## gradle dependency
+
+Add the following gradle dependency to your project `build.gradle` in the dependencies section if you want to import the core functionality of ent-api:
+
+```
+ext {
+			...
+    entCoreVersion = '1.3.1'
+			...
+}
+dependencies {
+			...
+	compile 'de.alpharogroup:ent-core:${entCoreVersion}'
+			...
+}
+```
 
 ## Semantic Versioning
 

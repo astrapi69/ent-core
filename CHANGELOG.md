@@ -1,6 +1,15 @@
 ## Change log
 ----------------------
 
+Version 1.3.1
+-------------
+
+ADDED:
+ 
+- new abstract entity for store a variable length of unique text values 
+- new versionable abstract entity for store a variable length of text values 
+- new versionable abstract entity for store a variable length of unique text values 
+
 Version 1.3
 -------------
 
