@@ -4,6 +4,14 @@
 Version 1.3-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new abstract entity for store a variable length of text values 
+
+CHANGED:
+
+- update of ent-api dependency to version 1.2
+
 Version 1.2.1
 -------------
 
