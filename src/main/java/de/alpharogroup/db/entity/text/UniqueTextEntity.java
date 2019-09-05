@@ -30,7 +30,6 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 import de.alpharogroup.db.entity.BaseEntity;
-import de.alpharogroup.db.entity.text.IdentifiableTextable;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

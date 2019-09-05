@@ -39,8 +39,8 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link VersionableTextEntity} is a base entity for a table with a single value
- * and has a version property for the optimistic locking
+ * The class {@link VersionableTextEntity} is a base entity for a table with a single value and has
+ * a version property for the optimistic locking
  *
  * @param <PK>
  *            the generic type of the id
