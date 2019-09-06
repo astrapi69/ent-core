@@ -47,7 +47,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@AttributeOverride(name="name", column = @Column(name="name", unique=false, columnDefinition = "TEXT"))
+@AttributeOverride(name = "name", column = @Column(name = "name", unique = false, columnDefinition = "TEXT"))
 public abstract class NameEntity<PK extends Serializable> extends BasicNameEntity<PK>
 	implements
 		IdentifiableNameable<PK>
@@ -59,7 +59,8 @@ public abstract class NameEntity<PK extends Serializable> extends BasicNameEntit
 	/**
 	 * Instantiates a new {@link NameEntity} with the given name
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public NameEntity(String name)
 	{

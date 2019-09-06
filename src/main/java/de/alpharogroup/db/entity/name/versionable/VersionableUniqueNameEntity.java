@@ -68,7 +68,8 @@ public abstract class VersionableUniqueNameEntity<PK extends Serializable>
 	/**
 	 * Instantiates a new {@link VersionableUniqueNameEntity} with the given name
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public VersionableUniqueNameEntity(String name)
 	{

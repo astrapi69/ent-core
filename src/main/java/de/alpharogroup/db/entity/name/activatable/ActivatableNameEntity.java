@@ -50,7 +50,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public abstract class ActivatableNameEntity<PK extends Serializable> extends NameEntity<PK>
 	implements
-	IdentifiableNameableActivatable<PK>
+		IdentifiableNameableActivatable<PK>
 {
 
 	/** The serial Version UID. */
@@ -63,7 +63,8 @@ public abstract class ActivatableNameEntity<PK extends Serializable> extends Nam
 	/**
 	 * Instantiates a new {@link ActivatableNameEntity} with the given name
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public ActivatableNameEntity(String name)
 	{

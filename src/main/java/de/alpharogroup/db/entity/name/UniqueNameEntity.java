@@ -37,7 +37,8 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link UniqueNameEntity} is a base entity for a table with a single unique value and versionable
+ * The class {@link UniqueNameEntity} is a base entity for a table with a single unique value and
+ * versionable
  *
  * @param <PK>
  *            the generic type of the id
@@ -47,7 +48,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@AttributeOverride(name="name", column = @Column(name="name", unique=true, columnDefinition = "TEXT"))
+@AttributeOverride(name = "name", column = @Column(name = "name", unique = true, columnDefinition = "TEXT"))
 public abstract class UniqueNameEntity<PK extends Serializable> extends BasicNameEntity<PK>
 	implements
 		IdentifiableNameable<PK>
@@ -59,7 +60,8 @@ public abstract class UniqueNameEntity<PK extends Serializable> extends BasicNam
 	/**
 	 * Instantiates a new {@link UniqueNameEntity} with the given name
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public UniqueNameEntity(String name)
 	{

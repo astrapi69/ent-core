@@ -60,19 +60,20 @@ public abstract class VersionableUniqueTextEntity<PK extends Serializable>
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * The version property for the optimistic lock value
+	 **/
+	@Version
+	Integer version;
+
+	/**
 	 * Instantiates a new {@link VersionableUniqueTextEntity} object with the given text value
 	 *
-	 * @param text the text
+	 * @param text
+	 *            the text
 	 */
 	public VersionableUniqueTextEntity(String text)
 	{
 		super(text);
 	}
-
-	/**
-	 * The version property for the optimistic lock value
-	 **/
-	@Version
-	Integer version;
 
 }

@@ -65,7 +65,8 @@ public abstract class VersionableNameEntity<PK extends Serializable> extends Nam
 	/**
 	 * Instantiates a new {@link VersionableNameEntity} with the given name
 	 *
-	 * @param name the name
+	 * @param name
+	 *            the name
 	 */
 	public VersionableNameEntity(String name)
 	{
