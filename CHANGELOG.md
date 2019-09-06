@@ -4,6 +4,10 @@
 Version 1.4-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new abstract entities created for store a variable length of name values 
+
 Version 1.3.1
 -------------
 

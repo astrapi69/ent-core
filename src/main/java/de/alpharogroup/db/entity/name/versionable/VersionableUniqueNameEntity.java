@@ -22,15 +22,15 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.text.versionable;
+package de.alpharogroup.db.entity.name.versionable;
 
 import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.text.IdentifiableTextableVersionable;
-import de.alpharogroup.db.entity.text.UniqueTextEntity;
+import de.alpharogroup.db.entity.name.IdentifiableNameableVersionable;
+import de.alpharogroup.db.entity.name.UniqueNameEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,8 +38,8 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link VersionableUniqueTextEntity} is a base entity for a table with a single unique
- * value and has a version property for the optimistic locking
+ * The class {@link VersionableUniqueNameEntity} is a base entity for a table with a single unique
+ * value
  *
  * @param <PK>
  *            the generic type of the id
@@ -49,30 +49,30 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class VersionableUniqueTextEntity<PK extends Serializable>
+public abstract class VersionableUniqueNameEntity<PK extends Serializable>
 	extends
-		UniqueTextEntity<PK>
+		UniqueNameEntity<PK>
 	implements
-		IdentifiableTextableVersionable<PK>
+		IdentifiableNameableVersionable<PK>
 {
 
-	/** The Constant serialVersionUID. */
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * Instantiates a new {@link VersionableUniqueTextEntity} object with the given text value
-	 *
-	 * @param text the text
-	 */
-	public VersionableUniqueTextEntity(String text)
-	{
-		super(text);
-	}
 
 	/**
 	 * The version property for the optimistic lock value
 	 **/
 	@Version
 	Integer version;
+
+	/**
+	 * Instantiates a new {@link VersionableUniqueNameEntity} with the given name
+	 *
+	 * @param name the name
+	 */
+	public VersionableUniqueNameEntity(String name)
+	{
+		super(name);
+	}
 
 }

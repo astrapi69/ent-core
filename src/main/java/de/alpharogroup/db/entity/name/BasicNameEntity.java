@@ -22,24 +22,22 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.text.versionable;
+package de.alpharogroup.db.entity.name;
 
 import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.text.IdentifiableTextableVersionable;
-import de.alpharogroup.db.entity.text.UniqueTextEntity;
+import de.alpharogroup.db.entity.BaseEntity;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link VersionableUniqueTextEntity} is a base entity for a table with a single unique
- * value and has a version property for the optimistic locking
+ * The class {@link BasicNameEntity} is a base entity for a table with a single value
  *
  * @param <PK>
  *            the generic type of the id
@@ -48,31 +46,17 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class VersionableUniqueTextEntity<PK extends Serializable>
-	extends
-		UniqueTextEntity<PK>
+public abstract class BasicNameEntity<PK extends Serializable> extends BaseEntity<PK>
 	implements
-		IdentifiableTextableVersionable<PK>
+		IdentifiableNameable<PK>
 {
 
-	/** The Constant serialVersionUID. */
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Instantiates a new {@link VersionableUniqueTextEntity} object with the given text value
-	 *
-	 * @param text the text
-	 */
-	public VersionableUniqueTextEntity(String text)
-	{
-		super(text);
-	}
-
-	/**
-	 * The version property for the optimistic lock value
-	 **/
-	@Version
-	Integer version;
+	/** The name. */
+	String name;
 
 }
