@@ -22,15 +22,15 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.text.versionable;
+package de.alpharogroup.db.entity.name.activatable;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.text.IdentifiableTextableVersionable;
-import de.alpharogroup.db.entity.text.UniqueTextEntity;
+import de.alpharogroup.db.entity.name.IdentifiableNameableActivatable;
+import de.alpharogroup.db.entity.name.NameEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,8 +38,7 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link VersionableUniqueTextEntity} is a base entity for a table with a single unique
- * value and has a version property for the optimistic locking
+ * The class {@link ActivatableNameEntity} is a base entity for a table with a single value
  *
  * @param <PK>
  *            the generic type of the id
@@ -49,31 +48,27 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class VersionableUniqueTextEntity<PK extends Serializable>
-	extends
-		UniqueTextEntity<PK>
+public abstract class ActivatableNameEntity<PK extends Serializable> extends NameEntity<PK>
 	implements
-		IdentifiableTextableVersionable<PK>
+		IdentifiableNameableActivatable<PK>
 {
 
-	/** The Constant serialVersionUID. */
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * The version property for the optimistic lock value
-	 **/
-	@Version
-	Integer version;
+	/** The attribute active indicates if this entity is active. */
+	@Column(name = "active")
+	boolean active;
 
 	/**
-	 * Instantiates a new {@link VersionableUniqueTextEntity} object with the given text value
+	 * Instantiates a new {@link ActivatableNameEntity} with the given name
 	 *
-	 * @param text
-	 *            the text
+	 * @param name
+	 *            the name
 	 */
-	public VersionableUniqueTextEntity(String text)
+	public ActivatableNameEntity(String name)
 	{
-		super(text);
+		super(name);
 	}
 
 }

@@ -1,6 +1,13 @@
 ## Change log
 ----------------------
 
+Version 1.3.2
+-------------
+
+ADDED:
+ 
+- new abstract entities created for store a variable length of name values 
+
 Version 1.3.1
 -------------
 

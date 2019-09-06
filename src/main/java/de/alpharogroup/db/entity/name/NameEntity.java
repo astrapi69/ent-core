@@ -22,15 +22,14 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.text.versionable;
+package de.alpharogroup.db.entity.name;
 
 import java.io.Serializable;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.text.IdentifiableTextableVersionable;
-import de.alpharogroup.db.entity.text.UniqueTextEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,8 +37,7 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link VersionableUniqueTextEntity} is a base entity for a table with a single unique
- * value and has a version property for the optimistic locking
+ * The class {@link NameEntity} is a base entity for a table with a single value
  *
  * @param <PK>
  *            the generic type of the id
@@ -49,31 +47,24 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class VersionableUniqueTextEntity<PK extends Serializable>
-	extends
-		UniqueTextEntity<PK>
+@AttributeOverride(name = "name", column = @Column(name = "name", unique = false, columnDefinition = "TEXT"))
+public abstract class NameEntity<PK extends Serializable> extends BasicNameEntity<PK>
 	implements
-		IdentifiableTextableVersionable<PK>
+		IdentifiableNameable<PK>
 {
 
-	/** The Constant serialVersionUID. */
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The version property for the optimistic lock value
-	 **/
-	@Version
-	Integer version;
-
-	/**
-	 * Instantiates a new {@link VersionableUniqueTextEntity} object with the given text value
+	 * Instantiates a new {@link NameEntity} with the given name
 	 *
-	 * @param text
-	 *            the text
+	 * @param name
+	 *            the name
 	 */
-	public VersionableUniqueTextEntity(String text)
+	public NameEntity(String name)
 	{
-		super(text);
+		super(name);
 	}
 
 }
