@@ -4,6 +4,15 @@
 Version 1.4-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new entity class TreeableEntity that provides keeping data with in a tree structure
+
+CHANGED:
+
+- update of ent-api dependency to version 1.3.1
+- gradle as build system
+
 Version 1.3.2
 -------------
 
