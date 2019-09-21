@@ -18,7 +18,7 @@ repositories {
 }
 
 group = 'de.alpharogroup'
-version = '1.4-SNAPSHOT'
+version = '1.4'
 description = 'ent-core'
 sourceCompatibility = '1.8'
 
