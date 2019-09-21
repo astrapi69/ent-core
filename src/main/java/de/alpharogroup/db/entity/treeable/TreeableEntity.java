@@ -42,8 +42,8 @@ import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The Entity class {@link TreeableEntity} can keep information with a tree structure.
- * The root {@link TreeableEntity} has no parent all child {@link TreeableEntity}s have a parent.
+ * The Entity class {@link TreeableEntity} can keep information with a tree structure. The root
+ * {@link TreeableEntity} has no parent all child {@link TreeableEntity}s have a parent.
  */
 @MappedSuperclass
 @Getter
@@ -51,14 +51,19 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<PK, T, ?>> extends BaseEntity<PK> implements Cloneable,
-	Treeable<PK, T, TR>
+public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<PK, T, ?>>
+	extends
+		BaseEntity<PK>
+	implements
+		Cloneable,
+		Treeable<PK, T, TR>
 {
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
-	/** The value of this tree entity */
-	@Column(unique = false, name = "value", columnDefinition = "TEXT")
-	T value;
+
+	/** The depth of this node. For the root depth would be 0. */
+	int depth;
+
 	/** A flag that indicates if this tree entity is a node */
 	@Column(name = "node")
 	boolean node;
@@ -68,7 +73,8 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 	@JoinColumn(name = "parent_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_treeable_parent_id"))
 	TR parent;
 
-	/** The depth of this node. For the root depth would be 0. */
-	int depth;
+	/** The value of this tree entity */
+	@Column(unique = false, name = "value", columnDefinition = "TEXT")
+	T value;
 
 }
