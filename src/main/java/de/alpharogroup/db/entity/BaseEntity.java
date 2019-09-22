@@ -81,7 +81,7 @@ public abstract class BaseEntity<PK extends Serializable> implements Serializabl
 	/** The technical primary key. */
 	@Id
 	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "default_generator")
 	@Column(name = "id", nullable = false)
 	PK id;
 
