@@ -32,6 +32,10 @@ import lombok.experimental.FieldDefaults;
 /**
  * The enum {@link DatabasePrefix} holds some useful prefixes for sequences, sequence generators,
  * unique constraints, foreign keys and indexes names
+ *
+ * @deprecated use instead the same name enum class from project ent-api<br>
+ *             <br>
+ *             Note: will be removed in the next minor release version
  */
 @Getter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)

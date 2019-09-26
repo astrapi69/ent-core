@@ -50,8 +50,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @AttributeOverride(name = "name", column = @Column(name = "name", unique = true, columnDefinition = "TEXT"))
 public abstract class UniqueNameEntity<PK extends Serializable> extends BasicNameEntity<PK>
-	implements
-		IdentifiableNameable<PK>
 {
 
 	/** The serial Version UID. */
