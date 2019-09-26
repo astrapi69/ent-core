@@ -22,35 +22,58 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.enums;
+package de.alpharogroup.db.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
 /**
- * The enum {@link DatabasePrefix} holds some useful prefixes for sequences, sequence generators,
- * unique constraints, foreign keys and indexes names
+ * The class {@link BaseSequenceEntity} holds the primary key.
+ *
+ * @param <PK>
+ *            the generic type of the technical primary key.
  */
+@MappedSuperclass
+@Access(AccessType.FIELD)
 @Getter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public enum DatabasePrefix
+@Setter
+@NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public abstract class BaseSequenceEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
 {
-	/** The prefix for the foreign key name */
-	FOREIGN_KEY_NAME("fk_"),
-	/** The prefix for the index */
-	INDEX_NAME("idx_"),
-	/** The prefix for the sequence generator name */
-	SEQUENCE_GENERATOR_NAME("seq_gen_"),
-	/** The prefix for the sequence name */
-	SEQUENCE_NAME("seq_"),
-	/** The underscore for concat prefixes with names */
-	UNDERSCORE("_"),
-	/** The prefix for the unique constraint name */
-	UNIQUE_CONSTRAINT_NAME("uk_");
 
-	/** The prefix. */
-	String prefix;
+	/** The serialVersionUID. */
+	private static final long serialVersionUID = 1L;
+
+	/** The technical primary key. */
+	@Id
+	@EqualsAndHashCode.Include
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generic_generator")
+	@Column(name = "id", nullable = false)
+	PK id;
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString()
+	{
+		return getClass().getSimpleName() + ": id=" + id;
+	}
+
 }
