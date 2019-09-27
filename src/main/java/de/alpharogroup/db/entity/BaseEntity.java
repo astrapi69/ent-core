@@ -61,7 +61,7 @@ public abstract class BaseEntity<PK extends Serializable> implements Serializabl
 	 * The Constant for the generic sequence name. Note this must be given as name in the annotation
 	 * SequenceGenerator if you want a sequence for the specific entity.
 	 */
-	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "hibernate_sequence";
+	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "generic_sequence";
 
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;

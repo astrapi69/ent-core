@@ -4,6 +4,10 @@
 Version 1.5
 -------------
 
+ADDED:
+ 
+- new class DatabaseAttribute created that holds constants for annotation attributes for an entity class
+
 CHANGED:
 
 - update of ent-api dependency to version 1.4
