@@ -34,7 +34,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.enums.DatabasePrefix;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -64,64 +63,8 @@ public abstract class BaseEntity<PK extends Serializable> implements Serializabl
 	 */
 	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "hibernate_sequence";
 
-	/**
-	 * The constant for the foreign key prefix
-	 *
-	 * @deprecated use instead the same name constant from <code><DatabasePrefix/code> <br>
-	 *             Note: will be removed in the next minor release version
-	 **/
-	@Deprecated
-	public static final String FOREIGN_KEY_PREFIX = DatabasePrefix.FOREIGN_KEY_NAME.getPrefix();
-
-	/**
-	 * The constant for the index prefix
-	 *
-	 * @deprecated use instead the same name constant from <code><DatabasePrefix/code> <br>
-	 *             Note: will be removed in the next minor release version
-	 **/
-	@Deprecated
-	public static final String INDEX_PREFIX = DatabasePrefix.INDEX_NAME.getPrefix();
-
-	/**
-	 * The constant for the sequence generator prefix
-	 *
-	 * @deprecated use instead the same name constant from <code><DatabasePrefix/code> <br>
-	 *             Note: will be removed in the next minor release version
-	 **/
-	@Deprecated
-	public static final String SEQUENCE_GENERATOR_PREFIX = DatabasePrefix.SEQUENCE_GENERATOR_NAME
-		.getPrefix();
-
-	/**
-	 * The constant for the sequence prefix
-	 *
-	 * @deprecated use instead the same name constant from <code><DatabasePrefix/code> <br>
-	 *             Note: will be removed in the next minor release version
-	 **/
-	@Deprecated
-	public static final String SEQUENCE_PREFIX = DatabasePrefix.SEQUENCE_NAME.getPrefix();
-
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * The constant for the underscore
-	 *
-	 * @deprecated use instead the same name constant from <code><DatabasePrefix/code> <br>
-	 *             Note: will be removed in the next minor release version
-	 **/
-	@Deprecated
-	public static final String UNDERSCORE = DatabasePrefix.UNDERSCORE.getPrefix();
-
-	/**
-	 * The constant for the unique constraint prefix
-	 *
-	 * @deprecated use instead the same name constant from <code><DatabasePrefix/code> <br>
-	 *             Note: will be removed in the next minor release version
-	 **/
-	@Deprecated
-	public static final String UNIQUE_CONSTRAINT_PREFIX = DatabasePrefix.UNIQUE_CONSTRAINT_NAME
-		.getPrefix();
 
 	/** The technical primary key. */
 	@Id

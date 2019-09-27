@@ -6,7 +6,8 @@ Version 1.5-SNAPSHOT
 
 CHANGED:
 
-- changed strategy to table for the id field
+- update of ent-api dependency to version 1.4
+- changed strategy to sequence for the id field
 
 Version 1.4
 -------------
