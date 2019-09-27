@@ -19,16 +19,16 @@ repositories {
 }
 
 group = 'de.alpharogroup'
-version = '1.5-SNAPSHOT'
+version = '1.5'
 description = 'ent-core'
 sourceCompatibility = '1.8'
 
 dependencies {
     compile 'de.alpharogroup:ent-api:1.4'
-    compile 'org.projectlombok:lombok:1.18.8'
-    testCompile 'org.testng:testng:6.14.3'
+    compile 'org.projectlombok:lombok:1.18.10'
+    testCompile 'org.testng:testng:7.0.0'
     testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.27.0'
+    testCompile 'org.mockito:mockito-core:3.0.0'
     compileOnly 'javax.persistence:javax.persistence-api:2.2'
 }
 
