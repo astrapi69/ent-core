@@ -57,31 +57,19 @@ import lombok.experimental.FieldDefaults;
 public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
 {
 
-	/** The constant for the foreign key prefix */
-	public static final String FOREIGN_KEY_PREFIX = "fk_";
-
-	/** The constant for the index prefix */
-	public static final String INDEX_PREFIX = "idx_";
-
-	/** The constant for the sequence generator prefix */
-	public static final String SEQUENCE_GENERATOR_PREFIX = "seq_gen_";
-
-	/** The constant for the sequence prefix */
-	public static final String SEQUENCE_PREFIX = "seq_";
+	/**
+	 * The Constant for the generic sequence name. Note this must be given as name in the annotation
+	 * SequenceGenerator if you want a sequence for the specific entity.
+	 */
+	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "generic_sequence";
 
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The constant for the underscore */
-	public static final String UNDERSCORE = "_";
-
-	/** The constant for the unique constraint prefix */
-	public static final String UNIQUE_CONSTRAINT_PREFIX = "uk_";
-
 	/** The technical primary key. */
 	@Id
 	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = BaseEntity.SEQUENCE_GENERIC_GENERATOR_NAME)
 	@Column(name = "id", nullable = false)
 	PK id;
 

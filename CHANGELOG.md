@@ -1,6 +1,18 @@
 ## Change log
 ----------------------
 
+Version 1.5
+-------------
+
+ADDED:
+ 
+- new class DatabaseAttribute created that holds constants for annotation attributes for an entity class
+
+CHANGED:
+
+- update of ent-api dependency to version 1.4.1
+- changed strategy to sequence for the id field
+
 Version 1.4
 -------------
 
