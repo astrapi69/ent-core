@@ -41,7 +41,7 @@
 		<!-- HIBERNATE version -->
 		<javax.persistence-api.version>2.2</javax.persistence-api.version>
 		<!-- ENT-API version -->
-		<ent-api.version>1.4</ent-api.version>
+		<ent-api.version>1.4.1</ent-api.version>
 	</properties>
 
 	<dependencyManagement>

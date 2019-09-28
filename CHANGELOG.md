@@ -10,7 +10,7 @@ ADDED:
 
 CHANGED:
 
-- update of ent-api dependency to version 1.4
+- update of ent-api dependency to version 1.4.1
 - changed strategy to sequence for the id field
 
 Version 1.4
