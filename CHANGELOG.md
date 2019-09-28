@@ -4,6 +4,10 @@
 Version 1.6-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new constant for the name of columns
+
 Version 1.5
 -------------
 

@@ -63,6 +63,9 @@ public abstract class BaseEntity<PK extends Serializable> implements Serializabl
 	 */
 	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "generic_sequence";
 
+	/** The Constant for the column name 'id'. */
+	public static final String COLUMN_NAME_ID = "id";
+
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 

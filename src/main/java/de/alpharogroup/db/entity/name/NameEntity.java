@@ -54,6 +54,9 @@ public abstract class NameEntity<PK extends Serializable> extends BasicNameEntit
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The Constant for the column name 'name'. */
+	public static final String COLUMN_NAME_NAME = "name";
+
 	/**
 	 * Instantiates a new {@link NameEntity} with the given name
 	 *
