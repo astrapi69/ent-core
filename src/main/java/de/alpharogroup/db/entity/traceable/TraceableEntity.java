@@ -64,6 +64,24 @@ public abstract class TraceableEntity<PK extends Serializable, T, U> extends Bas
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The Constant for the column name 'created'. */
+	public static final String COLUMN_NAME_CREATED = "created";
+
+	/** The Constant for the column name 'active'. */
+	public static final String COLUMN_NAME_CREATED_BY = "createdBy";
+
+	/** The Constant for the column name 'deleted'. */
+	public static final String COLUMN_NAME_DELETED = "deleted";
+
+	/** The Constant for the column name 'deletedBy'. */
+	public static final String COLUMN_NAME_DELETED_BY = "deletedBy";
+
+	/** The Constant for the column name 'lastModified'. */
+	public static final String COLUMN_NAME_LAST_MODIFIED = "lastModified";
+
+	/** The Constant for the column name 'lastModifiedBy'. */
+	public static final String COLUMN_NAME_LAST_MODIFIED_BY = "lastModifiedBy";
+
 	/** The date and time when the entity that owns this entity was created. */
 	private T created;
 

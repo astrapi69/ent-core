@@ -62,6 +62,12 @@ public class Creation<PK extends Serializable, T, U> extends BaseEntity<PK>
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
+	/** The Constant for the column name 'created'. */
+	public static final String COLUMN_NAME_CREATED = "created";
+
+	/** The Constant for the column name 'active'. */
+	public static final String COLUMN_NAME_CREATED_BY = "createdBy";
+
 	/** The date and time when the entity that owns this entity was created. */
 	private T created;
 

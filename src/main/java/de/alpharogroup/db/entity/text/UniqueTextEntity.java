@@ -26,12 +26,11 @@ package de.alpharogroup.db.entity.text;
 
 import java.io.Serializable;
 
+import javax.persistence.AttributeOverride;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.BaseEntity;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -47,9 +46,9 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class UniqueTextEntity<PK extends Serializable> extends BaseEntity<PK>
+@AttributeOverride(name = "text", column = @Column(name = "text", unique = true, columnDefinition = "TEXT"))
+public abstract class UniqueTextEntity<PK extends Serializable> extends TextEntity<PK>
 	implements
 		IdentifiableTextable<PK>
 {
@@ -57,8 +56,15 @@ public abstract class UniqueTextEntity<PK extends Serializable> extends BaseEnti
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The name. */
-	@Column(unique = true, name = "text", columnDefinition = "TEXT")
-	String text;
+	/**
+	 * Instantiates a new {@link UniqueTextEntity} with the given text
+	 *
+	 * @param text
+	 *            the text
+	 */
+	public UniqueTextEntity(String text)
+	{
+		super(text);
+	}
 
 }

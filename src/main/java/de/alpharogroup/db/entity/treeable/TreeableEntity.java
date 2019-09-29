@@ -61,7 +61,21 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;
 
+	/** The Constant for the column name 'depth'. */
+	public static final String COLUMN_NAME_DEPTH = "depth";
+
+	/** The Constant for the column name 'node'. */
+	public static final String COLUMN_NAME_NODE = "node";
+
+	/** The Constant for the column name 'parent'. */
+	public static final String COLUMN_NAME_PARENT = "parent";
+
+	/** The Constant for the column name 'value'. */
+	public static final String COLUMN_NAME_VALUE = "value";
+
+
 	/** The depth of this node. For the root depth would be 0. */
+	@Column(name = "depth")
 	int depth;
 
 	/** A flag that indicates if this tree entity is a node */
@@ -74,7 +88,7 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 	TR parent;
 
 	/** The value of this tree entity */
-	@Column(unique = false, name = "value", columnDefinition = "TEXT")
+	@Column(name = "value", columnDefinition = "TEXT")
 	T value;
 
 }
