@@ -51,7 +51,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>1.5</ent-core.version>
+		<ent-core.version>1.6</ent-core.version>
 			...
 	</properties>
 			...
@@ -74,7 +74,7 @@ Add the following gradle dependency to your project `build.gradle` in the depend
 ```
 ext {
 			...
-    entCoreVersion = '1.5'
+    entCoreVersion = '1.6'
 			...
 }
 dependencies {
