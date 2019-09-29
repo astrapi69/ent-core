@@ -61,6 +61,15 @@ public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V> exte
 		IdentifiableKeyValueOwner<PK, O, K, V>
 {
 
+	/** The Constant for the column name 'key'. */
+	public static final String COLUMN_NAME_KEY = "key";
+
+	/** The Constant for the column name 'owner'. */
+	public static final String COLUMN_NAME_OWNER = "owner";
+
+	/** The Constant for the column name 'value'. */
+	public static final String COLUMN_NAME_VALUE = "value";
+
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 

@@ -52,6 +52,9 @@ public abstract class VisibilityEntity<PK extends Serializable> extends BaseEnti
 		IdentifiableVisibility<PK>
 {
 
+	/** The Constant for the column name 'visible'. */
+	public static final String COLUMN_NAME_VISIBLE = "visible";
+
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 

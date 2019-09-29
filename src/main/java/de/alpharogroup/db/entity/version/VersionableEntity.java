@@ -22,67 +22,42 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity;
+package de.alpharogroup.db.entity.version;
 
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
+import de.alpharogroup.db.entity.BaseEntity;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
 /**
- * The class {@link BaseEntity} holds the primary key.
+ * The class {@link VersionableEntity} has a version property for the optimistic lock value
  *
  * @param <PK>
- *            the generic type of the technical primary key.
+ *            the generic type of the id
  */
 @MappedSuperclass
-@Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
+@AllArgsConstructor
+public abstract class VersionableEntity<PK extends Serializable> extends BaseEntity<PK>
+	implements
+		IdentifiableVersionable<PK>
 {
 
-	/** The Constant for the column name 'id'. */
-	public static final String COLUMN_NAME_ID = "id";
-
-	/**
-	 * The Constant for the generic sequence name. Note this must be given as name in the annotation
-	 * SequenceGenerator if you want a sequence for the specific entity.
-	 */
-	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "generic_sequence";
-
-	/** The serialVersionUID. */
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The technical primary key. */
-	@Id
-	@EqualsAndHashCode.Include
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = BaseEntity.SEQUENCE_GENERIC_GENERATOR_NAME)
-	@Column(name = "id", nullable = false)
-	PK id;
-
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public String toString()
-	{
-		return getClass().getSimpleName() + ": id=" + id;
-	}
+	 * The version property for the optimistic lock value
+	 **/
+	@Version
+	private Integer version;
 
 }

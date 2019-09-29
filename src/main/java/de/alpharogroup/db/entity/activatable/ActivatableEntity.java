@@ -55,6 +55,9 @@ public abstract class ActivatableEntity<PK extends Serializable> extends BaseEnt
 		IdentifiableActivatable<PK>
 {
 
+	/** The Constant for the column name 'active'. */
+	public static final String COLUMN_NAME_ACTIVE = "active";
+
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 

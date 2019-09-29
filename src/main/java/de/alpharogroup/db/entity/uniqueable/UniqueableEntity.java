@@ -59,6 +59,9 @@ public abstract class UniqueableEntity<PK extends Serializable>
 		Uniqueable<PK>
 {
 
+	/** The Constant for the column name 'uuid'. */
+	public static final String COLUMN_NAME_UUID = "uuid";
+
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 

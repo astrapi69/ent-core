@@ -30,7 +30,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import de.alpharogroup.db.entity.BaseEntity;
-import de.alpharogroup.db.entity.version.VersionableBaseEntity;
+import de.alpharogroup.db.entity.version.VersionableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -41,8 +41,8 @@ import lombok.ToString;
 /**
  * The entity class {@link LastModification} is keeping information of the last modification of an
  * entity. This entity can be extended or attached to another entity for keep information when it
- * was last modified. In combination with the {@link VersionableBaseEntity} it can build a history
- * of modification of an entity.
+ * was last modified. In combination with the {@link VersionableEntity} it can build a history of
+ * modification of an entity.
  *
  * @param <PK>
  *            the generic type of the id
@@ -63,6 +63,12 @@ public class LastModification<PK extends Serializable, T, U> extends BaseEntity<
 	implements
 		IdentifiableLastModified<PK, T, U>
 {
+
+	/** The Constant for the column name 'lastModified'. */
+	public static final String COLUMN_NAME_LAST_MODIFIED = "lastModified";
+
+	/** The Constant for the column name 'lastModifiedBy'. */
+	public static final String COLUMN_NAME_LAST_MODIFIED_BY = "lastModifiedBy";
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

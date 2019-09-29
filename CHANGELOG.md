@@ -1,6 +1,18 @@
 ## Change log
 ----------------------
 
+Version 1.6-SNAPSHOT
+-------------
+
+ADDED:
+ 
+- new constants for all relevant columns created
+- created new class VersionableEntity that replaces the class VersionableBaseEntity
+
+CHANGED:
+
+- VersionableBaseEntity tagged as deprecated
+
 Version 1.5
 -------------
 
