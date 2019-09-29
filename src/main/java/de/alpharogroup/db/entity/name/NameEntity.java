@@ -51,11 +51,11 @@ import lombok.experimental.FieldDefaults;
 public abstract class NameEntity<PK extends Serializable> extends BasicNameEntity<PK>
 {
 
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
-
 	/** The Constant for the column name 'name'. */
 	public static final String COLUMN_NAME_NAME = "name";
+
+	/** The serial Version UID. */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Instantiates a new {@link NameEntity} with the given name

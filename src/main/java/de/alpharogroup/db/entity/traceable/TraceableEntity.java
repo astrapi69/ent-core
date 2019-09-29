@@ -61,9 +61,6 @@ public abstract class TraceableEntity<PK extends Serializable, T, U> extends Bas
 		IdentifiableTraceable<PK, T, U>
 {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
-
 	/** The Constant for the column name 'created'. */
 	public static final String COLUMN_NAME_CREATED = "created";
 
@@ -81,6 +78,9 @@ public abstract class TraceableEntity<PK extends Serializable, T, U> extends Bas
 
 	/** The Constant for the column name 'lastModifiedBy'. */
 	public static final String COLUMN_NAME_LAST_MODIFIED_BY = "lastModifiedBy";
+
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = 1L;
 
 	/** The date and time when the entity that owns this entity was created. */
 	private T created;

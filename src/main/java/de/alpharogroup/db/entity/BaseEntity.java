@@ -57,14 +57,14 @@ import lombok.experimental.FieldDefaults;
 public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
 {
 
+	/** The Constant for the column name 'id'. */
+	public static final String COLUMN_NAME_ID = "id";
+
 	/**
 	 * The Constant for the generic sequence name. Note this must be given as name in the annotation
 	 * SequenceGenerator if you want a sequence for the specific entity.
 	 */
 	public static final String SEQUENCE_GENERIC_GENERATOR_NAME = "generic_sequence";
-
-	/** The Constant for the column name 'id'. */
-	public static final String COLUMN_NAME_ID = "id";
 
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;

@@ -54,11 +54,11 @@ public abstract class TextEntity<PK extends Serializable> extends BaseEntity<PK>
 		IdentifiableTextable<PK>
 {
 
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
-
 	/** The Constant for the column name 'text'. */
 	public static final String COLUMN_NAME_TEXT = "text";
+
+	/** The serial Version UID. */
+	private static final long serialVersionUID = 1L;
 
 	/** The name. */
 	@Column(unique = false, name = "text", columnDefinition = "TEXT")

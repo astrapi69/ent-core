@@ -40,9 +40,8 @@ import lombok.Setter;
  *
  * @param <PK>
  *            the generic type of the id
- *            @deprecated use instead the new renamed class <code>VersionableEntity</code><br>
- *            Note:
- *            will be removed in the next minor release
+ * @deprecated use instead the new renamed class <code>VersionableEntity</code><br>
+ *             Note: will be removed in the next minor release
  */
 @Deprecated
 @MappedSuperclass

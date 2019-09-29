@@ -58,9 +58,6 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 		Cloneable,
 		Treeable<PK, T, TR>
 {
-	/** The serial Version UID */
-	private static final long serialVersionUID = 1L;
-
 	/** The Constant for the column name 'depth'. */
 	public static final String COLUMN_NAME_DEPTH = "depth";
 
@@ -72,6 +69,9 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 
 	/** The Constant for the column name 'value'. */
 	public static final String COLUMN_NAME_VALUE = "value";
+
+	/** The serial Version UID */
+	private static final long serialVersionUID = 1L;
 
 
 	/** The depth of this node. For the root depth would be 0. */

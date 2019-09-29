@@ -57,14 +57,14 @@ public class ValidatableEntity<PK extends Serializable, T> extends BaseEntity<PK
 		IdentifiableValidatable<PK, T>
 {
 
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
-
 	/** The Constant for the column name 'validFrom'. */
 	public static final String COLUMN_NAME_VALID_FROM = "validFrom";
 
 	/** The Constant for the column name 'validTill'. */
 	public static final String COLUMN_NAME_VALID_TILL = "validTill";
+
+	/** The serial Version UID. */
+	private static final long serialVersionUID = 1L;
 
 	/** The valid from date for validation. */
 	private T validFrom;
