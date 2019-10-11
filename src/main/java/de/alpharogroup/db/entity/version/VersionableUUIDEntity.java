@@ -37,8 +37,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The abstract class {@link VersionableUUIDEntity} is a concrete class of {@link UniqueableEntity} and holds
- * an {@link UUID} as primary key.
+ * The abstract class {@link VersionableUUIDEntity} is a concrete class of {@link UniqueableEntity}
+ * and holds an {@link UUID} as primary key.
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)

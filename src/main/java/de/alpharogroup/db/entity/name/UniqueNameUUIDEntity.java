@@ -36,8 +36,8 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link UniqueNameUUIDEntity} is a base entity for a table with a single unique value and
- * versionable
+ * The class {@link UniqueNameUUIDEntity} is a base entity for a table with a single unique value
+ * and versionable
  */
 @MappedSuperclass
 @Getter

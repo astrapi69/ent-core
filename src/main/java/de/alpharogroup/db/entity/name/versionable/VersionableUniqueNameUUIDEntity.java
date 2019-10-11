@@ -36,8 +36,8 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VersionableUniqueNameUUIDEntity} is a base entity for a table with a single unique
- * value
+ * The class {@link VersionableUniqueNameUUIDEntity} is a base entity for a table with a single
+ * unique value
  */
 @MappedSuperclass
 @Getter
@@ -45,8 +45,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class VersionableUniqueNameUUIDEntity
-	extends UniqueNameUUIDEntity
+public abstract class VersionableUniqueNameUUIDEntity extends UniqueNameUUIDEntity
 {
 
 	/** The serial Version UID. */
