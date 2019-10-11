@@ -1,16 +1,27 @@
 ## Change log
 ----------------------
 
+Version 1.7.1
+-------------
+
+ADDED:
+ 
+- new versionable entity that derives from UUIDEntity created
+
+CHANGED:
+
+- removed deprecated class VersionableBaseEntity
+
 Version 1.7
 -------------
 
 ADDED:
  
 - new name entities that extends from the UUIDEntity
+
 CHANGED:
 
-- entities UniqueableEntity and UUIDEntity are with the lombok annotation 
-SuperBuilder annotated
+- entities UniqueableEntity and UUIDEntity are with the lombok annotation SuperBuilder annotated
 
 Version 1.6
 -------------

@@ -24,8 +24,9 @@
  */
 package de.alpharogroup.db.entity.name.versionable;
 
-import de.alpharogroup.db.entity.name.IdentifiableNameableVersionable;
-import de.alpharogroup.db.entity.name.UniqueNameEntity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+
 import de.alpharogroup.db.entity.name.UniqueNameUUIDEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -33,10 +34,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
-import java.io.Serializable;
 
 /**
  * The class {@link VersionableUniqueNameUUIDEntity} is a base entity for a table with a single unique

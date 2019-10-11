@@ -19,7 +19,7 @@ repositories {
 }
 
 group = 'de.alpharogroup'
-version = '1.7'
+version = '1.7.1'
 description = 'ent-core'
 sourceCompatibility = '1.8'
 

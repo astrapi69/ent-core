@@ -24,17 +24,16 @@
  */
 package de.alpharogroup.db.entity.name;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
 
 /**
  * The class {@link UniqueNameUUIDEntity} is a base entity for a table with a single unique value and
