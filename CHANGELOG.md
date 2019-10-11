@@ -4,6 +4,14 @@
 Version 1.7-SNAPSHOT
 -------------
 
+ADDED:
+ 
+- new name entities that extends from the UUIDEntity
+CHANGED:
+
+- entities UniqueableEntity and UUIDEntity are with the lombok annotation 
+SuperBuilder annotated
+
 Version 1.6
 -------------
 

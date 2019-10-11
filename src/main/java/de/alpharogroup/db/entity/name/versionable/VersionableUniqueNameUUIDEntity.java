@@ -22,27 +22,54 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.uniqueable;
+package de.alpharogroup.db.entity.name.versionable;
 
-import java.util.UUID;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.MappedSuperclass;
-
+import de.alpharogroup.db.entity.name.IdentifiableNameableVersionable;
+import de.alpharogroup.db.entity.name.UniqueNameEntity;
+import de.alpharogroup.db.entity.name.UniqueNameUUIDEntity;
+import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+import java.io.Serializable;
+
 /**
- * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds
- * an {@link UUID} as primary key.
+ * The class {@link VersionableUniqueNameUUIDEntity} is a base entity for a table with a single unique
+ * value
  */
 @MappedSuperclass
-@Access(AccessType.FIELD)
+@Getter
+@Setter
 @NoArgsConstructor
 @SuperBuilder
-public abstract class UUIDEntity extends UniqueableEntity<UUID>
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public abstract class VersionableUniqueNameUUIDEntity
+	extends UniqueNameUUIDEntity
 {
-	/** The serialVersionUID. */
+
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
+
+	/**
+	 * The version property for the optimistic lock value
+	 **/
+	@Version
+	Integer version;
+
+	/**
+	 * Instantiates a new {@link VersionableUniqueNameUUIDEntity} with the given name
+	 *
+	 * @param name
+	 *            the name
+	 */
+	public VersionableUniqueNameUUIDEntity(String name)
+	{
+		super(name);
+	}
+
 }
