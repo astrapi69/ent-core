@@ -22,27 +22,36 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.uniqueable;
+package de.alpharogroup.db.entity.name;
 
-import java.util.UUID;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 
+import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds
- * an {@link UUID} as primary key.
+ * The class {@link NameUUIDEntity} is a base entity for a table with a single value
  */
 @MappedSuperclass
-@Access(AccessType.FIELD)
+@Getter
+@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class UUIDEntity extends UniqueableEntity<UUID>
+public abstract class NameUUIDEntity extends UUIDEntity
 {
-	/** The serialVersionUID. */
+
+	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
+
+	/** The name. */
+	String name;
+
 }
