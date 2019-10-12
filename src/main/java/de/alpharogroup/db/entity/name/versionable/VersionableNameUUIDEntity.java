@@ -44,7 +44,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public class VersionableNameUUIDEntity extends NameUUIDEntity
+public abstract class VersionableNameUUIDEntity extends NameUUIDEntity
 {
 
 	/** The serial Version UID. */

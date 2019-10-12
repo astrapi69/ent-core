@@ -24,43 +24,34 @@
  */
 package de.alpharogroup.db.entity.version;
 
-import java.io.Serializable;
+import java.util.UUID;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
+import de.alpharogroup.db.entity.uniqueable.UniqueableEntity;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VersionableBaseEntity} has a version property for the optimistic lock value.
- *
- * @param <PK>
- *            the generic type of the id
- * @deprecated use instead the new renamed class <code>VersionableEntity</code><br>
- *             Note: will be removed in the next minor release
+ * The abstract class {@link VersionableUUIDEntity} is a concrete class of {@link UniqueableEntity}
+ * and holds an {@link UUID} as primary key.
  */
-@Deprecated
 @MappedSuperclass
-@Getter
-@Setter
+@Access(AccessType.FIELD)
 @NoArgsConstructor
-@AllArgsConstructor
-public abstract class VersionableBaseEntity<PK extends Serializable> extends BaseEntity<PK>
-	implements
-		IdentifiableVersionable<PK>
+@SuperBuilder
+public abstract class VersionableUUIDEntity extends UUIDEntity
 {
-
-	/** The serial Version UID. */
+	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * The version property for the optimistic lock value.
+	 * The version property for the optimistic lock value
 	 **/
 	@Version
-	private Integer version;
-
+	Integer version;
 }
