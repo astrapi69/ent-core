@@ -28,7 +28,7 @@ import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -48,7 +48,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class BasicNameEntity<PK extends Serializable> extends BaseEntity<PK>
+public abstract class BasicNameEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableNameable<PK>
 {

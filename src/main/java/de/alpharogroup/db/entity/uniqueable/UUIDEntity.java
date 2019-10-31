@@ -30,6 +30,7 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 
+import de.alpharogroup.db.entity.base.UniqueableEntity;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 

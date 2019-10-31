@@ -29,7 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -52,16 +52,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class ValidatableEntity<PK extends Serializable, T> extends BaseEntity<PK>
+public class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableValidatable<PK, T>
 {
-
-	/** The Constant for the column name 'validFrom'. */
-	public static final String COLUMN_NAME_VALID_FROM = "validFrom";
-
-	/** The Constant for the column name 'validTill'. */
-	public static final String COLUMN_NAME_VALID_TILL = "validTill";
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;

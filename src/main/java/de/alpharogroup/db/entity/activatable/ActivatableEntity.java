@@ -31,7 +31,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -50,13 +50,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class ActivatableEntity<PK extends Serializable> extends BaseEntity<PK>
+public abstract class ActivatableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableActivatable<PK>
 {
-
-	/** The Constant for the column name 'active'. */
-	public static final String COLUMN_NAME_ACTIVE = "active";
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
