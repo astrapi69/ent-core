@@ -4,6 +4,9 @@
 Version 1.8-SNAPSHOT
 -------------
 
+Version 1.8
+-------------
+
 ADDED:
  
 - new base entities with different generation types of the id
