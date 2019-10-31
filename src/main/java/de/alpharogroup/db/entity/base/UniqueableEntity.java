@@ -22,43 +22,63 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.text;
+package de.alpharogroup.db.entity.base;
 
 import java.io.Serializable;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import de.alpharogroup.db.entity.Identifiable;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link TextEntity} is a base entity for a table with a single value
+ * The class {@link UniqueableEntity} holds an UUID as primary key.
  *
  * @param <PK>
- *            the generic type of the id
+ *            the generic type of the UUID technical primary key.
  */
 @MappedSuperclass
+@Access(AccessType.FIELD)
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class TextEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
+@SuperBuilder
+public abstract class UniqueableEntity<PK extends Serializable>
 	implements
-		IdentifiableTextable<PK>
+		Serializable,
+		Identifiable<PK>
 {
 
-	/** The serial Version UID. */
+	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The name. */
-	@Column(unique = false, name = "text", columnDefinition = "TEXT")
-	String text;
+	/** The technical primary key. */
+	@Id
+	@EqualsAndHashCode.Include
+	@GeneratedValue(generator = "UUID")
+	@Column(name = "id", updatable = false, nullable = false)
+	PK id;
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString()
+	{
+		return getClass().getSimpleName() + ": id=" + getId();
+	}
 
 }

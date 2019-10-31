@@ -28,7 +28,7 @@ import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import de.alpharogroup.db.entity.create.Creation;
 import de.alpharogroup.db.entity.delete.Deletion;
 import de.alpharogroup.db.entity.modify.LastModification;
@@ -56,28 +56,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class TraceableEntity<PK extends Serializable, T, U> extends BaseEntity<PK>
+public abstract class TraceableEntity<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableTraceable<PK, T, U>
 {
-
-	/** The Constant for the column name 'created'. */
-	public static final String COLUMN_NAME_CREATED = "created";
-
-	/** The Constant for the column name 'active'. */
-	public static final String COLUMN_NAME_CREATED_BY = "createdBy";
-
-	/** The Constant for the column name 'deleted'. */
-	public static final String COLUMN_NAME_DELETED = "deleted";
-
-	/** The Constant for the column name 'deletedBy'. */
-	public static final String COLUMN_NAME_DELETED_BY = "deletedBy";
-
-	/** The Constant for the column name 'lastModified'. */
-	public static final String COLUMN_NAME_LAST_MODIFIED = "lastModified";
-
-	/** The Constant for the column name 'lastModifiedBy'. */
-	public static final String COLUMN_NAME_LAST_MODIFIED_BY = "lastModifiedBy";
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

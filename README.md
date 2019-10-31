@@ -29,11 +29,7 @@ or over ether with:
 
 0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
 
-or over flattr:
-
-<a href="https://flattr.com/submit/auto?fid=r7vp62&url=https%3A%2F%2Fgithub.com%2Fastrapi69%2Fent-core" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
-</a>
+or over donate buttons at the top
 
 ## License
 
@@ -51,7 +47,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>1.7.1</ent-core.version>
+		<ent-core.version>1.8</ent-core.version>
 			...
 	</properties>
 			...
@@ -74,7 +70,7 @@ Add the following gradle dependency to your project `build.gradle` in the depend
 ```
 ext {
 			...
-    entCoreVersion = '1.6'
+    entCoreVersion = '1.8'
 			...
 }
 dependencies {

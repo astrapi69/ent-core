@@ -33,7 +33,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -53,22 +53,11 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<PK, T, ?>>
 	extends
-		BaseEntity<PK>
+		SequenceBaseEntity<PK>
 	implements
 		Cloneable,
 		Treeable<PK, T, TR>
 {
-	/** The Constant for the column name 'depth'. */
-	public static final String COLUMN_NAME_DEPTH = "depth";
-
-	/** The Constant for the column name 'node'. */
-	public static final String COLUMN_NAME_NODE = "node";
-
-	/** The Constant for the column name 'parent'. */
-	public static final String COLUMN_NAME_PARENT = "parent";
-
-	/** The Constant for the column name 'value'. */
-	public static final String COLUMN_NAME_VALUE = "value";
 
 	/** The serial Version UID */
 	private static final long serialVersionUID = 1L;

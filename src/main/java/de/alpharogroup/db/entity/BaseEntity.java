@@ -46,7 +46,11 @@ import lombok.experimental.FieldDefaults;
  *
  * @param <PK>
  *            the generic type of the technical primary key.
+ * @deprecated use instead the <code>SequenceBaseEntity</code> class from the base package<br>
+ *             <br>
+ *             Note: will be removed on next minor version
  */
+@Deprecated
 @MappedSuperclass
 @Access(AccessType.FIELD)
 @Getter
@@ -56,9 +60,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public abstract class BaseEntity<PK extends Serializable> implements Serializable, Identifiable<PK>
 {
-
-	/** The Constant for the column name 'id'. */
-	public static final String COLUMN_NAME_ID = "id";
 
 	/**
 	 * The Constant for the generic sequence name. Note this must be given as name in the annotation

@@ -29,7 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -56,19 +56,12 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V> extends BaseEntity<PK>
+public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>
+	extends
+		SequenceBaseEntity<PK>
 	implements
 		IdentifiableKeyValueOwner<PK, O, K, V>
 {
-
-	/** The Constant for the column name 'key'. */
-	public static final String COLUMN_NAME_KEY = "key";
-
-	/** The Constant for the column name 'owner'. */
-	public static final String COLUMN_NAME_OWNER = "owner";
-
-	/** The Constant for the column name 'value'. */
-	public static final String COLUMN_NAME_VALUE = "value";
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

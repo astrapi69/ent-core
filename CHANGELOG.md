@@ -1,6 +1,18 @@
 ## Change log
 ----------------------
 
+Version 1.8-SNAPSHOT
+-------------
+
+ADDED:
+ 
+- new base entities with different generation types of the id
+
+CHANGED:
+
+- moved column constants from the entity classes to the appropriate interfaces
+- tagged BaseEntity as deprecated 
+
 Version 1.7.1
 -------------
 

@@ -29,7 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -70,16 +70,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class Deletion<PK extends Serializable, T, U> extends BaseEntity<PK>
+public class Deletion<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableDeletable<PK, T, U>
 {
-
-	/** The Constant for the column name 'deleted'. */
-	public static final String COLUMN_NAME_DELETED = "deleted";
-
-	/** The Constant for the column name 'deletedBy'. */
-	public static final String COLUMN_NAME_DELETED_BY = "deletedBy";
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

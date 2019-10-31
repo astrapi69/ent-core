@@ -29,7 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -54,16 +54,10 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Creation<PK extends Serializable, T, U> extends BaseEntity<PK>
+public class Creation<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableCreatable<PK, T, U>
 {
-
-	/** The Constant for the column name 'created'. */
-	public static final String COLUMN_NAME_CREATED = "created";
-
-	/** The Constant for the column name 'active'. */
-	public static final String COLUMN_NAME_CREATED_BY = "createdBy";
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

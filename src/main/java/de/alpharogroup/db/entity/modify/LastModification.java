@@ -29,7 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import de.alpharogroup.db.entity.BaseEntity;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import de.alpharogroup.db.entity.version.VersionableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -59,16 +59,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class LastModification<PK extends Serializable, T, U> extends BaseEntity<PK>
+public class LastModification<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableLastModified<PK, T, U>
 {
-
-	/** The Constant for the column name 'lastModified'. */
-	public static final String COLUMN_NAME_LAST_MODIFIED = "lastModified";
-
-	/** The Constant for the column name 'lastModifiedBy'. */
-	public static final String COLUMN_NAME_LAST_MODIFIED_BY = "lastModifiedBy";
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;

@@ -46,7 +46,11 @@ import lombok.experimental.SuperBuilder;
  *
  * @param <PK>
  *            the generic type of the UUID technical primary key.
+ * @deprecated use instead the same name class from the base package<br>
+ *             <br>
+ *             Note: will be removed on next minor version
  */
+@Deprecated
 @MappedSuperclass
 @Access(AccessType.FIELD)
 @Getter
@@ -60,9 +64,6 @@ public abstract class UniqueableEntity<PK extends Serializable>
 		Serializable,
 		Uniqueable<PK>
 {
-
-	/** The Constant for the column name 'uuid'. */
-	public static final String COLUMN_NAME_UUID = "uuid";
 
 	/** The serialVersionUID. */
 	private static final long serialVersionUID = 1L;

@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>5</version>
+		<version>5.3</version>
 	</parent>
 
 	<artifactId>ent-core</artifactId>
-	<version>1.7.1</version>
+	<version>1.8</version>
 
 	<name>${project.artifactId}</name>
 
@@ -41,7 +41,7 @@
 		<!-- HIBERNATE version -->
 		<javax.persistence-api.version>2.2</javax.persistence-api.version>
 		<!-- ENT-API version -->
-		<ent-api.version>1.4.1</ent-api.version>
+		<ent-api.version>1.5</ent-api.version>
 	</properties>
 
 	<dependencyManagement>
