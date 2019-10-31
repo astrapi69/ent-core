@@ -4,15 +4,11 @@
 plugins {
     id "io.franzbecker.gradle-lombok" version "3.2.0"
     id "java"
-    id "maven"
     id "maven-publish"
     id "signing"
     id "com.github.ben-manes.versions" version "0.27.0"
     id "com.github.hierynomus.license" version "0.15.0"
 }
-
-apply plugin: "java"
-apply plugin: "maven"
 
 group = "de.alpharogroup"
 version = "1.8"
@@ -44,7 +40,7 @@ dependencies {
 }
 
 license {
-    ext.year="2015"
+    ext.year="2018"
     ext.owner="Asterios Raptis"
     header rootProject.file("src/main/resources/LICENSE.txt")
     excludes(["**/README",
