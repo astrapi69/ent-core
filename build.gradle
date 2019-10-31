@@ -15,7 +15,7 @@ apply plugin: "java"
 apply plugin: "maven"
 
 group = "de.alpharogroup"
-version = "1.8-SNAPSHOT"
+version = "1.8"
 description = "ent-core"
 sourceCompatibility = "1.8"
 
