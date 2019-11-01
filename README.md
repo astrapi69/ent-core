@@ -65,7 +65,7 @@ Than you can add the dependency to your dependencies:
 	
 ## gradle dependency
 
-Add the following gradle dependency to your project `build.gradle` in the dependencies section if you want to import the core functionality of ent-api:
+Add the following gradle dependency to your project `build.gradle` in the dependencies section if you want to import the core functionality of ent-core:
 
 ```
 ext {
