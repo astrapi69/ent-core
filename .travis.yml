@@ -1,6 +1,11 @@
 # ent-core .travis.yml
 
 language: java
+
+cache:
+    directories:
+        - $HOME/.m2
+
 before_install:
     - chmod +x gradlew
 
