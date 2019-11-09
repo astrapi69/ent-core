@@ -39,38 +39,38 @@ dependencies {
     testCompile "org.mockito:mockito-core:${mockitoCoreVersion}"
 }
 
-license {
-    ext.year="2018"
-    ext.owner="Asterios Raptis"
-    header rootProject.file("src/main/resources/LICENSE.txt")
-    excludes(["**/README",
-              "**/README.md",
-              "**/LICENSE",
-              "**/NOTICE",
-              "**/*.xml",
-              "**/*.xsl",
-              "**/*.xsd",
-              "**/*.dtd",
-              "**/*.html",
-              "**/*.jsp",
-              "**/*.jpa",
-              "**/*.sql",
-              "**/*.properties",
-              "**/*.bat",
-              "**/*.gradle",
-              "**/*.MF",
-              "**/*.txt",
-              "**/*.vm",
-              "**/*.log",
-              "**/*.map",
-              "**/*.js.map",
-              "**/*.tmpl",
-              "**/*.js.tmpl",
-              "**/*.editorconfig",
-              "**/*.lombok.config",
-              "src/test/resources/**",
-              "src/main/resources/**"])
-}
+//license {
+//    ext.year="2018"
+//    ext.owner="Asterios Raptis"
+//    header rootProject.file("src/main/resources/LICENSE.txt")
+//    excludes(["**/README",
+//              "**/README.md",
+//              "**/LICENSE",
+//              "**/NOTICE",
+//              "**/*.xml",
+//              "**/*.xsl",
+//              "**/*.xsd",
+//              "**/*.dtd",
+//              "**/*.html",
+//              "**/*.jsp",
+//              "**/*.jpa",
+//              "**/*.sql",
+//              "**/*.properties",
+//              "**/*.bat",
+//              "**/*.gradle",
+//              "**/*.MF",
+//              "**/*.txt",
+//              "**/*.vm",
+//              "**/*.log",
+//              "**/*.map",
+//              "**/*.js.map",
+//              "**/*.tmpl",
+//              "**/*.js.tmpl",
+//              "**/*.editorconfig",
+//              "**/*.lombok.config",
+//              "src/test/resources/**",
+//              "src/main/resources/**"])
+//}
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set("sources")
