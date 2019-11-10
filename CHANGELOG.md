@@ -1,8 +1,13 @@
 ## Change log
 ----------------------
 
-Version 1.8-SNAPSHOT
+Version 1.8.1
 -------------
+
+CHANGED:
+
+- build errors fixed
+- obsolete maven build scripts deleted
 
 Version 1.8
 -------------
