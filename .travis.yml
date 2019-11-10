@@ -1,8 +1,10 @@
 # ent-core .travis.yml
 
 language: java
-before_install:
-    - chmod +x gradlew
+
+cache:
+    directories:
+        - $HOME/.m2
 
 jdk:
     - openjdk8

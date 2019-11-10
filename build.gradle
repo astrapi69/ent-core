@@ -7,11 +7,11 @@ plugins {
     id "maven-publish"
     id "signing"
     id "com.github.ben-manes.versions" version "0.27.0"
-    id "com.github.hierynomus.license" version "0.15.0"
+//    id "com.github.hierynomus.license" version "0.15.0"
 }
 
 group = "de.alpharogroup"
-version = "1.8"
+version = "1.8.1"
 description = "ent-core"
 sourceCompatibility = "1.8"
 
@@ -39,38 +39,38 @@ dependencies {
     testCompile "org.mockito:mockito-core:${mockitoCoreVersion}"
 }
 
-license {
-    ext.year="2018"
-    ext.owner="Asterios Raptis"
-    header rootProject.file("src/main/resources/LICENSE.txt")
-    excludes(["**/README",
-              "**/README.md",
-              "**/LICENSE",
-              "**/NOTICE",
-              "**/*.xml",
-              "**/*.xsl",
-              "**/*.xsd",
-              "**/*.dtd",
-              "**/*.html",
-              "**/*.jsp",
-              "**/*.jpa",
-              "**/*.sql",
-              "**/*.properties",
-              "**/*.bat",
-              "**/*.gradle",
-              "**/*.MF",
-              "**/*.txt",
-              "**/*.vm",
-              "**/*.log",
-              "**/*.map",
-              "**/*.js.map",
-              "**/*.tmpl",
-              "**/*.js.tmpl",
-              "**/*.editorconfig",
-              "**/*.lombok.config",
-              "src/test/resources/**",
-              "src/main/resources/**"])
-}
+//license {
+//    ext.year="2018"
+//    ext.owner="Asterios Raptis"
+//    header rootProject.file("src/main/resources/LICENSE.txt")
+//    excludes(["**/README",
+//              "**/README.md",
+//              "**/LICENSE",
+//              "**/NOTICE",
+//              "**/*.xml",
+//              "**/*.xsl",
+//              "**/*.xsd",
+//              "**/*.dtd",
+//              "**/*.html",
+//              "**/*.jsp",
+//              "**/*.jpa",
+//              "**/*.sql",
+//              "**/*.properties",
+//              "**/*.bat",
+//              "**/*.gradle",
+//              "**/*.MF",
+//              "**/*.txt",
+//              "**/*.vm",
+//              "**/*.log",
+//              "**/*.map",
+//              "**/*.js.map",
+//              "**/*.tmpl",
+//              "**/*.js.tmpl",
+//              "**/*.editorconfig",
+//              "**/*.lombok.config",
+//              "src/test/resources/**",
+//              "src/main/resources/**"])
+//}
 
 task sourcesJar(type: Jar) {
     archiveClassifier.set("sources")
@@ -128,8 +128,8 @@ publishing {
     repositories {
         maven {
             credentials {
-                username project.property("ossrhUsername")
-                password project.property("ossrhPassword")
+                username System.getenv("ossrhUsername") ?: project.property("ossrhUsername")
+                password System.getenv("ossrhPassword") ?: project.property("ossrhPassword")
             }
             def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
             def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"

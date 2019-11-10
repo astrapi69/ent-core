@@ -47,7 +47,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>1.8</ent-core.version>
+		<ent-core.version>1.8.1</ent-core.version>
 			...
 	</properties>
 			...
@@ -65,12 +65,12 @@ Than you can add the dependency to your dependencies:
 	
 ## gradle dependency
 
-Add the following gradle dependency to your project `build.gradle` in the dependencies section if you want to import the core functionality of ent-api:
+Add the following gradle dependency to your project `build.gradle` in the dependencies section if you want to import the core functionality of ent-core:
 
 ```
 ext {
 			...
-    entCoreVersion = '1.8'
+    entCoreVersion = '1.8.1'
 			...
 }
 dependencies {
