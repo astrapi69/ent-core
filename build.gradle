@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "de.alpharogroup"
-version = "1.8.1"
+version = "1.9-SNAPSHOT"
 description = "ent-core"
 sourceCompatibility = "1.8"
 
