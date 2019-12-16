@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2018 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -73,7 +73,7 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 
 	/** The parent tree entity that references to the parent. */
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "parent_id", nullable = true, referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_treeable_parent_id"))
+	@JoinColumn(name = "parent_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_treeable_parent_id"))
 	TR parent;
 
 	/** The value of this tree entity */

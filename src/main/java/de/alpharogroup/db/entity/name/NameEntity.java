@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2018 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -47,7 +47,7 @@ import lombok.experimental.FieldDefaults;
 @Setter
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@AttributeOverride(name = "name", column = @Column(name = "name", unique = false, columnDefinition = "TEXT"))
+@AttributeOverride(name = "name", column = @Column(name = "name", columnDefinition = "TEXT"))
 public abstract class NameEntity<PK extends Serializable> extends BasicNameEntity<PK>
 {
 

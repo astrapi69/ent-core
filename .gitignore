@@ -1,3 +1,12 @@
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
 ##################
 # Compiled files #
 ##################
@@ -7,9 +16,16 @@
 # intellij files #
 ##################
 *.iml
-.idea
-*/.idea
+*.iws
+*.ipr
 !.idea/runConfigurations
+.idea/inspectionProfiles
+.idea/copyright
+.idea/libraries
+.idea/codeStyles
+.idea/shelf
+.idea/*.*
+/.idea/$PRODUCT_WORKSPACE_FILE$
 
 #################
 # eclipse files #
@@ -17,6 +33,7 @@
 /.project
 /.classpath
 /.settings
+/.tern-project
 
 #########################
 # maven generated files #
@@ -56,6 +73,7 @@
 /build
 /.gradle
 /gradle
+/out
 # Ignore Gradle GUI config
 gradle-app.setting
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
@@ -72,4 +90,3 @@ gradle-app.setting
 ##############################################################
 hs_err_pid*
 /.attach_pid*
-

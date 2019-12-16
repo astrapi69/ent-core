@@ -1,6 +1,21 @@
 ## Change log
 ----------------------
 
+Version 1.9
+-------------
+
+ADDED:
+ 
+- new idea run configurations for gradle builds created
+- new jacoco plugin added for code coverage
+
+CHANGED:
+
+- update of ent-api dependency to version 1.6
+- update of testng test dependency version to 7.1.0
+- update of junit test dependency version to 4.13-rc-2
+- update of mockito-core test dependency version to 3.2.4
+
 Version 1.8.1
 -------------
 
