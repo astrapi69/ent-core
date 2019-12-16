@@ -13,7 +13,7 @@ plugins {
 apply plugin: "jacoco"
 
 group = "de.alpharogroup"
-version = "1.9"
+version = "1.10-SNAPSHOT"
 description = "ent-core"
 sourceCompatibility = "1.8"
 
