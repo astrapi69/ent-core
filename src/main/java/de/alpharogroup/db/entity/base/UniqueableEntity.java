@@ -43,10 +43,10 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link UniqueableEntity} holds an UUID as primary key.
+ * The class {@link UniqueableEntity} holds an UUID as primary key
  *
  * @param <PK>
- *            the generic type of the UUID technical primary key.
+ *            the generic type of the UUID technical primary key
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)

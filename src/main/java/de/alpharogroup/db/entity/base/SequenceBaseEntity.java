@@ -44,10 +44,10 @@ import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link SequenceBaseEntity} holds the primary key.
+ * The class {@link SequenceBaseEntity} holds the primary key with generation type strategy sequence
  *
  * @param <PK>
- *            the generic type of the technical primary key.
+ *            the generic type of the technical primary key
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)
