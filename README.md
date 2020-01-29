@@ -47,7 +47,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>1.9</ent-core.version>
+		<ent-core.version>1.10</ent-core.version>
 			...
 	</properties>
 			...
@@ -70,12 +70,12 @@ Add the following gradle dependency to your project `build.gradle` in the depend
 ```
 ext {
 			...
-    entCoreVersion = "1.9"
+    entCoreVersion = "1.10"
 			...
 }
 dependencies {
 			...
-	compile "de.alpharogroup:ent-core:${entCoreVersion}"
+	compile("de.alpharogroup:ent-core:$entCoreVersion")
 			...
 }
 ```

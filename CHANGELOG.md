@@ -1,10 +1,15 @@
 ## Change log
 ----------------------
 
-Version 1.10-SNAPSHOT
+Version 1.10
 -------------
 
+CHANGED:
 
+- NameUUIDEntity implements now IdentifiableNameable
+- removed deprecated entity classes
+- moved dependency versions to gradle.properties file
+- javadoc extended
 
 Version 1.9
 -------------
