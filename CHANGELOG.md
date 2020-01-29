@@ -6,6 +6,7 @@ Version 1.10
 
 CHANGED:
 
+- update gradle version to 6.1.1
 - NameUUIDEntity implements now IdentifiableNameable
 - removed deprecated entity classes
 - moved dependency versions to gradle.properties file
