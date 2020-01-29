@@ -24,6 +24,8 @@
  */
 package de.alpharogroup.db.entity.name;
 
+import java.util.UUID;
+
 import javax.persistence.MappedSuperclass;
 
 import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
@@ -45,7 +47,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class NameUUIDEntity extends UUIDEntity
+public abstract class NameUUIDEntity extends UUIDEntity implements IdentifiableNameable<UUID>
 {
 
 	/** The serial Version UID. */
