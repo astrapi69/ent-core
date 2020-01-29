@@ -23,15 +23,6 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    lombokVersion = "1.18.10"
-    persistenceApiVersion = "2.2"
-    entApiVersion = "1.6"
-    testngVersion = "7.1.0"
-    junitVersion = "4.13-rc-2"
-    mockitoCoreVersion = "3.2.4"
-}
-
 dependencies {
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
