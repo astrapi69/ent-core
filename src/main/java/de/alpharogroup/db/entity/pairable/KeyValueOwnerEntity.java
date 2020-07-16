@@ -22,7 +22,7 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.visibility;
+package de.alpharogroup.db.entity.pairable;
 
 import java.io.Serializable;
 
@@ -30,34 +30,53 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
- * entity is visible or not.
+ * The abstract entity class {@link KeyValueOwnerEntity} holds a generic key value pair with his
+ * owner which can be also the parent if it is from the same type.
  *
  * @param <PK>
- *            the generic type of the id
+ *            the generic type of the technical primary key
+ * @param <O>
+ *            the generic type of the owner
+ * @param <K>
+ *            the generic type of the key
+ * @param <V>
+ *            the generic type of the value
  */
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements
-		IdentifiableVisibility<PK>
+public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>
+	extends
+		SequenceBaseEntity<PK>
+	implements IdentifiableKeyValueOwner<PK, O, K, V>
 {
 
-	/** The serial Version UID. */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The attribute visible, if true this entity is visible. */
-	@Column(name = "visible")
-	private boolean visible;
+	/** The key of this key-value pair. */
+	@Column(name = "key", nullable = false)
+	K key;
+
+	/** The owner of this key-value pair. */
+	@Column(name = "owner", nullable = false)
+	O owner;
+
+	/** The value of this key-value pair. */
+	@Column(name = "value")
+	V value;
+
 }

@@ -29,14 +29,15 @@ import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.create.Creation;
-import de.alpharogroup.db.entity.delete.Deletion;
+import de.alpharogroup.db.entity.creatable.Creation;
+import de.alpharogroup.db.entity.deletable.Deletion;
 import de.alpharogroup.db.entity.traceable.IdentifiableTraceableVersionable;
 import de.alpharogroup.db.entity.traceable.TraceableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
  * The entity class {@link VersionableTraceableEntity} is keeping the information for the creation,
@@ -56,6 +57,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 public abstract class VersionableTraceableEntity<PK extends Serializable, T, U>
 	extends
 		TraceableEntity<PK, T, U>

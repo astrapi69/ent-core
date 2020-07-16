@@ -22,42 +22,51 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.visibility;
+package de.alpharogroup.db.entity.validatable.versionable;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Version;
 
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import de.alpharogroup.db.entity.validatable.ValidatableEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
- * entity is visible or not.
+ * The class {@link VersionableValidatableEntity} is a base entity and has a validFrom property and
+ * a validTill property for restricting an entity in a time range in which it is valid.
  *
  * @param <PK>
  *            the generic type of the id
+ * @param <T>
+ *            the generic type of time measurement
  */
-@MappedSuperclass
+@Entity
+@Table(name = "version-validation")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements
-		IdentifiableVisibility<PK>
+public class VersionableValidatableEntity<PK extends Serializable, T>
+	extends
+		ValidatableEntity<PK, T>
+	implements IdentifiableValidatableVersionable<PK, T>
 {
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The attribute visible, if true this entity is visible. */
-	@Column(name = "visible")
-	private boolean visible;
+	/**
+	 * The version property for the optimistic lock value.
+	 **/
+	@Version
+	private Integer version;
 }

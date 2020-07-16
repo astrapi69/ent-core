@@ -22,23 +22,20 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.visibility;
+package de.alpharogroup.db.entity.versionable;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
- * entity is visible or not.
+ * The class {@link VersionableEntity} has a version property for the optimistic lock value
  *
  * @param <PK>
  *            the generic type of the id
@@ -48,16 +45,19 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements
-		IdentifiableVisibility<PK>
+public abstract class VersionableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
+	implements IdentifiableVersionable<PK>
 {
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The attribute visible, if true this entity is visible. */
-	@Column(name = "visible")
-	private boolean visible;
+	/**
+	 * The version property for the optimistic lock value
+	 **/
+	@Version
+	Integer version;
+
 }

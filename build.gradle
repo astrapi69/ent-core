@@ -1,19 +1,19 @@
 
 plugins {
-    id "io.franzbecker.gradle-lombok" version "3.2.0"
+    id "io.franzbecker.gradle-lombok" version "4.0.0"
     id "java"
     id "maven-publish"
     id "signing"
-    id "com.github.ben-manes.versions" version "0.27.0"
+    id "com.github.ben-manes.versions" version "0.28.0"
     id "com.github.hierynomus.license" version "0.15.0"
 }
 
 apply plugin: "jacoco"
 
-group = "de.alpharogroup"
-version = "1.11-SNAPSHOT"
-description = "ent-core"
-sourceCompatibility = "1.8"
+group = "$groupPackage"
+version = "$projectVersion"
+description = "$rootProject.name"
+sourceCompatibility = "$projectSourceCompatibility"
 
 repositories {
     jcenter()
@@ -22,13 +22,10 @@ repositories {
 }
 
 dependencies {
-    compileOnly "org.projectlombok:lombok:${lombokVersion}"
-    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-    compileOnly "javax.persistence:javax.persistence-api:${persistenceApiVersion}"
-    compile "de.alpharogroup:ent-api:${entApiVersion}"
-    testCompile "org.testng:testng:${testngVersion}"
-    testCompile "junit:junit:${junitVersion}"
-    testCompile "org.mockito:mockito-core:${mockitoCoreVersion}"
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    compileOnly("javax.persistence:javax.persistence-api:$persistenceApiVersion")
+    implementation("de.alpharogroup:ent-api:$entApiVersion")
 }
 
 license {
