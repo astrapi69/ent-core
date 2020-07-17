@@ -53,7 +53,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 public class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
-	implements IdentifiableValidatable<PK, T>
+	implements
+		IdentifiableValidatable<PK, T>
 {
 
 	/** The serial Version UID. */

@@ -61,7 +61,8 @@ import lombok.experimental.SuperBuilder;
 public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>
 	extends
 		SequenceBaseEntity<PK>
-	implements IdentifiableKeyValueOwner<PK, O, K, V>
+	implements
+		IdentifiableKeyValueOwner<PK, O, K, V>
 {
 
 	/** The Constant serialVersionUID. */

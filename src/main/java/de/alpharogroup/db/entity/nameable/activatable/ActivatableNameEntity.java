@@ -29,8 +29,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.nameable.NameEntity;
 import de.alpharogroup.db.entity.nameable.IdentifiableNameableActivatable;
+import de.alpharogroup.db.entity.nameable.NameEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,7 +51,8 @@ import lombok.experimental.SuperBuilder;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class ActivatableNameEntity<PK extends Serializable> extends NameEntity<PK>
-	implements IdentifiableNameableActivatable<PK>
+	implements
+		IdentifiableNameableActivatable<PK>
 {
 
 	/** The serial Version UID. */

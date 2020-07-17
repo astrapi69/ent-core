@@ -58,7 +58,8 @@ import lombok.experimental.SuperBuilder;
 public class VersionableValidatableEntity<PK extends Serializable, T>
 	extends
 		ValidatableEntity<PK, T>
-	implements IdentifiableValidatableVersionable<PK, T>
+	implements
+		IdentifiableValidatableVersionable<PK, T>
 {
 
 	/** The serial Version UID. */

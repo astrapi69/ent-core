@@ -71,7 +71,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 public class Deletion<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
-	implements IdentifiableDeletable<PK, T, U>
+	implements
+		IdentifiableDeletable<PK, T, U>
 {
 
 	/** The Constant serialVersionUID. */

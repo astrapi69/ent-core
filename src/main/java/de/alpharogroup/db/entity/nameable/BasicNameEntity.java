@@ -51,7 +51,8 @@ import lombok.experimental.SuperBuilder;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class BasicNameEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements IdentifiableNameable<PK>
+	implements
+		IdentifiableNameable<PK>
 {
 
 	/** The serial Version UID. */

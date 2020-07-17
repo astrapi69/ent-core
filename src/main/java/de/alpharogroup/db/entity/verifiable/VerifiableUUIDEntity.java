@@ -24,20 +24,23 @@
  */
 package de.alpharogroup.db.entity.verifiable;
 
+import java.util.UUID;
+
+import javax.persistence.MappedSuperclass;
+
 import de.alpharogroup.db.entity.Identifiable;
 import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
-import java.util.UUID;
-
 /**
- * The class {@link VerifiableUUIDEntity} is a concrete class of {@link UUIDEntity}
- * and holds an {@link UUID} as primary key. It is for entity classes that have to be signed and
- * verified
+ * The class {@link VerifiableUUIDEntity} is a concrete class of {@link UUIDEntity} and holds an
+ * {@link UUID} as primary key. It is for entity classes that have to be signed and verified
  */
 @MappedSuperclass
 @Getter
@@ -46,7 +49,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class VerifiableUUIDEntity extends UUIDEntity implements Identifiable<UUID>, Verifiable
+public abstract class VerifiableUUIDEntity extends UUIDEntity
+	implements
+		Identifiable<UUID>,
+		Verifiable
 {
 
 	/** The serial Version UID. */
