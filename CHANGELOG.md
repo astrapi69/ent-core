@@ -1,6 +1,19 @@
 ## Change log
 ----------------------
 
+Version 1.11
+-------------
+
+ADDED:
+ 
+- new entity classes that have to be signed and verified
+
+CHANGED:
+
+- update gradle version to 6.5.1
+- update of ent-api dependency to version 1.8
+- renamed several packages for clarity
+
 Version 1.10
 -------------
 

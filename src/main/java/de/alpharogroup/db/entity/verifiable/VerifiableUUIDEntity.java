@@ -22,42 +22,43 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.visibility;
+package de.alpharogroup.db.entity.verifiable;
 
-import java.io.Serializable;
+import java.util.UUID;
 
-import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import de.alpharogroup.db.entity.Identifiable;
+import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
- * entity is visible or not.
- *
- * @param <PK>
- *            the generic type of the id
+ * The class {@link VerifiableUUIDEntity} is a concrete class of {@link UUIDEntity} and holds an
+ * {@link UUID} as primary key. It is for entity classes that have to be signed and verified
  */
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
+public abstract class VerifiableUUIDEntity extends UUIDEntity
 	implements
-		IdentifiableVisibility<PK>
+		Identifiable<UUID>,
+		Verifiable
 {
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The attribute visible, if true this entity is visible. */
-	@Column(name = "visible")
-	private boolean visible;
+	/** The signature. */
+	String signature;
+
 }

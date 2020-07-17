@@ -36,6 +36,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 /**
  * The class {@link ActivatableEntity} is a base entity with a flag 'active' that indicates if an
@@ -50,6 +51,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 public abstract class ActivatableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableActivatable<PK>

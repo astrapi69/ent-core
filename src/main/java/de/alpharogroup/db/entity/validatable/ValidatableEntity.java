@@ -22,42 +22,47 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.visibility;
+package de.alpharogroup.db.entity.validatable;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
- * entity is visible or not.
+ * The class {@link ValidatableEntity} is a base entity and has a validFrom property and a validTill
+ * property for restricting an entity in a time range in which it is valid.
  *
  * @param <PK>
  *            the generic type of the id
  */
-@MappedSuperclass
+@Entity
+@Table(name = "validation")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
+public class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements
-		IdentifiableVisibility<PK>
+		IdentifiableValidatable<PK, T>
 {
 
 	/** The serial Version UID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The attribute visible, if true this entity is visible. */
-	@Column(name = "visible")
-	private boolean visible;
+	/** The valid from date for validation. */
+	private T validFrom;
+
+	/** The valid till date for validation. */
+	private T validTill;
 }

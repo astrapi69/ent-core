@@ -22,42 +22,52 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.db.entity.visibility;
+package de.alpharogroup.db.entity.creatable;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 /**
- * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
- * entity is visible or not.
+ * The entity class {@link Creation} is keeping the information for the creation of an entity. This
+ * entity can be extended or attached to another entity for keep information when it was created.
  *
  * @param <PK>
  *            the generic type of the id
+ * @param <T>
+ *            the generic type of time measurement
+ * @param <U>
+ *            the generic type of the user or account
  */
-@MappedSuperclass
+@Entity
+@Table(name = "creation")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
+public class Creation<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
-		IdentifiableVisibility<PK>
+		IdentifiableCreatable<PK, T, U>
 {
 
-	/** The serial Version UID. */
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 
-	/** The attribute visible, if true this entity is visible. */
-	@Column(name = "visible")
-	private boolean visible;
+	/** The date and time when the entity that owns this entity was created. */
+	private T created;
+
+	/** The user or account that created the entity that owns this entity. */
+	private U createdBy;
+
 }

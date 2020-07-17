@@ -40,6 +40,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 /**
  * The Entity class {@link TreeableEntity} can keep information with a tree structure. The root
@@ -51,6 +52,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@SuperBuilder
 public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<PK, T, ?>>
 	extends
 		SequenceBaseEntity<PK>
