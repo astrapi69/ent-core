@@ -58,7 +58,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class Creation<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
-		IdentifiableCreatable<PK, T, U>
+		IdentifiableByCreatable<PK, T, U>
 {
 
 	/** The Constant serialVersionUID. */
