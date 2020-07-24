@@ -61,7 +61,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public class LastModification<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
-		IdentifiableLastModified<PK, T, U>
+		IdentifiableByLastModified<PK, T, U>
 {
 
 	/** The Constant serialVersionUID. */

@@ -6,7 +6,7 @@ Version 1.12-SNAPSHOT
 
 CHANGED:
 
-- update of ent-api dependency to version 1.9
+- update of ent-api dependency to version 1.10
 - adapted related entities from the update of dependency ent-api
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.29.0
 
