@@ -24,18 +24,13 @@
  */
 package de.alpharogroup.db.entity.nameable;
 
-import java.util.UUID;
-
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import java.util.UUID;
 
 /**
  * The class {@link NameUUIDEntity} is a base entity for a table with a single value

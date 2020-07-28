@@ -24,21 +24,16 @@
  */
 package de.alpharogroup.db.entity.deletable;
 
-import java.io.Serializable;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 /**
- * The entity class {@link Deletion} acts like an deletion flag that keeps the information for the
+ * The entity class {@link ByDeletion} acts like an deletion flag that keeps the information for the
  * deletion of another entity that have this entity as an instance variable. This information are
  * the date when it was deleted and from whom it was deleted. So this entity can be attached to
  * another entity for keeping information if it is deleted and when it was deleted. <br>
@@ -59,18 +54,20 @@ import lombok.experimental.SuperBuilder;
  *            the generic type of the id
  * @param <T>
  *            the generic type of time measurement
+ * @param <U>
+ *            the generic type of the user or account
  */
 @Entity
-@Table(name = "deletion")
+@Table(name = "deletion_by")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class Deletion<PK extends Serializable, T> extends SequenceBaseEntity<PK>
+public class ByDeletion<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
-		IdentifiableDeletable<PK, T>
+		IdentifiableByDeletable<PK, T, U>
 {
 
 	/** The Constant serialVersionUID. */
@@ -78,5 +75,8 @@ public class Deletion<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 
 	/** The date and time when the entity that owns this entity was deleted. */
 	private T deleted;
+
+	/** The user or account that deleted the entity that owns this entity. */
+	private U deletedBy;
 
 }

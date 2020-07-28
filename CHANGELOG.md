@@ -1,6 +1,24 @@
 ## Change log
 ----------------------
 
+Version 1.12
+-------------
+
+ADDED:
+ 
+- new entity class ByCreation that refects the old Creation
+- new entity class ByDeletion that refects the old Deletion
+- new entity class ByLastModification that refects the old LastModification
+
+CHANGED:
+
+- update of ent-api dependency to version 1.10
+- adapted related entities from the update of dependency ent-api
+- removed the field createdBy from the class Creation
+- removed the field deletedBy from the class Deletion
+- removed the field lastModifiedBy from the class LastModification
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.29.0
+
 Version 1.11
 -------------
 

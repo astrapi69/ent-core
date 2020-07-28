@@ -41,15 +41,12 @@ import lombok.experimental.SuperBuilder;
 /**
  * The entity class {@link LastModification} is keeping information of the last modification of an
  * entity. This entity can be extended or attached to another entity for keep information when it
- * was last modified. In combination with the {@link VersionableEntity} it can build a history of
- * modification of an entity.
+ * was last modified.
  *
  * @param <PK>
  *            the generic type of the id
  * @param <T>
  *            the generic type of time measurement
- * @param <U>
- *            the generic type of the user or account
  */
 @Entity
 @Table(name = "modified")
@@ -59,9 +56,9 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class LastModification<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
+public class LastModification<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements
-		IdentifiableLastModified<PK, T, U>
+		IdentifiableLastModified<PK, T>
 {
 
 	/** The Constant serialVersionUID. */
@@ -69,8 +66,5 @@ public class LastModification<PK extends Serializable, T, U> extends SequenceBas
 
 	/** The date and time when the entity that owns this entity was modified. */
 	private T lastModified;
-
-	/** The user or account that modified the entity that owns this entity. */
-	private U lastModifiedBy;
 
 }
