@@ -25,7 +25,6 @@
 package de.alpharogroup.db.entity.verifiable;
 
 import de.alpharogroup.db.entity.identifiable.Identifiable;
-import de.alpharogroup.db.entity.processable.Processable;
 import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

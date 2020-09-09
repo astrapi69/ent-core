@@ -24,8 +24,8 @@
  */
 package de.alpharogroup.db.entity.verifiable;
 
-import de.alpharogroup.db.entity.identifiable.Identifiable;
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import de.alpharogroup.db.entity.identifiable.Identifiable;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;

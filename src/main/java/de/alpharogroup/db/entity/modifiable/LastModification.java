@@ -30,7 +30,6 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
