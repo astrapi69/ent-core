@@ -24,18 +24,13 @@
  */
 package de.alpharogroup.db.entity.nameable;
 
-import java.io.Serializable;
-
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The class {@link BasicNameEntity} is a base entity for a table with a single value
@@ -54,9 +49,6 @@ public abstract class BasicNameEntity<PK extends Serializable> extends SequenceB
 	implements
 		IdentifiableNameable<PK>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The name. */
 	String name;

@@ -24,9 +24,6 @@
  */
 package de.alpharogroup.db.entity.nameable.versionable;
 
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
-
 import de.alpharogroup.db.entity.nameable.UniqueNameUUIDEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -34,6 +31,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 
 /**
  * The class {@link VersionableUniqueNameUUIDEntity} is a base entity for a table with a single
@@ -47,9 +47,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class VersionableUniqueNameUUIDEntity extends UniqueNameUUIDEntity
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The version property for the optimistic lock value

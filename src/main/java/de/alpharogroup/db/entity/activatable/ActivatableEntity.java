@@ -24,19 +24,18 @@
  */
 package de.alpharogroup.db.entity.activatable;
 
-import java.io.Serializable;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The class {@link ActivatableEntity} is a base entity with a flag 'active' that indicates if an
@@ -56,10 +55,6 @@ public abstract class ActivatableEntity<PK extends Serializable> extends Sequenc
 	implements
 		IdentifiableActivatable<PK>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
-
 	/** The attribute active, if true this entity is active. */
 	@Column(name = "active")
 	private boolean active;

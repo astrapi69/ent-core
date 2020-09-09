@@ -24,19 +24,14 @@
  */
 package de.alpharogroup.db.entity.modifiable;
 
-import java.io.Serializable;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
-
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import de.alpharogroup.db.entity.versionable.VersionableEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 /**
  * The entity class {@link LastModification} is keeping information of the last modification of an
@@ -48,21 +43,18 @@ import lombok.experimental.SuperBuilder;
  * @param <T>
  *            the generic type of time measurement
  */
+@MappedSuperclass
 @Entity
-@Table(name = "modified")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class LastModification<PK extends Serializable, T> extends SequenceBaseEntity<PK>
+public abstract class LastModification<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableLastModified<PK, T>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The date and time when the entity that owns this entity was modified. */
 	private T lastModified;

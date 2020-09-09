@@ -45,9 +45,6 @@ import java.util.UUID;
 public abstract class NameUUIDEntity extends UUIDEntity implements IdentifiableNameable<UUID>
 {
 
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
-
 	/** The name. */
 	String name;
 

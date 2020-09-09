@@ -24,18 +24,14 @@
  */
 package de.alpharogroup.db.entity.creatable;
 
-import java.io.Serializable;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
-
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 /**
  * The entity class {@link Creation} is keeping the information for the creation of an entity. This
@@ -46,21 +42,18 @@ import lombok.experimental.SuperBuilder;
  * @param <T>
  *            the generic type of time measurement
  */
+@MappedSuperclass
 @Entity
-@Table(name = "creation")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class Creation<PK extends Serializable, T> extends SequenceBaseEntity<PK>
+public abstract class Creation<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableCreatable<PK, T>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The date and time when the entity that owns this entity was created. */
 	private T created;

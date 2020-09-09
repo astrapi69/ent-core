@@ -24,11 +24,6 @@
  */
 package de.alpharogroup.db.entity.nameable.activatable;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.nameable.IdentifiableNameableActivatable;
 import de.alpharogroup.db.entity.nameable.NameEntity;
 import lombok.AccessLevel;
@@ -37,6 +32,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The class {@link ActivatableNameEntity} is a base entity for a table with a single value
@@ -54,9 +53,6 @@ public abstract class ActivatableNameEntity<PK extends Serializable> extends Nam
 	implements
 		IdentifiableNameableActivatable<PK>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The attribute active indicates if this entity is active. */
 	@Column(name = "active")

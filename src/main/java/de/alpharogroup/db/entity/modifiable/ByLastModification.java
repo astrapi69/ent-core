@@ -25,11 +25,11 @@
 package de.alpharogroup.db.entity.modifiable;
 
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import de.alpharogroup.db.entity.versionable.VersionableEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 import java.io.Serializable;
 
@@ -45,21 +45,18 @@ import java.io.Serializable;
  * @param <U>
  *            the generic type of the user or account
  */
+@MappedSuperclass
 @Entity
-@Table(name = "modified_by")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class ByLastModification<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
+public abstract class ByLastModification<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableByLastModified<PK, T, U>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The date and time when the entity that owns this entity was modified. */
 	private T lastModified;

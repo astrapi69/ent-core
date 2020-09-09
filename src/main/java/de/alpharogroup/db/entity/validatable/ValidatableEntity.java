@@ -24,18 +24,14 @@
  */
 package de.alpharogroup.db.entity.validatable;
 
-import java.io.Serializable;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
-
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 /**
  * The class {@link ValidatableEntity} is a base entity and has a validFrom property and a validTill
@@ -44,21 +40,18 @@ import lombok.experimental.SuperBuilder;
  * @param <PK>
  *            the generic type of the id
  */
+@MappedSuperclass
 @Entity
-@Table(name = "validation")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
+public abstract class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableValidatable<PK, T>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The valid from date for validation. */
 	private T validFrom;

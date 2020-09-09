@@ -24,10 +24,6 @@
  */
 package de.alpharogroup.db.entity.traceable;
 
-import java.io.Serializable;
-
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import de.alpharogroup.db.entity.creatable.Creation;
 import de.alpharogroup.db.entity.deletable.Deletion;
@@ -37,6 +33,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The entity class {@link TraceableEntity} is keeping the information for the creation, last
@@ -62,9 +61,6 @@ public abstract class TraceableEntity<PK extends Serializable, T, U> extends Seq
 	implements
 		IdentifiableTraceable<PK, T, U>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The date and time when the entity that owns this entity was created. */
 	private T created;

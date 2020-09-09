@@ -24,18 +24,17 @@
  */
 package de.alpharogroup.db.entity.nameable;
 
-import java.io.Serializable;
-
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The class {@link NameEntity} is a base entity for a table with a single value
@@ -52,9 +51,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class NameEntity<PK extends Serializable> extends BasicNameEntity<PK>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Instantiates a new {@link NameEntity} with the given name

@@ -24,24 +24,13 @@
  */
 package de.alpharogroup.db.entity.base;
 
-import java.io.Serializable;
-
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.Identifiable;
-import lombok.AccessLevel;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * The class {@link AutoBaseEntity} holds the primary key with generation type strategy auto
@@ -59,12 +48,8 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class AutoBaseEntity<PK extends Serializable>
 	implements
-		Serializable,
 		Identifiable<PK>
 {
-
-	/** The serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The technical primary key. */
 	@Id

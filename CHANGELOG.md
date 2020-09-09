@@ -4,6 +4,13 @@
 Version 2-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update gradle to new version 6.6.1
+- update of ent-api dependency to version 1.11
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.31.0
+- update of all entities so they dont implement Serializable anymore
+
 Version 1.12
 -------------
 

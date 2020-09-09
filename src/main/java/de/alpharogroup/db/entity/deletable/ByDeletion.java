@@ -29,6 +29,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 import java.io.Serializable;
 
@@ -57,21 +58,18 @@ import java.io.Serializable;
  * @param <U>
  *            the generic type of the user or account
  */
+@MappedSuperclass
 @Entity
-@Table(name = "deletion_by")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class ByDeletion<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
+public abstract class ByDeletion<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
 		IdentifiableByDeletable<PK, T, U>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The date and time when the entity that owns this entity was deleted. */
 	private T deleted;

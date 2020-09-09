@@ -24,19 +24,14 @@
  */
 package de.alpharogroup.db.entity.pairable;
 
-import java.io.Serializable;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 /**
  * The abstract entity class {@link KeyValueOwnerEntity} holds a generic key value pair with his
@@ -64,9 +59,6 @@ public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>
 	implements
 		IdentifiableKeyValueOwner<PK, O, K, V>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The key of this key-value pair. */
 	@Column(name = "key", nullable = false)
