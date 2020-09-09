@@ -24,17 +24,16 @@
  */
 package de.alpharogroup.db.entity.visibility;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
@@ -53,9 +52,6 @@ public abstract class VisibilityEntity<PK extends Serializable> extends Sequence
 	implements
 		IdentifiableVisibility<PK>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The attribute visible, if true this entity is visible. */
 	@Column(name = "visible")

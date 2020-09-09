@@ -24,16 +24,15 @@
  */
 package de.alpharogroup.db.entity.versionable;
 
-import java.util.UUID;
+import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-
-import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import java.util.UUID;
 
 /**
  * The abstract class {@link VersionableUUIDEntity} is a concrete class of {@link UUIDEntity} and
@@ -45,8 +44,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class VersionableUUIDEntity extends UUIDEntity
 {
-	/** The serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The version property for the optimistic lock value

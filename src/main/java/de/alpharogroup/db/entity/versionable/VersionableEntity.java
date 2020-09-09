@@ -24,19 +24,14 @@
  */
 package de.alpharogroup.db.entity.versionable;
 
-import java.io.Serializable;
+import de.alpharogroup.db.entity.base.SequenceBaseEntity;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-
-import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 /**
  * The class {@link VersionableEntity} has a version property for the optimistic lock value
@@ -55,9 +50,6 @@ public abstract class VersionableEntity<PK extends Serializable> extends Sequenc
 	implements
 		IdentifiableVersionable<PK>
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The version property for the optimistic lock value

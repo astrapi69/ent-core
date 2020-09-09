@@ -24,23 +24,13 @@
  */
 package de.alpharogroup.db.entity.treeable;
 
-import java.io.Serializable;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.ForeignKey;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * The Entity class {@link TreeableEntity} can keep information with a tree structure. The root
@@ -60,10 +50,6 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 		Cloneable,
 		Treeable<PK, T, TR>
 {
-
-	/** The serial Version UID */
-	private static final long serialVersionUID = 1L;
-
 
 	/** The depth of this node. For the root depth would be 0. */
 	@Column(name = "depth")

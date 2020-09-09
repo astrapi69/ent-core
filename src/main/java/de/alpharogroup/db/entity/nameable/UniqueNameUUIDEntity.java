@@ -24,16 +24,16 @@
  */
 package de.alpharogroup.db.entity.nameable;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
 /**
  * The class {@link UniqueNameUUIDEntity} is a base entity for a table with a single unique value
@@ -48,9 +48,6 @@ import lombok.experimental.SuperBuilder;
 @AttributeOverride(name = "name", column = @Column(name = "name", unique = true, columnDefinition = "TEXT"))
 public abstract class UniqueNameUUIDEntity extends NameUUIDEntity
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Instantiates a new {@link UniqueNameUUIDEntity} with the given name

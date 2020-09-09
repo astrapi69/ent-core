@@ -24,19 +24,14 @@
  */
 package de.alpharogroup.db.entity.verifiable;
 
-import java.io.Serializable;
-
-import javax.persistence.MappedSuperclass;
-
-import de.alpharogroup.db.entity.Identifiable;
 import de.alpharogroup.db.entity.base.SequenceBaseEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import de.alpharogroup.db.entity.identifiable.Identifiable;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * The class {@link BasicVerifiableEntity} is a base entity that have to be signed and verified
@@ -56,9 +51,6 @@ public abstract class BasicVerifiableEntity<PK extends Serializable> extends Seq
 		Identifiable<PK>,
 		Verifiable
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The signature. */
 	String signature;

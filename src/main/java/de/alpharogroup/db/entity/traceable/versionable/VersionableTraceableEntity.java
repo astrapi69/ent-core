@@ -24,11 +24,6 @@
  */
 package de.alpharogroup.db.entity.traceable.versionable;
 
-import java.io.Serializable;
-
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
-
 import de.alpharogroup.db.entity.creatable.Creation;
 import de.alpharogroup.db.entity.deletable.Deletion;
 import de.alpharogroup.db.entity.traceable.IdentifiableTraceableVersionable;
@@ -38,6 +33,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+import java.io.Serializable;
 
 /**
  * The entity class {@link VersionableTraceableEntity} is keeping the information for the creation,
@@ -64,9 +63,6 @@ public abstract class VersionableTraceableEntity<PK extends Serializable, T, U>
 	implements
 		IdentifiableTraceableVersionable<PK, T, U>
 {
-
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The version property for the optimistic lock value.

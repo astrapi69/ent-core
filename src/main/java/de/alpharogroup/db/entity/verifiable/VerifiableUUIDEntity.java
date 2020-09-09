@@ -24,19 +24,14 @@
  */
 package de.alpharogroup.db.entity.verifiable;
 
-import java.util.UUID;
-
-import javax.persistence.MappedSuperclass;
-
-import de.alpharogroup.db.entity.Identifiable;
+import de.alpharogroup.db.entity.identifiable.Identifiable;
 import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+
+import javax.persistence.MappedSuperclass;
+import java.util.UUID;
 
 /**
  * The class {@link VerifiableUUIDEntity} is a concrete class of {@link UUIDEntity} and holds an
@@ -52,13 +47,16 @@ import lombok.experimental.SuperBuilder;
 public abstract class VerifiableUUIDEntity extends UUIDEntity
 	implements
 		Identifiable<UUID>,
-		Verifiable
+	VerifiableProcessable
 {
-
-	/** The serial Version UID. */
-	private static final long serialVersionUID = 1L;
 
 	/** The signature. */
 	String signature;
+
+	/** The processable flag will be set to false if this object has been manipulated from
+	 * an inappropriate user. That means that the verification process failed and will be set from
+	 * the verification process to false */
+	@Builder.Default
+	boolean processable = true;
 
 }

@@ -24,15 +24,14 @@
  */
 package de.alpharogroup.db.entity.uniqueable;
 
-import java.util.UUID;
+import de.alpharogroup.db.entity.base.UniqueableEntity;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
-
-import de.alpharogroup.db.entity.base.UniqueableEntity;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import java.util.UUID;
 
 /**
  * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds
@@ -44,6 +43,4 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 public abstract class UUIDEntity extends UniqueableEntity<UUID>
 {
-	/** The serialVersionUID. */
-	private static final long serialVersionUID = 1L;
 }
