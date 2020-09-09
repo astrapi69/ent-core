@@ -24,7 +24,8 @@
  */
 package de.alpharogroup.db.entity.verifiable;
 
-import de.alpharogroup.db.entity.Identifiable;
+import de.alpharogroup.db.entity.identifiable.Identifiable;
+import de.alpharogroup.db.entity.processable.Processable;
 import de.alpharogroup.db.entity.uniqueable.UUIDEntity;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -47,10 +48,16 @@ import java.util.UUID;
 public abstract class VerifiableUUIDEntity extends UUIDEntity
 	implements
 		Identifiable<UUID>,
-		Verifiable
+	VerifiableProcessable
 {
 
 	/** The signature. */
 	String signature;
+
+	/** The processable flag will be set to false if this object has been manipulated from
+	 * an inappropriate user. That means that the verification process failed and will be set from
+	 * the verification process to false */
+	@Builder.Default
+	boolean processable = true;
 
 }
