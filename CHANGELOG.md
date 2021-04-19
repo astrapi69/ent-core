@@ -4,6 +4,13 @@
 Version 2.1-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update gradle to new version 7.0
+- update of dependency lombok version to 1.18.20
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.38.0
+- removed deprecated repository jcenter from the repositories
+
 Version 2
 -------------
 
