@@ -4,6 +4,18 @@
 Version 2.1-SNAPSHOT
 -------------
 
+ADDED:
+
+- new class for generate id from system time
+- new class for the process info from a verifiable object
+- new enum class for the verifaction state
+- new junit 5 dependency for unit tests
+  
+  CHANGED:
+
+- update gradle to new version 6.9
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
+
 Version 2
 -------------
 
