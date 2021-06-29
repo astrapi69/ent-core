@@ -36,6 +36,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
     compileOnly("javax.persistence:javax.persistence-api:$persistenceApiVersion")
     implementation("de.alpharogroup:ent-api:$entApiVersion")
+    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
 license {
@@ -179,7 +182,7 @@ tasks.withType(JavaCompile) {
 }
 
 test {
-    useTestNG()
+    useJUnitPlatform()
 }
 
 jacocoTestReport {
