@@ -4,24 +4,19 @@
 Version 2.1-SNAPSHOT
 -------------
 
-CHANGED:
-
-- update gradle to new version 7.0
-- update of dependency lombok version to 1.18.20
-- update of com.github.ben-manes.versions.gradle.plugin to new version 0.38.0
-- removed deprecated repository jcenter from the repositories
-
 ADDED:
 
 - new class for generate id from system time
 - new class for the process info from a verifiable object
 - new enum class for the verifaction state
 - new junit 5 dependency for unit tests
-  
-  CHANGED:
+
+CHANGED:
 
 - update gradle to new version 6.9
+- update of dependency lombok version to 1.18.20
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
+- removed deprecated repository jcenter from the repositories
 
 Version 2
 -------------
