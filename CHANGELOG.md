@@ -1,6 +1,25 @@
 ## Change log
 ----------------------
 
+Version 2.1
+-------------
+
+ADDED:
+
+- new class for generate id from system time
+- new class for the process info from a verifiable object
+- new enum class for the verifaction state
+- new junit 5 dependency for unit tests
+
+CHANGED:
+
+- changed to new package io.github.astrapi69
+- update gradle to new version 7.3.2
+- update of dependency lombok version to 1.18.22
+- update of ent-api dependency to new minor version 2.1
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
+- removed deprecated repository jcenter from the repositories
+
 Version 2
 -------------
 
