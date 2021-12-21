@@ -47,7 +47,6 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VerifiableUUIDEntity extends UUIDEntity

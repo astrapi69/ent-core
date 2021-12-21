@@ -50,7 +50,6 @@ import io.github.astrapi69.entity.nameable.UniqueNameEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VersionableUniqueNameEntity<PK extends Serializable>

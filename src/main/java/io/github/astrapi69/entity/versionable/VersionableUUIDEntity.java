@@ -43,7 +43,6 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @MappedSuperclass
 @Access(AccessType.FIELD)
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class VersionableUUIDEntity extends UUIDEntity
 {

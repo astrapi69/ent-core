@@ -44,7 +44,6 @@ import io.github.astrapi69.entity.nameable.UniqueNameUUIDEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VersionableUniqueNameUUIDEntity extends UniqueNameUUIDEntity

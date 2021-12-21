@@ -54,7 +54,6 @@ import io.github.astrapi69.entity.identifiable.Identifiable;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder

@@ -48,7 +48,6 @@ import io.github.astrapi69.entity.identifiable.Identifiable;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class BasicVerifiableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>

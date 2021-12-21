@@ -56,7 +56,6 @@ import io.github.astrapi69.entity.modifiable.LastModification;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class TraceableEntity<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements

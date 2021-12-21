@@ -55,7 +55,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>

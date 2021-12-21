@@ -44,7 +44,6 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @AttributeOverride(name = "name", column = @Column(name = "name", unique = true, columnDefinition = "TEXT"))

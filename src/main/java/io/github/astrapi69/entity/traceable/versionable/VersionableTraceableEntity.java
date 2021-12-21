@@ -56,7 +56,6 @@ import io.github.astrapi69.entity.traceable.TraceableEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class VersionableTraceableEntity<PK extends Serializable, T, U>
 	extends

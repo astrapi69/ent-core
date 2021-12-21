@@ -53,7 +53,6 @@ import io.github.astrapi69.entity.validatable.ValidatableEntity;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class VersionableValidatableEntity<PK extends Serializable, T>
 	extends

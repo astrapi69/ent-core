@@ -44,7 +44,6 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class NameUUIDEntity extends UUIDEntity implements IdentifiableNameable<UUID>
@@ -53,4 +52,8 @@ public abstract class NameUUIDEntity extends UUIDEntity implements IdentifiableN
 	/** The name. */
 	String name;
 
+	public NameUUIDEntity(String name)
+	{
+		this.name = name;
+	}
 }

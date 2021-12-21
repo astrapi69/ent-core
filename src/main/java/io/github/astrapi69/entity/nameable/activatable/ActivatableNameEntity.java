@@ -49,7 +49,6 @@ import io.github.astrapi69.entity.nameable.NameEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class ActivatableNameEntity<PK extends Serializable> extends NameEntity<PK>

@@ -32,6 +32,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
@@ -47,7 +48,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class BasicNameEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
@@ -58,4 +58,8 @@ public abstract class BasicNameEntity<PK extends Serializable> extends SequenceB
 	/** The name. */
 	String name;
 
+	public BasicNameEntity(String name)
+	{
+		this.name = name;
+	}
 }

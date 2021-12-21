@@ -50,7 +50,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<PK, T, ?>>

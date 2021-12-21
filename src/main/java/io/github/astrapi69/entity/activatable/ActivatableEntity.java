@@ -50,7 +50,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class ActivatableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
 	implements

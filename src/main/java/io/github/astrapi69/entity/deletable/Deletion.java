@@ -66,7 +66,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class Deletion<PK extends Serializable, T> extends SequenceBaseEntity<PK>
 	implements

@@ -47,7 +47,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
 	implements

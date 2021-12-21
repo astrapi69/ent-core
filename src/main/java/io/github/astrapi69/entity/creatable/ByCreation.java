@@ -55,7 +55,6 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 public abstract class ByCreation<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
 	implements
