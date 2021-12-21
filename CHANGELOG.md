@@ -13,8 +13,10 @@ ADDED:
 
 CHANGED:
 
-- update gradle to new version 6.9
-- update of dependency lombok version to 1.18.20
+- changed to new package io.github.astrapi69
+- update gradle to new version 7.3.2
+- update of dependency lombok version to 1.18.22
+- update of ent-api dependency to new minor version 2.1
 - update of com.github.ben-manes.versions.gradle.plugin to new version 0.39.0
 - removed deprecated repository jcenter from the repositories
 
