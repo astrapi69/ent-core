@@ -24,15 +24,19 @@
  */
 package io.github.astrapi69.entity.pairable;
 
-import io.github.astrapi69.entity.pairable.IdentifiableKeyValueOwner;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The abstract entity class {@link KeyValueOwnerEntity} holds a generic key value pair with his
@@ -57,7 +61,8 @@ import java.io.Serializable;
 public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>
 	extends
 		SequenceBaseEntity<PK>
-	implements IdentifiableKeyValueOwner<PK, O, K, V>
+	implements
+		IdentifiableKeyValueOwner<PK, O, K, V>
 {
 
 	/** The key of this key-value pair. */

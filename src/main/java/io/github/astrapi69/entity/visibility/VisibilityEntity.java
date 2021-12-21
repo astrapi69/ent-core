@@ -24,17 +24,17 @@
  */
 package io.github.astrapi69.entity.visibility;
 
-import io.github.astrapi69.entity.visibility.IdentifiableVisibility;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the
@@ -50,7 +50,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements IdentifiableVisibility<PK>
+	implements
+		IdentifiableVisibility<PK>
 {
 
 	/** The attribute visible, if true this entity is visible. */

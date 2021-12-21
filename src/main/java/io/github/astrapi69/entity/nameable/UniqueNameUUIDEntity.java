@@ -24,16 +24,17 @@
  */
 package io.github.astrapi69.entity.nameable;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
 
 /**
  * The class {@link UniqueNameUUIDEntity} is a base entity for a table with a single unique value
@@ -43,6 +44,7 @@ import javax.persistence.MappedSuperclass;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 @AttributeOverride(name = "name", column = @Column(name = "name", unique = true, columnDefinition = "TEXT"))

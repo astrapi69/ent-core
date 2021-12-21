@@ -24,18 +24,20 @@
  */
 package io.github.astrapi69.entity.nameable.versionable;
 
-import io.github.astrapi69.entity.nameable.IdentifiableNameableVersionable;
-import io.github.astrapi69.entity.nameable.NameEntity;
+import java.io.Serializable;
+
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
-import java.io.Serializable;
+import io.github.astrapi69.entity.nameable.IdentifiableNameableVersionable;
+import io.github.astrapi69.entity.nameable.NameEntity;
 
 /**
  * The class {@link VersionableNameEntity} is a base entity for a table with a single value
@@ -47,6 +49,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VersionableNameEntity<PK extends Serializable> extends NameEntity<PK>

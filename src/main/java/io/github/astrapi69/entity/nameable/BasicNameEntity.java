@@ -24,14 +24,18 @@
  */
 package io.github.astrapi69.entity.nameable;
 
-import io.github.astrapi69.entity.nameable.IdentifiableNameable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The class {@link BasicNameEntity} is a base entity for a table with a single value
@@ -47,7 +51,8 @@ import java.io.Serializable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class BasicNameEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements IdentifiableNameable<PK>
+	implements
+		IdentifiableNameable<PK>
 {
 
 	/** The name. */

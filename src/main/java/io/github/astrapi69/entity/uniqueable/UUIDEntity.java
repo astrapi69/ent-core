@@ -24,14 +24,15 @@
  */
 package io.github.astrapi69.entity.uniqueable;
 
-import io.github.astrapi69.entity.base.UniqueableEntity;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import java.util.UUID;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
-import java.util.UUID;
+
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.UniqueableEntity;
 
 /**
  * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds

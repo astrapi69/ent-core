@@ -24,16 +24,17 @@
  */
 package io.github.astrapi69.entity.nameable.versionable;
 
-import io.github.astrapi69.entity.nameable.UniqueNameUUIDEntity;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import io.github.astrapi69.entity.nameable.UniqueNameUUIDEntity;
 
 /**
  * The class {@link VersionableUniqueNameUUIDEntity} is a base entity for a table with a single
@@ -43,6 +44,7 @@ import javax.persistence.Version;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VersionableUniqueNameUUIDEntity extends UniqueNameUUIDEntity

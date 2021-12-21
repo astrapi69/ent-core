@@ -13,7 +13,12 @@
 
 This project holds base and abstract entities.
 
-If you like this project put a ⭐ and donate
+> Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/astrapi69/ent-core" data-icon="octicon-star" aria-label="Star astrapi69/ent-core on GitHub">Star ⭐</a>
+>
+> Share this library with friends on Twitter and everywhere else you can
+>
+> If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 
 ## Note
 
@@ -28,13 +33,13 @@ functionality of ent-core:
 define version in file gradle.properties
 
 ```
-entCoreVersion=7.10
+entCoreVersion=2.1
 ```
 
 or in build.gradle ext area
 
 ```
-    entCoreVersion = '7.10'
+    entCoreVersion = '2.1'
 }
 ```
 
@@ -56,7 +61,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>2</ent-core.version>
+		<ent-core.version>2.1</ent-core.version>
 			...
 	</properties>
 			...

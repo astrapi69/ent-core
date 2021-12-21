@@ -24,14 +24,23 @@
  */
 package io.github.astrapi69.entity.treeable;
 
-import io.github.astrapi69.entity.treeable.Treeable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.ForeignKey;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MappedSuperclass;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.*;
-import java.io.Serializable;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The Entity class {@link TreeableEntity} can keep information with a tree structure. The root
@@ -48,7 +57,6 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 	extends
 		SequenceBaseEntity<PK>
 	implements
-		Cloneable,
 		Treeable<PK, T, TR>
 {
 

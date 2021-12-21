@@ -24,14 +24,18 @@
  */
 package io.github.astrapi69.entity.creatable;
 
-import io.github.astrapi69.entity.creatable.IdentifiableCreatable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The entity class {@link Creation} is keeping the information for the creation of an entity. This
@@ -51,7 +55,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class Creation<PK extends Serializable, T> extends SequenceBaseEntity<PK>
-	implements IdentifiableCreatable<PK, T>
+	implements
+		IdentifiableCreatable<PK, T>
 {
 
 	/** The date and time when the entity that owns this entity was created. */

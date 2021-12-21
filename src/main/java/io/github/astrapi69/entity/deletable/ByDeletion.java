@@ -24,14 +24,18 @@
  */
 package io.github.astrapi69.entity.deletable;
 
-import io.github.astrapi69.entity.deletable.IdentifiableByDeletable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The entity class {@link ByDeletion} acts like an deletion flag that keeps the information for the
@@ -67,7 +71,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class ByDeletion<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
-	implements IdentifiableByDeletable<PK, T, U>
+	implements
+		IdentifiableByDeletable<PK, T, U>
 {
 
 	/** The date and time when the entity that owns this entity was deleted. */

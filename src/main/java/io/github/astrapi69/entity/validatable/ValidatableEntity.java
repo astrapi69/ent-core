@@ -24,14 +24,18 @@
  */
 package io.github.astrapi69.entity.validatable;
 
-import io.github.astrapi69.entity.validatable.IdentifiableValidatable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The class {@link ValidatableEntity} is a base entity and has a validFrom property and a validTill
@@ -49,7 +53,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
-	implements IdentifiableValidatable<PK, T>
+	implements
+		IdentifiableValidatable<PK, T>
 {
 
 	/** The valid from date for validation. */

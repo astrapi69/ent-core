@@ -62,10 +62,11 @@ task javadocJar(type: Jar) {
 }
 
 javadoc {
-    failOnError = false
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption("html5", true)
     }
+    failOnError = false
+    exclude 'io/github/astrapi69/**'
 }
 
 test {

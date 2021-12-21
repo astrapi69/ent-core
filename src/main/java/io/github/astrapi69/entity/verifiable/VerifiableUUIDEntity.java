@@ -24,15 +24,20 @@
  */
 package io.github.astrapi69.entity.verifiable;
 
-import io.github.astrapi69.entity.identifiable.Identifiable;
-import io.github.astrapi69.entity.verifiable.VerifiableProcessable;
-import io.github.astrapi69.entity.uniqueable.UUIDEntity;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.util.UUID;
 
 import javax.persistence.MappedSuperclass;
-import java.util.UUID;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.identifiable.Identifiable;
+import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
  * The class {@link VerifiableUUIDEntity} is a concrete class of {@link UUIDEntity} and holds an
@@ -47,15 +52,18 @@ import java.util.UUID;
 @SuperBuilder
 public abstract class VerifiableUUIDEntity extends UUIDEntity
 	implements
-		Identifiable<UUID>, VerifiableProcessable
+		Identifiable<UUID>,
+		VerifiableProcessable
 {
 
 	/** The signature. */
 	String signature;
 
-	/** The processable flag will be set to false if this object has been manipulated from
-	 * an inappropriate user. That means that the verification process failed and will be set from
-	 * the verification process to false */
+	/**
+	 * The processable flag will be set to false if this object has been manipulated from an
+	 * inappropriate user. That means that the verification process failed and will be set from the
+	 * verification process to false
+	 */
 	@Builder.Default
 	boolean processable = true;
 

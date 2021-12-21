@@ -24,19 +24,19 @@
  */
 package io.github.astrapi69.entity.traceable;
 
-import io.github.astrapi69.entity.traceable.IdentifiableTraceable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import io.github.astrapi69.entity.creatable.Creation;
-import io.github.astrapi69.entity.deletable.Deletion;
-import io.github.astrapi69.entity.modifiable.LastModification;
+import java.io.Serializable;
+
+import javax.persistence.MappedSuperclass;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.creatable.Creation;
+import io.github.astrapi69.entity.deletable.Deletion;
+import io.github.astrapi69.entity.modifiable.LastModification;
 
 /**
  * The entity class {@link TraceableEntity} is keeping the information for the creation, last
@@ -59,7 +59,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class TraceableEntity<PK extends Serializable, T, U> extends SequenceBaseEntity<PK>
-	implements IdentifiableTraceable<PK, T, U>
+	implements
+		IdentifiableTraceable<PK, T, U>
 {
 
 	/** The date and time when the entity that owns this entity was created. */

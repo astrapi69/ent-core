@@ -24,14 +24,18 @@
  */
 package io.github.astrapi69.entity.nameable;
 
-import io.github.astrapi69.entity.nameable.IdentifiableNameable;
-import io.github.astrapi69.entity.uniqueable.UUIDEntity;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.util.UUID;
 
 import javax.persistence.MappedSuperclass;
-import java.util.UUID;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
  * The class {@link NameUUIDEntity} is a base entity for a table with a single value

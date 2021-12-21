@@ -24,15 +24,19 @@
  */
 package io.github.astrapi69.entity.versionable;
 
-import io.github.astrapi69.entity.versionable.IdentifiableVersionable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-import java.io.Serializable;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The class {@link VersionableEntity} has a version property for the optimistic lock value
@@ -48,7 +52,8 @@ import java.io.Serializable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VersionableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements IdentifiableVersionable<PK>
+	implements
+		IdentifiableVersionable<PK>
 {
 
 	/**

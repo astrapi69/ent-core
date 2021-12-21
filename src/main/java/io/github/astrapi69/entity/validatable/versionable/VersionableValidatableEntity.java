@@ -24,15 +24,19 @@
  */
 package io.github.astrapi69.entity.validatable.versionable;
 
-import io.github.astrapi69.entity.validatable.versionable.IdentifiableValidatableVersionable;
-import io.github.astrapi69.entity.validatable.ValidatableEntity;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.validatable.ValidatableEntity;
 
 /**
  * The class {@link VersionableValidatableEntity} is a base entity and has a validFrom property and
@@ -54,7 +58,8 @@ import java.io.Serializable;
 public abstract class VersionableValidatableEntity<PK extends Serializable, T>
 	extends
 		ValidatableEntity<PK, T>
-	implements IdentifiableValidatableVersionable<PK, T>
+	implements
+		IdentifiableValidatableVersionable<PK, T>
 {
 
 	/**

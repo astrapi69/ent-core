@@ -24,19 +24,20 @@
  */
 package io.github.astrapi69.entity.traceable.versionable;
 
-import io.github.astrapi69.entity.creatable.Creation;
-import io.github.astrapi69.entity.deletable.Deletion;
-import io.github.astrapi69.entity.traceable.IdentifiableTraceableVersionable;
-import io.github.astrapi69.entity.traceable.TraceableEntity;
+import java.io.Serializable;
+
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
-import java.io.Serializable;
+import io.github.astrapi69.entity.creatable.Creation;
+import io.github.astrapi69.entity.deletable.Deletion;
+import io.github.astrapi69.entity.traceable.IdentifiableTraceableVersionable;
+import io.github.astrapi69.entity.traceable.TraceableEntity;
 
 /**
  * The entity class {@link VersionableTraceableEntity} is keeping the information for the creation,

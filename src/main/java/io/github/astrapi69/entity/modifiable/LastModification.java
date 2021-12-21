@@ -24,14 +24,18 @@
  */
 package io.github.astrapi69.entity.modifiable;
 
-import io.github.astrapi69.entity.modifiable.IdentifiableLastModified;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The entity class {@link LastModification} is keeping information of the last modification of an
@@ -52,7 +56,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @SuperBuilder
 public abstract class LastModification<PK extends Serializable, T> extends SequenceBaseEntity<PK>
-	implements IdentifiableLastModified<PK, T>
+	implements
+		IdentifiableLastModified<PK, T>
 {
 
 	/** The date and time when the entity that owns this entity was modified. */

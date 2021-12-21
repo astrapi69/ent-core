@@ -24,15 +24,17 @@
  */
 package io.github.astrapi69.entity.versionable;
 
-import io.github.astrapi69.entity.uniqueable.UUIDEntity;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import java.util.UUID;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-import java.util.UUID;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
  * The abstract class {@link VersionableUUIDEntity} is a concrete class of {@link UUIDEntity} and
@@ -41,6 +43,7 @@ import java.util.UUID;
 @MappedSuperclass
 @Access(AccessType.FIELD)
 @NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 public abstract class VersionableUUIDEntity extends UUIDEntity
 {

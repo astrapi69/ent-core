@@ -24,13 +24,25 @@
  */
 package io.github.astrapi69.entity.base;
 
-import io.github.astrapi69.entity.identifiable.Identifiable;
-import lombok.*;
+import java.io.Serializable;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-
-import javax.persistence.*;
-import java.io.Serializable;
+import io.github.astrapi69.entity.identifiable.Identifiable;
 
 /**
  * The class {@link AutoBaseEntity} holds the primary key with generation type strategy auto
@@ -43,12 +55,11 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class AutoBaseEntity<PK extends Serializable>
-	implements
-		Identifiable<PK>
+public abstract class AutoBaseEntity<PK extends Serializable> implements Identifiable<PK>
 {
 
 	/** The technical primary key. */
