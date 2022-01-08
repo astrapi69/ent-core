@@ -4,7 +4,9 @@
 Version 2.3-SNAPSHOT
 -------------
 
+ADDED:
 
+- new class TreeableUUIDEntity that extends UUIDEntity and implements Treeable
 
 Version 2.2
 -------------
