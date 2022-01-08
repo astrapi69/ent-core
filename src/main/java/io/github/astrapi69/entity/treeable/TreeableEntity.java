@@ -26,8 +26,8 @@ package io.github.astrapi69.entity.treeable;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -67,8 +67,8 @@ public abstract class TreeableEntity<PK extends Serializable, T, TR extends Tree
 	boolean node;
 
 	/** The parent tree entity that references to the parent. */
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "parent_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_treeable_parent_id"))
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "parent_id", foreignKey = @ForeignKey(name = "fk_treeable_parent_id"))
 	TR parent;
 
 	/** The value of this tree entity */
