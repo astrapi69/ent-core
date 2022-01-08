@@ -4,6 +4,18 @@
 Version 2.2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new gradle-plugin org.ajoberstar.grgit:grgit-gradle in version 4.1.1 for create git tags
+- new gradle options for improve gradle build performance
+
+CHANGED:
+
+- update gradle to new version 7.3.3
+- update of dependency lombok version to 1.18.22
+- update of ent-api dependency to new minor version 2.2
+- update of com.github.ben-manes.versions.gradle.plugin to new version 0.41.0
+
 Version 2.1
 -------------
 
