@@ -31,7 +31,6 @@ import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;

@@ -30,7 +30,6 @@ import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
