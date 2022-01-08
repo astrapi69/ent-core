@@ -48,6 +48,8 @@ tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
     // uncomment the next line for build with compiler argument -Xlint:deprecation
     // options.compilerArgs << "-Xlint:deprecation"
+    // uncomment the next line for build with compiler argument -Xlint:unchecked
+    // options.compilerArgs << "-Xlint:unchecked"
 }
 
 task sourcesJar(type: Jar) {
@@ -68,19 +70,6 @@ javadoc {
     failOnError = false
     exclude 'io/github/astrapi69/**'
 }
-
-test {
-    useJUnitPlatform()
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-    }
-}
-
-check.dependsOn jacocoTestReport
 
 def releaseVersion = !version.endsWith("SNAPSHOT")
 
@@ -197,6 +186,19 @@ license {
 // workhack for license issue #76
 gradle.startParameter.excludedTaskNames += "licenseMain"
 gradle.startParameter.excludedTaskNames += "licenseTest"
+
+test {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestReport
 
 dependencies {
     compileOnly("org.projectlombok:lombok:$lombokVersion")
