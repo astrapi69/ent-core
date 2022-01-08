@@ -33,13 +33,13 @@ functionality of ent-core:
 define version in file gradle.properties
 
 ```
-entCoreVersion=2.1
+entCoreVersion=2.2
 ```
 
 or in build.gradle ext area
 
 ```
-    entCoreVersion = '2.1'
+    entCoreVersion = '2.2'
 }
 ```
 

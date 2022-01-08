@@ -34,7 +34,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -44,7 +43,7 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The Entity class {@link TreeableEntity} can keep information with a tree structure. The root
- * {@link TreeableEntity} has no parent all child {@link TreeableEntity}s have a parent.
+ * {@link TreeableEntity} has no parent, all other {@link TreeableEntity} objects have a parent.
  */
 @MappedSuperclass
 @Getter
@@ -52,18 +51,18 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<PK, T, ?>>
+public abstract class TreeableEntity<PK extends Serializable, T, TR extends Treeable<T, TR>>
 	extends
 		SequenceBaseEntity<PK>
 	implements
-		Treeable<PK, T, TR>
+		Treeable<T, TR>
 {
 
 	/** The depth of this node. For the root depth would be 0. */
 	@Column(name = "depth")
 	int depth;
 
-	/** A flag that indicates if this tree entity is a node */
+	/** A flag that indicates if this tree entity is a node or a leaf */
 	@Column(name = "node")
 	boolean node;
 

@@ -29,7 +29,6 @@ import java.util.UUID;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
