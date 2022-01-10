@@ -33,18 +33,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.entity.base.AutoBaseEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.entity.base.AutoBaseEntity;
 
 /**
  * The Entity class {@link TreeEntity} can keep information for a tree structure. The root
- * {@link TreeEntity} has no parent, all other {@link TreeEntity} objects have a parent.
- * The generation strategy type of the primary key is auto
+ * {@link TreeEntity} has no parent, all other {@link TreeEntity} objects have a parent. The
+ * generation strategy type of the primary key is auto
  */
 @MappedSuperclass
 @Getter
@@ -53,7 +53,8 @@ import lombok.experimental.SuperBuilder;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class TreeEntity<PK extends Serializable, T, TR extends Treeable<T, TR>>
-	extends AutoBaseEntity<PK>
+	extends
+		AutoBaseEntity<PK>
 	implements
 		Treeable<T, TR>
 {
