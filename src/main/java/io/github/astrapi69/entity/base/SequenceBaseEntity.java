@@ -46,6 +46,8 @@ import io.github.astrapi69.entity.identifiable.Identifiable;
 /**
  * The class {@link SequenceBaseEntity} holds the primary key with generation type strategy sequence
  *
+ * So the generation strategy type of the primary key is <code>GenerationType.SEQUENCE</code>
+ *
  * @param <PK>
  *            the generic type of the technical primary key
  */

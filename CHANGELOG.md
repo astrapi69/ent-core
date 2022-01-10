@@ -1,6 +1,20 @@
 ## Change log
 ----------------------
 
+Version 2.3
+-------------
+
+ADDED:
+
+- new class TreeableUUIDEntity that extends UUIDEntity and implements Treeable
+- new class TreeWithChildrenUUIDEntity that holds also a collection of children
+
+CHANGED:
+
+- update of ent-api dependency to new minor version 2.3
+- renamed entity class TreeableEntity to TreeEntity
+- renamed entity class TreeableUUIDEntity to TreeUUIDEntity
+
 Version 2.2
 -------------
 
