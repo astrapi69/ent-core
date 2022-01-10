@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 2.3-SNAPSHOT
+Version 2.3
 -------------
 
 ADDED:
@@ -11,6 +11,7 @@ ADDED:
 
 CHANGED:
 
+- update of ent-api dependency to new minor version 2.3
 - renamed entity class TreeableEntity to TreeEntity
 - renamed entity class TreeableUUIDEntity to TreeUUIDEntity
 

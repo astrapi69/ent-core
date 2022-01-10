@@ -24,6 +24,7 @@
  */
 package io.github.astrapi69.entity.treeable;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Column;
@@ -35,6 +36,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -53,9 +55,9 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public class TreeWithChildrenUUIDEntity<T, TR extends Treeable<T, TR>> extends UUIDEntity
+public class TreeWithChildrenUUIDEntity<T, TR extends TreeWithChildren<T, TR>> extends UUIDEntity
 	implements
-		Treeable<T, TR>
+		TreeWithChildren<T, TR>
 {
 
 	/** The depth of this node. For the root depth would be 0 */
@@ -73,10 +75,34 @@ public class TreeWithChildrenUUIDEntity<T, TR extends Treeable<T, TR>> extends U
 
 	/** The children of this entity */
 	@OneToMany(mappedBy = "parent")
-	Collection<TR> children;
+	@Builder.Default
+	Collection<TR> children = new ArrayList<>();
 
 	/** The value of this tree entity */
 	@Column(name = "value", columnDefinition = "TEXT")
 	T value;
 
+	/**
+	 * Adds the given child to the children collection
+	 * 
+	 * @param child
+	 *            the child to add
+	 */
+	public void addChild(TR child)
+	{
+		if(!children.contains(child)) {
+			children.add(child);
+		}
+	}
+
+	/**
+	 * Removes the given child from the children collection
+	 * 
+	 * @param child
+	 *            the child to remove
+	 */
+	public void removeChild(TR child)
+	{
+		children.remove(child);
+	}
 }

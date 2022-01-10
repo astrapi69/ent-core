@@ -35,13 +35,13 @@ functionality of ent-core:
 define version in file gradle.properties
 
 ```
-entCoreVersion=2.2
+entCoreVersion=2.3
 ```
 
 or in build.gradle ext area
 
 ```
-    entCoreVersion = '2.2'
+    entCoreVersion = '2.3'
 }
 ```
 
@@ -63,7 +63,7 @@ Than you can add the dependency to your dependencies:
 	<properties>
 			...
 		<!-- ENT-CORE version -->
-		<ent-core.version>2.2</ent-core.version>
+		<ent-core.version>2.3</ent-core.version>
 			...
 	</properties>
 			...
