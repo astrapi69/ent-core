@@ -44,7 +44,9 @@ import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.entity.identifiable.Identifiable;
 
 /**
- * The class {@link AutoBaseEntity} holds the primary key with generation type strategy auto
+ * The class {@link AutoBaseEntity} holds the primary key with generation type strategy auto.
+ *
+ * So the generation strategy type of the primary key is <code>GenerationType.AUTO</code>
  *
  * @param <PK>
  *            the generic type of the technical primary key

@@ -37,6 +37,8 @@ import io.github.astrapi69.entity.base.UniqueableEntity;
 /**
  * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds
  * an {@link UUID} as primary key.
+ *
+ * The generation strategy type of the primary key is 'UUID'
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)

@@ -45,6 +45,8 @@ import io.github.astrapi69.entity.identifiable.Identifiable;
 /**
  * The class {@link UniqueableEntity} holds an UUID as primary key
  *
+ * The generation strategy type of the primary key is 'UUID'
+ *
  * @param <PK>
  *            the generic type of the UUID technical primary key
  */

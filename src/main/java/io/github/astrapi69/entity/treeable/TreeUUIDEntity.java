@@ -16,8 +16,8 @@ import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
- * The Entity class {@link TreeableUUIDEntity} can keep information with a tree structure. The root
- * {@link TreeableUUIDEntity} has no parent, all other {@link TreeableUUIDEntity} objects have a parent.
+ * The Entity class {@link TreeUUIDEntity} can keep information for a tree structure. The root
+ * {@link TreeUUIDEntity} has no parent, all other {@link TreeUUIDEntity} objects have a parent.
  */
 @MappedSuperclass
 @Getter
@@ -25,7 +25,7 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
-public class TreeableUUIDEntity<T, TR extends Treeable<T, TR>> extends UUIDEntity
+public class TreeUUIDEntity<T, TR extends Treeable<T, TR>> extends UUIDEntity
 	implements
 		Treeable<T, TR>
 {

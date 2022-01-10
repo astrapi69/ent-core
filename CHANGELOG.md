@@ -7,6 +7,12 @@ Version 2.3-SNAPSHOT
 ADDED:
 
 - new class TreeableUUIDEntity that extends UUIDEntity and implements Treeable
+- new class TreeWithChildrenUUIDEntity that holds also a collection of children
+
+CHANGED:
+
+- renamed entity class TreeableEntity to TreeEntity
+- renamed entity class TreeableUUIDEntity to TreeUUIDEntity
 
 Version 2.2
 -------------
