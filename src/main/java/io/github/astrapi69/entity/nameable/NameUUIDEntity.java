@@ -28,6 +28,7 @@ import java.util.UUID;
 
 import javax.persistence.MappedSuperclass;
 
+import io.github.astrapi69.data.nameable.IdentifiableNameable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

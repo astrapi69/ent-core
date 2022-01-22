@@ -29,6 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import io.github.astrapi69.data.pairable.IdentifiableKeyValueOwner;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -59,8 +60,7 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 public abstract class KeyValueOwnerEntity<PK extends Serializable, O, K, V>
 	extends
 		SequenceBaseEntity<PK>
-	implements
-		IdentifiableKeyValueOwner<PK, O, K, V>
+	implements IdentifiableKeyValueOwner<PK, O, K, V>
 {
 
 	/** The key of this key-value pair. */

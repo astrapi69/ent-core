@@ -29,6 +29,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import io.github.astrapi69.data.visibility.IdentifiableVisibility;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -48,8 +49,7 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class VisibilityEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements
-		IdentifiableVisibility<PK>
+	implements IdentifiableVisibility<PK>
 {
 
 	/** The attribute visible, if true this entity is visible. */

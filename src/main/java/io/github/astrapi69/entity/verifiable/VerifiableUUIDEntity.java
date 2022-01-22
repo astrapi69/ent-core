@@ -28,6 +28,7 @@ import java.util.UUID;
 
 import javax.persistence.MappedSuperclass;
 
+import io.github.astrapi69.data.verifiable.VerifiableProcessable;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -35,7 +36,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.identifiable.Identifiable;
+import io.github.astrapi69.data.identifiable.Identifiable;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
@@ -50,8 +51,7 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @SuperBuilder
 public abstract class VerifiableUUIDEntity extends UUIDEntity
 	implements
-		Identifiable<UUID>,
-		VerifiableProcessable
+		Identifiable<UUID>, VerifiableProcessable
 {
 
 	/** The signature. */

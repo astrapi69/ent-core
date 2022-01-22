@@ -33,6 +33,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
+import io.github.astrapi69.data.treeable.Treeable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -55,8 +56,7 @@ import io.github.astrapi69.entity.base.AutoBaseEntity;
 public abstract class TreeEntity<PK extends Serializable, T, TR extends Treeable<T, TR>>
 	extends
 		AutoBaseEntity<PK>
-	implements
-		Treeable<T, TR>
+	implements Treeable<T, TR>
 {
 
 	/** The depth of this node. For the root depth would be 0. */

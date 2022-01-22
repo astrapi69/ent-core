@@ -29,6 +29,7 @@ import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+import io.github.astrapi69.data.versionable.IdentifiableVersionable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -50,8 +51,7 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public abstract class VersionableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements
-		IdentifiableVersionable<PK>
+	implements IdentifiableVersionable<PK>
 {
 
 	/**

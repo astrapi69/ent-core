@@ -31,6 +31,7 @@ import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import io.github.astrapi69.data.activatable.IdentifiableActivatable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -51,8 +52,7 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class ActivatableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
-	implements
-		IdentifiableActivatable<PK>
+	implements IdentifiableActivatable<PK>
 {
 	/** The attribute active, if true this entity is active. */
 	@Column(name = "active")

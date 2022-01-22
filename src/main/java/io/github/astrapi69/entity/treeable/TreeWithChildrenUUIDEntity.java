@@ -35,6 +35,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 
+import io.github.astrapi69.data.treeable.TreeWithChildren;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -56,8 +57,7 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public class TreeWithChildrenUUIDEntity<T, TR extends TreeWithChildren<T, TR>> extends UUIDEntity
-	implements
-		TreeWithChildren<T, TR>
+	implements TreeWithChildren<T, TR>
 {
 
 	/** The depth of this node. For the root depth would be 0 */
