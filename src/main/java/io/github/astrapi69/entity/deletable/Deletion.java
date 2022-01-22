@@ -29,12 +29,12 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.data.deletable.IdentifiableDeletable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.deletable.IdentifiableDeletable;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
@@ -68,7 +68,8 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class Deletion<PK extends Serializable, T> extends SequenceBaseEntity<PK>
-	implements IdentifiableDeletable<PK, T>
+	implements
+		IdentifiableDeletable<PK, T>
 {
 	/** The date and time when the entity that owns this entity was deleted. */
 	private T deleted;

@@ -29,12 +29,12 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.data.validatable.IdentifiableValidatable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.validatable.IdentifiableValidatable;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
@@ -52,7 +52,8 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 @NoArgsConstructor
 @SuperBuilder
 public abstract class ValidatableEntity<PK extends Serializable, T> extends SequenceBaseEntity<PK>
-	implements IdentifiableValidatable<PK, T>
+	implements
+		IdentifiableValidatable<PK, T>
 {
 
 	/** The valid from date for validation. */

@@ -28,13 +28,13 @@ import java.util.UUID;
 
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.data.nameable.IdentifiableNameable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.nameable.IdentifiableNameable;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**

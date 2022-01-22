@@ -35,7 +35,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToMany;
 
-import io.github.astrapi69.data.treeable.TreeWithChildren;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -43,6 +42,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.treeable.TreeWithChildren;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
@@ -57,7 +57,8 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public class TreeWithChildrenUUIDEntity<T, TR extends TreeWithChildren<T, TR>> extends UUIDEntity
-	implements TreeWithChildren<T, TR>
+	implements
+		TreeWithChildren<T, TR>
 {
 
 	/** The depth of this node. For the root depth would be 0 */
@@ -90,7 +91,8 @@ public class TreeWithChildrenUUIDEntity<T, TR extends TreeWithChildren<T, TR>> e
 	 */
 	public void addChild(TR child)
 	{
-		if(!children.contains(child)) {
+		if (!children.contains(child))
+		{
 			children.add(child);
 		}
 	}

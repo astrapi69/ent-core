@@ -29,12 +29,12 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.data.modifiable.IdentifiableByLastModified;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.modifiable.IdentifiableByLastModified;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
@@ -59,7 +59,8 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
 public abstract class ByLastModification<PK extends Serializable, T, U>
 	extends
 		SequenceBaseEntity<PK>
-	implements IdentifiableByLastModified<PK, T, U>
+	implements
+		IdentifiableByLastModified<PK, T, U>
 {
 
 	/** The date and time when the entity that owns this entity was modified. */

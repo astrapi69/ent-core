@@ -31,13 +31,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.data.treeable.Treeable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.treeable.Treeable;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
@@ -51,7 +51,8 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @SuperBuilder
 public class TreeUUIDEntity<T, TR extends Treeable<T, TR>> extends UUIDEntity
-	implements Treeable<T, TR>
+	implements
+		Treeable<T, TR>
 {
 
 	/** The depth of this node. For the root depth would be 0. */

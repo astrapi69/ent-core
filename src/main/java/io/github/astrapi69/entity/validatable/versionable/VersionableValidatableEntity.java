@@ -30,12 +30,12 @@ import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-import io.github.astrapi69.data.validatable.versionable.IdentifiableValidatableVersionable;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.validatable.versionable.IdentifiableValidatableVersionable;
 import io.github.astrapi69.entity.validatable.ValidatableEntity;
 
 /**
@@ -57,7 +57,8 @@ import io.github.astrapi69.entity.validatable.ValidatableEntity;
 public abstract class VersionableValidatableEntity<PK extends Serializable, T>
 	extends
 		ValidatableEntity<PK, T>
-	implements IdentifiableValidatableVersionable<PK, T>
+	implements
+		IdentifiableValidatableVersionable<PK, T>
 {
 
 	/**

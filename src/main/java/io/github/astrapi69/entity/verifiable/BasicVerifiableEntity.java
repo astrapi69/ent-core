@@ -28,15 +28,15 @@ import java.io.Serializable;
 
 import javax.persistence.MappedSuperclass;
 
-import io.github.astrapi69.data.verifiable.Verifiable;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
 import io.github.astrapi69.data.identifiable.Identifiable;
+import io.github.astrapi69.data.verifiable.Verifiable;
+import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**
  * The class {@link BasicVerifiableEntity} is a base entity that have to be signed and verified
@@ -52,7 +52,8 @@ import io.github.astrapi69.data.identifiable.Identifiable;
 @SuperBuilder
 public abstract class BasicVerifiableEntity<PK extends Serializable> extends SequenceBaseEntity<PK>
 	implements
-		Identifiable<PK>, Verifiable
+		Identifiable<PK>,
+		Verifiable
 {
 
 	/** The signature. */
