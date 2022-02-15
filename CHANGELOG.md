@@ -11,6 +11,7 @@ ADDED:
 
 CHANGED:
 
+- update gradle version to 7.4
 - removed dependency io.github.astrapi69:ent-api
 
 Version 2.3
