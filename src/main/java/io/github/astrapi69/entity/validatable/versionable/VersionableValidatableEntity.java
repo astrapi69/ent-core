@@ -35,6 +35,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.validatable.versionable.IdentifiableValidatableVersionable;
 import io.github.astrapi69.entity.validatable.ValidatableEntity;
 
 /**

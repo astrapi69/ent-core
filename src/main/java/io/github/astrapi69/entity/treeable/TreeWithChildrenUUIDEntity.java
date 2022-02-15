@@ -42,6 +42,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.treeable.TreeWithChildren;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
@@ -90,7 +91,8 @@ public class TreeWithChildrenUUIDEntity<T, TR extends TreeWithChildren<T, TR>> e
 	 */
 	public void addChild(TR child)
 	{
-		if(!children.contains(child)) {
+		if (!children.contains(child))
+		{
 			children.add(child);
 		}
 	}

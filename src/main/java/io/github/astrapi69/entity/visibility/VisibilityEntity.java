@@ -33,6 +33,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.visibility.IdentifiableVisibility;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**

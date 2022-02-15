@@ -35,6 +35,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.pairable.IdentifiableKeyValueOwner;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
 
 /**

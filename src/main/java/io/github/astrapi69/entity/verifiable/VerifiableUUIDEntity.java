@@ -35,7 +35,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.identifiable.Identifiable;
+import io.github.astrapi69.data.identifiable.Identifiable;
+import io.github.astrapi69.data.verifiable.VerifiableProcessable;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**

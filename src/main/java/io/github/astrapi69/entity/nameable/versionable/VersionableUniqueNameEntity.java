@@ -35,7 +35,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.nameable.IdentifiableNameableVersionable;
+import io.github.astrapi69.data.nameable.IdentifiableNameableVersionable;
 import io.github.astrapi69.entity.nameable.UniqueNameEntity;
 
 /**

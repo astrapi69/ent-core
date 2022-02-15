@@ -1,6 +1,22 @@
 ## Change log
 ----------------------
 
+Version 3
+-------------
+
+ADDED:
+
+- new dependency io.github.astrapi69:data-api in major version 3 that replace the dependency ent-api
+- new workflow for build with gradle with github-actions
+- new gradle-plugin dependency com.diffplug.spotless:spotless-plugin-gradle in version 6.2.2
+
+CHANGED:
+
+- update gradle version to 7.4
+- removed dependency io.github.astrapi69:ent-api
+- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.42.0
+- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new version 6.4.0
+
 Version 2.3
 -------------
 
@@ -63,7 +79,7 @@ Version 1.12
 -------------
 
 ADDED:
- 
+
 - new entity class ByCreation that refects the old Creation
 - new entity class ByDeletion that refects the old Deletion
 - new entity class ByLastModification that refects the old LastModification
@@ -81,7 +97,7 @@ Version 1.11
 -------------
 
 ADDED:
- 
+
 - new entity classes that have to be signed and verified
 
 CHANGED:
@@ -105,7 +121,7 @@ Version 1.9
 -------------
 
 ADDED:
- 
+
 - new idea run configurations for gradle builds created
 - new jacoco plugin added for code coverage
 
@@ -128,19 +144,19 @@ Version 1.8
 -------------
 
 ADDED:
- 
+
 - new base entities with different generation types of the id
 
 CHANGED:
 
 - moved column constants from the entity classes to the appropriate interfaces
-- tagged BaseEntity as deprecated 
+- tagged BaseEntity as deprecated
 
 Version 1.7.1
 -------------
 
 ADDED:
- 
+
 - new versionable entity that derives from UUIDEntity created
 
 CHANGED:
@@ -151,7 +167,7 @@ Version 1.7
 -------------
 
 ADDED:
- 
+
 - new name entities that extends from the UUIDEntity
 
 CHANGED:
@@ -162,7 +178,7 @@ Version 1.6
 -------------
 
 ADDED:
- 
+
 - new constants for all relevant columns created
 - created new class VersionableEntity that replaces the class VersionableBaseEntity
 
@@ -174,7 +190,7 @@ Version 1.5
 -------------
 
 ADDED:
- 
+
 - new class DatabaseAttribute created that holds constants for annotation attributes for an entity class
 
 CHANGED:
@@ -186,7 +202,7 @@ Version 1.4
 -------------
 
 ADDED:
- 
+
 - new entity class TreeableEntity that provides keeping data with in a tree structure
 
 CHANGED:
@@ -198,24 +214,24 @@ Version 1.3.2
 -------------
 
 ADDED:
- 
-- new abstract entities created for store a variable length of name values 
+
+- new abstract entities created for store a variable length of name values
 
 Version 1.3.1
 -------------
 
 ADDED:
- 
-- new abstract entity for store a variable length of unique text values 
-- new versionable abstract entity for store a variable length of text values 
-- new versionable abstract entity for store a variable length of unique text values 
+
+- new abstract entity for store a variable length of unique text values
+- new versionable abstract entity for store a variable length of text values
+- new versionable abstract entity for store a variable length of unique text values
 
 Version 1.3
 -------------
 
 ADDED:
- 
-- new abstract entity for store a variable length of text values 
+
+- new abstract entity for store a variable length of text values
 
 CHANGED:
 
@@ -236,7 +252,7 @@ CHANGED:
 - update of parent version to 5
 - added new prefixes for unique constraints and foreign keys in enum DatabasePrefix
 - update of ent-api dependency to version 1.1
-- replaced hibernate with javax.persistence-api dependency 
+- replaced hibernate with javax.persistence-api dependency
 
 Version 1.1
 -------------
@@ -250,5 +266,5 @@ Version 1
 -------------
 
 ADDED:
- 
+
 - this changelog file

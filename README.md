@@ -2,14 +2,13 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://api.travis-ci.com/astrapi69/ent-core.svg?branch=develop)](https://travis-ci.com/github/astrapi69/ent-core) 
-[![Open Issues](https://img.shields.io/github/issues/astrapi69/ent-core.svg?style=flat)](https://github.com/astrapi69/ent-core/issues) 
+[![Java CI with Gradle](https://github.com/astrapi69/ent-core/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/ent-core/actions/workflows/gradle.yml)
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/ent-core.svg?style=flat)](https://github.com/astrapi69/ent-core/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/ent-core.svg)](http://www.javadoc.io/doc/io.github.astrapi69/ent-core)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 [![Hits Of Code](https://hitsofcode.com/github/astrapi69/ent-core)](https://hitsofcode.com/github/astrapi69/ent-core/view)
-[![Lines Of Code](https://tokei.rs/b1/github/astrapi69/ent-core)](https://github.com/astrapi69/ent-core)
 
 </div>
 
@@ -35,20 +34,20 @@ functionality of ent-core:
 define version in file gradle.properties
 
 ```
-entCoreVersion=2.3
+entCoreVersion=3
 ```
 
 or in build.gradle ext area
 
 ```
-    entCoreVersion = '2.3'
+    entCoreVersion = '3'
 }
 ```
 
 and then add the dependency to the dependencies area
 
 ```
-	implementation("io.github.astrapi69:ent-core:$entCoreVersion")
+    implementation("io.github.astrapi69:ent-core:$entCoreVersion")
 ```
 
 ## Maven dependency
@@ -60,23 +59,23 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- ENT-CORE version -->
-		<ent-core.version>2.3</ent-core.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- ENT-CORE DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>ent-core</artifactId>
-				<version>${ent-core.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- ENT-CORE version -->
+        <ent-core.version>3</ent-core.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- ENT-CORE DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>ent-core</artifactId>
+                <version>${ent-core.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 # Donations
 
@@ -172,12 +171,6 @@ Do not hesitate to contact the ent-core developers with your questions, concerns
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/ent-core/issues).
 
 ## Credits
-
-|**Travis CI**|
-|     :---:      |
-|[![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)](https://coveralls.io/github/astrapi69/ent-core?branch=master)|
-|Special thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects|
-|     <img width=1000/>     |
 
 |**Nexus Sonatype repositories**|
 |     :---:      |

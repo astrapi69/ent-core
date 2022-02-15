@@ -32,6 +32,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import io.github.astrapi69.data.traceable.IdentifiableTraceable;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
 import io.github.astrapi69.entity.creatable.Creation;
 import io.github.astrapi69.entity.deletable.Deletion;
