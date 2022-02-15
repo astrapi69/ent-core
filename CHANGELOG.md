@@ -1,7 +1,7 @@
 ## Change log
 ----------------------
 
-Version 2.4-SNAPSHOT
+Version 3-SNAPSHOT
 -------------
 
 ADDED:
@@ -13,6 +13,8 @@ CHANGED:
 
 - update gradle version to 7.4
 - removed dependency io.github.astrapi69:ent-api
+- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new version 0.42.0
+- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new version 6.4.0
 
 Version 2.3
 -------------
