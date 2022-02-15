@@ -3,7 +3,7 @@
 <div style="text-align: center">
 
 [![Java CI with Gradle](https://github.com/astrapi69/ent-core/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/ent-core/actions/workflows/gradle.yml)
-[![Open Issues](https://img.shields.io/github/issues/astrapi69/ent-core.svg?style=flat)](https://github.com/astrapi69/ent-core/issues) 
+[![Open Issues](https://img.shields.io/github/issues/astrapi69/ent-core.svg?style=flat)](https://github.com/astrapi69/ent-core/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core)
 [![Javadocs](http://www.javadoc.io/badge/io.github.astrapi69/ent-core.svg)](http://www.javadoc.io/doc/io.github.astrapi69/ent-core)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
@@ -47,7 +47,7 @@ or in build.gradle ext area
 and then add the dependency to the dependencies area
 
 ```
-	implementation("io.github.astrapi69:ent-core:$entCoreVersion")
+    implementation("io.github.astrapi69:ent-core:$entCoreVersion")
 ```
 
 ## Maven dependency
@@ -59,23 +59,23 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- ENT-CORE version -->
-		<ent-core.version>2.3</ent-core.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- ENT-CORE DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>ent-core</artifactId>
-				<version>${ent-core.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- ENT-CORE version -->
+        <ent-core.version>2.3</ent-core.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- ENT-CORE DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>ent-core</artifactId>
+                <version>${ent-core.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 # Donations
 
