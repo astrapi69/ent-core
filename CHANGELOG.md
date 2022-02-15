@@ -7,6 +7,7 @@ Version 2.4-SNAPSHOT
 ADDED:
 
 - new dependency io.github.astrapi69:data-api in major version 3 that replace the dependency ent-api
+- new workflow for build with gradle with github-actions
 
 CHANGED:
 
