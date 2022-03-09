@@ -24,6 +24,8 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
+import io.github.astrapi69.data.identifiable.IdGenerator;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
