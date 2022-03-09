@@ -25,13 +25,15 @@
 package io.github.astrapi69.entity.id.generator;
 
 /**
- * The Interface IdGenerator.
+ * The interface {@link IdGenerator} provides a method for get the next id.
+ *
+ * Note: will be tagged as deprecated. Moved to data api module
  */
 public interface IdGenerator
 {
 
 	/**
-	 * Gets the next id.
+	 * Gets the next id
 	 * 
 	 * @return the next id
 	 */
