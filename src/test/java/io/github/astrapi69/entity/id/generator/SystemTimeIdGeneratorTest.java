@@ -52,6 +52,7 @@ public class SystemTimeIdGeneratorTest
 				"Next id" + nextId + " should not generated twice");
 			nextIds.add(nextId);
 		}
+		System.out.println(nextIds);
 	}
 
 	/**
