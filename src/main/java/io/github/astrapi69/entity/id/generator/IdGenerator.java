@@ -24,31 +24,20 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+/**
+ * The interface {@link IdGenerator} provides a method for get the next id.
+ *
+ * @deprecated use instead the same name interface from module data-api
+ */
+@Deprecated
+public interface IdGenerator
+{
 
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+	/**
+	 * Gets the next id.
+	 *
+	 * @return the next id
+	 */
+	int getNextId();
 
-import org.junit.jupiter.api.Test;
-
-public class BigIntegerIdGeneratorTest {
-
-    /**
-     * Test method for {@link BigIntegerIdGenerator#getNextId()}
-     */
-    @Test
-    void getNextId()
-    {
-        final List<BigInteger> nextIds = new ArrayList<>();
-        for (int i = 0; i < 1000; i++)
-        {
-            final BigInteger nextId = BigIntegerIdGenerator.getInstance().getNextId();
-            assertFalse(nextIds.contains(nextId),
-                    "Next id" + nextId + " should not generated twice");
-            nextIds.add(nextId);
-        }
-		assertEquals(nextIds.size(), 1000);
-    }
 }

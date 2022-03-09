@@ -24,31 +24,58 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
-import org.junit.jupiter.api.Test;
+import lombok.NonNull;
 
-public class BigIntegerIdGeneratorTest {
+/**
+ * The class {@link AtomicBigInteger} holds a {@link BigInteger} value that may be updated
+ * atomically
+ */
+public final class AtomicBigInteger
+{
 
-    /**
-     * Test method for {@link BigIntegerIdGenerator#getNextId()}
-     */
-    @Test
-    void getNextId()
-    {
-        final List<BigInteger> nextIds = new ArrayList<>();
-        for (int i = 0; i < 1000; i++)
-        {
-            final BigInteger nextId = BigIntegerIdGenerator.getInstance().getNextId();
-            assertFalse(nextIds.contains(nextId),
-                    "Next id" + nextId + " should not generated twice");
-            nextIds.add(nextId);
-        }
-		assertEquals(nextIds.size(), 1000);
-    }
+	private final AtomicReference<BigInteger> atomicReference;
+
+	/**
+	 * Creates a new AtomicInteger with the given initial value.
+	 *
+	 * @param initialValue
+	 *            the initial value
+	 */
+	public AtomicBigInteger(final @NonNull BigInteger initialValue)
+	{
+		this.atomicReference = new AtomicReference<>(initialValue);
+	}
+
+	/**
+	 * Atomically increments by one the current value
+	 *
+	 * @return the incremented value
+	 */
+	public BigInteger incrementAndGet()
+	{
+		return atomicReference.accumulateAndGet(BigInteger.ONE, BigInteger::add);
+	}
+
+	/**
+	 * Atomically increments by one the current value.
+	 *
+	 * @return the previous value
+	 */
+	public BigInteger getAndIncrement()
+	{
+		return atomicReference.getAndAccumulate(BigInteger.ONE, BigInteger::add);
+	}
+
+	/**
+	 * Gets the current value.
+	 *
+	 * @return the current value
+	 */
+	public BigInteger get()
+	{
+		return atomicReference.get();
+	}
 }
