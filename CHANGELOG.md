@@ -4,6 +4,10 @@
 Version 3.1-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update of gradle-plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new minor version 6.3.0
+- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 6.4.1
 
 
 Version 3
