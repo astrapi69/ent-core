@@ -32,22 +32,23 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-public class LongIdGeneratorTest {
+public class LongIdGeneratorTest
+{
 
-    /**
-     * Test method for {@link LongIdGenerator#getNextId()}
-     */
-    @Test
-    void getNextId()
-    {
-        final List<Long> nextIds = new ArrayList<>();
-        for (int i = 0; i < 1000; i++)
-        {
-            final Long nextId = LongIdGenerator.getInstance().getNextId();
-            assertFalse(nextIds.contains(nextId),
-                    "Next id" + nextId + " should not generated twice");
-            nextIds.add(nextId);
-        }
+	/**
+	 * Test method for {@link LongIdGenerator#getNextId()}
+	 */
+	@Test
+	void getNextId()
+	{
+		final List<Long> nextIds = new ArrayList<>();
+		for (int i = 0; i < 1000; i++)
+		{
+			final Long nextId = LongIdGenerator.getInstance().getNextId();
+			assertFalse(nextIds.contains(nextId),
+				"Next id" + nextId + " should not generated twice");
+			nextIds.add(nextId);
+		}
 		assertEquals(nextIds.size(), 1000);
-    }
+	}
 }

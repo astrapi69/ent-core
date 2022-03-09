@@ -39,7 +39,8 @@ public class BigIntegerIdGenerator implements IdGenerator<BigInteger>
 	/**
 	 * The default instance with an initial value of 0
 	 */
-	private static final BigIntegerIdGenerator instance = new BigIntegerIdGenerator(BigInteger.ZERO);
+	private static final BigIntegerIdGenerator instance = new BigIntegerIdGenerator(
+		BigInteger.ZERO);
 
 	/**
 	 * The atomic id.
