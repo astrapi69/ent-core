@@ -9,6 +9,7 @@
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Donate](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
 [![Hits Of Code](https://hitsofcode.com/github/astrapi69/ent-core)](https://hitsofcode.com/github/astrapi69/ent-core/view)
+[![Lines Of Code](https://tokei.rs/b1/github/astrapi69/ent-core)](https://github.com/astrapi69/ent-core)
 
 </div>
 
@@ -34,13 +35,13 @@ functionality of ent-core:
 define version in file gradle.properties
 
 ```
-entCoreVersion=3
+entCoreVersion=3.1
 ```
 
 or in build.gradle ext area
 
 ```
-    entCoreVersion = '3'
+    entCoreVersion = '3.1'
 }
 ```
 
@@ -62,7 +63,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- ENT-CORE version -->
-        <ent-core.version>3</ent-core.version>
+        <ent-core.version>3.1</ent-core.version>
             ...
     </properties>
             ...
