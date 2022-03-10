@@ -13,6 +13,7 @@ ADDED:
 
 CHANGED:
 
+- update gradle to new version 7.4.1
 - update of gradle-plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new minor version 6.3.0
 - update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 6.4.1
 - update of data-api dependency to new patch version 3.2.1
