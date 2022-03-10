@@ -1,6 +1,24 @@
 ## Change log
 ----------------------
 
+Version 3.1
+-------------
+
+ADDED:
+
+- new class AtomicBigInteger for generator class BigIntegerIdGenerator
+- new generator class BigIntegerIdGenerator for id generation of type BigInteger
+- new generator class IntegerIdGenerator for id generation of type Integer
+- new generator class LongIdGenerator for id generation of type Long
+
+CHANGED:
+
+- update gradle to new version 7.4.1
+- update of gradle-plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new minor version 6.3.0
+- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 6.4.1
+- update of data-api dependency to new patch version 3.2.1
+- tagged class IdGenerator as deprecated, class is moved to module data-api
+
 Version 3
 -------------
 

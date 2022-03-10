@@ -24,44 +24,58 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import java.math.BigInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
-import org.meanbean.test.BeanTester;
+import lombok.NonNull;
 
 /**
- * The unit test class for the class {@link SystemTimeIdGenerator}.
+ * The class {@link AtomicBigInteger} holds a {@link BigInteger} value that may be updated
+ * atomically
  */
-public class SystemTimeIdGeneratorTest
+public final class AtomicBigInteger
 {
 
+	private final AtomicReference<BigInteger> atomicReference;
+
 	/**
-	 * Test method for {@link SystemTimeIdGenerator#getNextId()}
+	 * Creates a new AtomicInteger with the given initial value.
+	 *
+	 * @param initialValue
+	 *            the initial value
 	 */
-	@Test
-	void getNextId()
+	public AtomicBigInteger(final @NonNull BigInteger initialValue)
 	{
-		final List<Integer> nextIds = new ArrayList<>();
-		for (int i = 0; i < 1000; i++)
-		{
-			final int nextId = SystemTimeIdGenerator.getInstance().getNextId();
-			assertFalse(nextIds.contains(nextId),
-				"Next id" + nextId + " should not generated twice");
-			nextIds.add(nextId);
-		}
-		System.out.println(nextIds);
+		this.atomicReference = new AtomicReference<>(initialValue);
 	}
 
 	/**
-	 * Test method for {@link SystemTimeIdGenerator}
+	 * Atomically increments by one the current value
+	 *
+	 * @return the incremented value
 	 */
-	@Test
-	public void testWithBeanTester()
+	public BigInteger incrementAndGet()
 	{
-		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(SystemTimeIdGenerator.class);
+		return atomicReference.accumulateAndGet(BigInteger.ONE, BigInteger::add);
+	}
+
+	/**
+	 * Atomically increments by one the current value.
+	 *
+	 * @return the previous value
+	 */
+	public BigInteger getAndIncrement()
+	{
+		return atomicReference.getAndAccumulate(BigInteger.ONE, BigInteger::add);
+	}
+
+	/**
+	 * Gets the current value.
+	 *
+	 * @return the current value
+	 */
+	public BigInteger get()
+	{
+		return atomicReference.get();
 	}
 }
