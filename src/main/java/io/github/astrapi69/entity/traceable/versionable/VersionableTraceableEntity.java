@@ -29,9 +29,11 @@ import java.io.Serializable;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.traceable.IdentifiableTraceableVersionable;
 import io.github.astrapi69.entity.creatable.Creation;
@@ -52,6 +54,8 @@ import io.github.astrapi69.entity.traceable.TraceableEntity;
  * @see Deletion
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 @NoArgsConstructor

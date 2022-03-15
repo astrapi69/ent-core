@@ -31,6 +31,7 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link SystemTimeIdGenerator} is an base implementation of {@link IdGenerator}
  * interface
+ * @deprecated use instead the same name class from the module id-generate
  */
 public class SystemTimeIdGenerator implements IdGenerator<Integer>
 {
@@ -39,17 +40,18 @@ public class SystemTimeIdGenerator implements IdGenerator<Integer>
 	 * The instance.
 	 */
 	private static final SystemTimeIdGenerator instance = new SystemTimeIdGenerator();
+
 	/**
-	 * The atomic id.
+	 * The atomic id counter
 	 */
-	private final AtomicInteger atomicId;
+	private final AtomicInteger atomicIdCounter;
 
 	/**
 	 * Instantiates a new system time id generator.
 	 */
 	private SystemTimeIdGenerator()
 	{
-		atomicId = new AtomicInteger((int)System.currentTimeMillis());
+		atomicIdCounter = new AtomicInteger((int)System.currentTimeMillis());
 	}
 
 	/**
@@ -68,7 +70,7 @@ public class SystemTimeIdGenerator implements IdGenerator<Integer>
 	@Override
 	public Integer getNextId()
 	{
-		int nextId = atomicId.getAndIncrement();
+		int nextId = atomicIdCounter.getAndIncrement();
 		if (nextId < 0)
 		{
 			nextId *= -1;

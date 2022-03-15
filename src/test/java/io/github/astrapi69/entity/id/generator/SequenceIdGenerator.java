@@ -31,52 +31,58 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.prefs.Preferences;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
+import io.github.astrapi69.data.identifiable.IdGenerator;
+
 /**
  * Example of stackoverflow.com see
  * 'https://stackoverflow.com/questions/22416826/sequence-generator-in-java-for-unique-id'
  */
-public final class SequenceGenerator
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public final class SequenceIdGenerator implements IdGenerator<Long>
 {
 
-	private static final String DEFAULT_INITIAL_VALUE = "1";
 	private static final Preferences PREFERENCES = Preferences
-		.userNodeForPackage(SequenceGenerator.class);
-	private static final AtomicLong ATOMIC_ID_COUNTER = new AtomicLong(
-		Integer.parseInt(PREFERENCES.get("seq_id", DEFAULT_INITIAL_VALUE)));
-	private static final Map<Long, SoftReference<SequenceGenerator>> GENERATORS = new ConcurrentHashMap<>();
-	private static final SequenceGenerator DEFAULT_GENERATOR = new SequenceGenerator(0L,
-		Long.parseLong(PREFERENCES.get("seq_0", DEFAULT_INITIAL_VALUE)));
+		.userNodeForPackage(SequenceIdGenerator.class);
+	private static final AtomicLong ATOMIC_ID_COUNTER = new AtomicLong(Integer.parseInt(PREFERENCES
+		.get(SequenceValue.DEFAULT_SEQUENCE_ID_KEY, SequenceValue.DEFAULT_SEQUENCE_INITIAL_VALUE)));
+	private static final Map<Long, SoftReference<SequenceIdGenerator>> GENERATORS = new ConcurrentHashMap<>();
+	private static final SequenceIdGenerator DEFAULT_GENERATOR = new SequenceIdGenerator(0L,
+		Long.parseLong(PREFERENCES.get(SequenceValue.DEFAULT_SEQUENCE_PREFIX + "0",
+			SequenceValue.DEFAULT_SEQUENCE_INITIAL_VALUE)));
 
 	static
 	{
 		Runtime.getRuntime().addShutdownHook(new Thread(() -> {
 			GENERATORS.values().stream().map(SoftReference::get)
 				.filter(seq -> seq != null && seq.isPersistOnExit())
-				.forEach(SequenceGenerator::persist);
+				.forEach(SequenceIdGenerator::persist);
 			if (DEFAULT_GENERATOR.isPersistOnExit())
 			{
 				DEFAULT_GENERATOR.persist();
 			}
-			PREFERENCES.put("seq_id", ATOMIC_ID_COUNTER.toString());
+			PREFERENCES.put(SequenceValue.DEFAULT_SEQUENCE_ID_KEY, ATOMIC_ID_COUNTER.toString());
 		}));
 	}
 
-	private final long sequenceId;
-	private final AtomicLong atomicIdCounter;
-	private final AtomicBoolean persistOnExit = new AtomicBoolean();
+	{
+		persistOnExit = new AtomicBoolean(false);
+	}
 
-	private SequenceGenerator(long sequenceId, long initialValue)
+	long sequenceId;
+	AtomicLong atomicIdCounter;
+	AtomicBoolean persistOnExit;
+
+	private SequenceIdGenerator(long sequenceId, long initialValue)
 	{
 		this.sequenceId = sequenceId;
 		atomicIdCounter = new AtomicLong(initialValue);
 	}
 
-	public long nextId()
-	{
-		return atomicIdCounter.getAndIncrement();
-	}
-
-	public long currentId()
+	public long getCurrentId()
 	{
 		return atomicIdCounter.get();
 	}
@@ -98,7 +104,8 @@ public final class SequenceGenerator
 
 	public void persist()
 	{
-		PREFERENCES.put("seq_" + sequenceId, atomicIdCounter.toString());
+		PREFERENCES.put(SequenceValue.DEFAULT_SEQUENCE_PREFIX + sequenceId,
+			atomicIdCounter.toString());
 	}
 
 	@Override
@@ -121,22 +128,22 @@ public final class SequenceGenerator
 	@Override
 	public boolean equals(Object obj)
 	{
-		return obj == this || obj != null && obj instanceof SequenceGenerator
-			&& sequenceId == ((SequenceGenerator)obj).sequenceId;
+		return obj == this || obj != null && obj instanceof SequenceIdGenerator
+			&& sequenceId == ((SequenceIdGenerator)obj).sequenceId;
 	}
 
 	@Override
 	public String toString()
 	{
-		return "{" + "counter=" + atomicIdCounter + ", seq=" + sequenceId + '}';
+		return "{" + "sequence=" + sequenceId + ", counter=" + atomicIdCounter + '}';
 	}
 
-	public static SequenceGenerator getDefault()
+	public static SequenceIdGenerator getDefault()
 	{
 		return DEFAULT_GENERATOR;
 	}
 
-	public static SequenceGenerator get(long sequenceId)
+	public static SequenceIdGenerator get(long sequenceId)
 	{
 		if (sequenceId < 0)
 		{
@@ -146,11 +153,11 @@ public final class SequenceGenerator
 		{
 			return DEFAULT_GENERATOR;
 		}
-		SoftReference<SequenceGenerator> r = GENERATORS.computeIfAbsent(sequenceId, sid -> {
+		SoftReference<SequenceIdGenerator> r = GENERATORS.computeIfAbsent(sequenceId, sid -> {
 			try
 			{
-				return new SoftReference<>(new SequenceGenerator(sid,
-					Long.parseLong(PREFERENCES.get("seq_" + sid, null))));
+				return new SoftReference<>(new SequenceIdGenerator(sid, Long.parseLong(
+					PREFERENCES.get(SequenceValue.DEFAULT_SEQUENCE_PREFIX + sid, null))));
 			}
 			catch (Throwable t)
 			{
@@ -160,18 +167,25 @@ public final class SequenceGenerator
 		return r == null ? null : r.get();
 	}
 
-	public static SequenceGenerator create()
+	public static SequenceIdGenerator newSequenceIdGenerator()
 	{
-		return create(1);
+		return newSequenceIdGenerator(1);
 	}
 
-	public static SequenceGenerator create(long initialValue)
+	public static SequenceIdGenerator newSequenceIdGenerator(long initialValue)
 	{
 		long sequenceId = ATOMIC_ID_COUNTER.getAndIncrement();
-		SequenceGenerator seq = new SequenceGenerator(sequenceId,
-			Long.parseLong(PREFERENCES.get("seq_" + sequenceId, "" + initialValue)));
-		GENERATORS.put(sequenceId, new SoftReference<>(seq));
-		return seq;
+		SequenceIdGenerator sequenceIdGenerator = new SequenceIdGenerator(sequenceId,
+			Long.parseLong(PREFERENCES.get(SequenceValue.DEFAULT_SEQUENCE_PREFIX + sequenceId,
+				"" + initialValue)));
+		GENERATORS.put(sequenceId, new SoftReference<>(sequenceIdGenerator));
+		return sequenceIdGenerator;
+	}
+
+	@Override
+	public Long getNextId()
+	{
+		return atomicIdCounter.getAndIncrement();
 	}
 
 }

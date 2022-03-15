@@ -30,6 +30,7 @@ import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -48,10 +49,11 @@ import io.github.astrapi69.entity.validatable.ValidatableEntity;
  *            the generic type of time measurement
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Entity
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @SuperBuilder
 public abstract class VersionableValidatableEntity<PK extends Serializable, T>

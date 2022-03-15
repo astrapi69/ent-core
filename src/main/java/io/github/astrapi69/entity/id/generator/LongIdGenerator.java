@@ -32,6 +32,7 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link LongIdGenerator} is an implementation of {@link IdGenerator} interface with id
  * type of {@link Long} object
+ * @deprecated use instead the same name class from the module id-generate
  */
 public class LongIdGenerator implements IdGenerator<Long>
 {
@@ -42,9 +43,9 @@ public class LongIdGenerator implements IdGenerator<Long>
 	private static final LongIdGenerator instance = new LongIdGenerator(0L);
 
 	/**
-	 * The atomic id.
+	 * The atomic id counter
 	 */
-	private final AtomicLong atomicId;
+	private final AtomicLong atomicIdCounter;
 
 	/**
 	 * Instantiates a new {@link LongIdGenerator}
@@ -54,7 +55,7 @@ public class LongIdGenerator implements IdGenerator<Long>
 	 */
 	private LongIdGenerator(final @NonNull Long initialValue)
 	{
-		atomicId = new AtomicLong(initialValue);
+		atomicIdCounter = new AtomicLong(initialValue);
 	}
 
 	/**
@@ -84,6 +85,6 @@ public class LongIdGenerator implements IdGenerator<Long>
 	@Override
 	public Long getNextId()
 	{
-		return atomicId.getAndIncrement();
+		return atomicIdCounter.getAndIncrement();
 	}
 }

@@ -30,7 +30,9 @@ import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.entity.base.UniqueableEntity;
 
@@ -42,6 +44,8 @@ import io.github.astrapi69.entity.base.UniqueableEntity;
  */
 @MappedSuperclass
 @Access(AccessType.FIELD)
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @NoArgsConstructor
 @SuperBuilder
 public abstract class UUIDEntity extends UniqueableEntity<UUID>

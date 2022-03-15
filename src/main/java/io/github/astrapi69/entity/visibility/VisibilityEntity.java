@@ -29,9 +29,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.visibility.IdentifiableVisibility;
 import io.github.astrapi69.entity.base.SequenceBaseEntity;
@@ -44,6 +46,8 @@ import io.github.astrapi69.entity.base.SequenceBaseEntity;
  *            the generic type of the id
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 @NoArgsConstructor
