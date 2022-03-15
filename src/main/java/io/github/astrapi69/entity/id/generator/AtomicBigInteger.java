@@ -32,6 +32,7 @@ import lombok.NonNull;
 /**
  * The class {@link AtomicBigInteger} holds a {@link BigInteger} value that may be updated
  * atomically
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
 public final class AtomicBigInteger

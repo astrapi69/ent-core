@@ -32,6 +32,7 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link BigIntegerIdGenerator} is an implementation of {@link IdGenerator} interface
  * with id type of {@link BigInteger} object
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
 public class BigIntegerIdGenerator implements IdGenerator<BigInteger>

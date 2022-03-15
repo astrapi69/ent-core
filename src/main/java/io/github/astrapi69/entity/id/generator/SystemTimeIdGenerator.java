@@ -31,6 +31,7 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link SystemTimeIdGenerator} is an base implementation of {@link IdGenerator}
  * interface
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
 public class SystemTimeIdGenerator implements IdGenerator<Integer>

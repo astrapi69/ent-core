@@ -32,6 +32,7 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link IntegerIdGenerator} is an implementation of {@link IdGenerator} interface with
  * id type of {@link Integer} object
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
 public class IntegerIdGenerator implements IdGenerator<Integer>
