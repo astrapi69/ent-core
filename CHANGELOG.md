@@ -6,6 +6,7 @@ Version 3.3-SNAPSHOT
 
 CHANGED:
 
+- moved all base classes from package 'io.github.astrapi69.entity.base.*' to 'io.github.astrapi69.entity.identifiable.*'
 - removed all classes that are tagged as deprecated
 
 Version 3.2

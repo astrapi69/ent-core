@@ -42,7 +42,7 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.treeable.Treeable;
-import io.github.astrapi69.entity.base.AutoBaseEntity;
+import io.github.astrapi69.entity.identifiable.AutoBaseEntity;
 
 /**
  * The Entity class {@link TreeEntity} can keep information for a tree structure. The root

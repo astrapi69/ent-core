@@ -38,7 +38,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.activatable.IdentifiableActivatable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link ActivatableEntity} is a base entity with a flag 'active' that indicates if an
