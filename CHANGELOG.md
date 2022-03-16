@@ -1,6 +1,17 @@
 ## Change log
 ----------------------
 
+Version 3.2
+-------------
+
+ADDED:
+
+- new lombok annotations for @EqualsAndHashCode and @ToString to all subclasses that call super
+
+CHANGED:
+
+- tagged all classes IdGenerator as deprecated, classes are moved to own module id-generate
+
 Version 3.1
 -------------
 

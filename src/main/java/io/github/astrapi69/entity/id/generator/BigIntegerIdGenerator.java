@@ -32,6 +32,8 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link BigIntegerIdGenerator} is an implementation of {@link IdGenerator} interface
  * with id type of {@link BigInteger} object
+ * 
+ * @deprecated use instead the same name class from the module id-generate
  */
 public class BigIntegerIdGenerator implements IdGenerator<BigInteger>
 {
@@ -43,9 +45,9 @@ public class BigIntegerIdGenerator implements IdGenerator<BigInteger>
 		BigInteger.ZERO);
 
 	/**
-	 * The atomic id.
+	 * The atomic id counter
 	 */
-	private final AtomicBigInteger atomicId;
+	private final AtomicBigInteger atomicIdCounter;
 
 	/**
 	 * Instantiates a new {@link BigIntegerIdGenerator}
@@ -55,7 +57,7 @@ public class BigIntegerIdGenerator implements IdGenerator<BigInteger>
 	 */
 	private BigIntegerIdGenerator(final @NonNull BigInteger initialValue)
 	{
-		atomicId = new AtomicBigInteger(initialValue);
+		atomicIdCounter = new AtomicBigInteger(initialValue);
 	}
 
 	/**
@@ -85,6 +87,6 @@ public class BigIntegerIdGenerator implements IdGenerator<BigInteger>
 	@Override
 	public BigInteger getNextId()
 	{
-		return atomicId.getAndIncrement();
+		return atomicIdCounter.getAndIncrement();
 	}
 }

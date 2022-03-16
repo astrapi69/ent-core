@@ -32,6 +32,8 @@ import io.github.astrapi69.data.identifiable.IdGenerator;
 /**
  * The class {@link IntegerIdGenerator} is an implementation of {@link IdGenerator} interface with
  * id type of {@link Integer} object
+ * 
+ * @deprecated use instead the same name class from the module id-generate
  */
 public class IntegerIdGenerator implements IdGenerator<Integer>
 {
@@ -42,9 +44,9 @@ public class IntegerIdGenerator implements IdGenerator<Integer>
 	private static final IntegerIdGenerator instance = new IntegerIdGenerator(0);
 
 	/**
-	 * The atomic id.
+	 * The atomic id counter
 	 */
-	private final AtomicInteger atomicId;
+	private final AtomicInteger atomicIdCounter;
 
 	/**
 	 * Instantiates a new {@link IntegerIdGenerator}
@@ -54,7 +56,7 @@ public class IntegerIdGenerator implements IdGenerator<Integer>
 	 */
 	private IntegerIdGenerator(final @NonNull Integer initialValue)
 	{
-		atomicId = new AtomicInteger(initialValue);
+		atomicIdCounter = new AtomicInteger(initialValue);
 	}
 
 	/**
@@ -84,6 +86,6 @@ public class IntegerIdGenerator implements IdGenerator<Integer>
 	@Override
 	public Integer getNextId()
 	{
-		return atomicId.getAndIncrement();
+		return atomicIdCounter.getAndIncrement();
 	}
 }

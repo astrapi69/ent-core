@@ -30,9 +30,11 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.nameable.IdentifiableNameableActivatable;
@@ -45,6 +47,8 @@ import io.github.astrapi69.entity.nameable.NameEntity;
  *            the generic type of the id
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 @NoArgsConstructor

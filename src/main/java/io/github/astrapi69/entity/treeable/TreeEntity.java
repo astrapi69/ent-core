@@ -34,9 +34,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.treeable.Treeable;
@@ -48,6 +50,8 @@ import io.github.astrapi69.entity.base.AutoBaseEntity;
  * generation strategy type of the primary key is auto
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 @NoArgsConstructor

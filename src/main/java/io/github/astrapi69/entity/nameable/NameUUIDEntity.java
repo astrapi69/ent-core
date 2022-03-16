@@ -29,9 +29,11 @@ import java.util.UUID;
 import javax.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.nameable.IdentifiableNameable;
@@ -41,6 +43,8 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
  * The class {@link NameUUIDEntity} is a base entity for a table with a single value
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 @NoArgsConstructor

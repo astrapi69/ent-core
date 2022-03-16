@@ -37,9 +37,11 @@ import javax.persistence.OneToMany;
 
 import lombok.AccessLevel;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.treeable.TreeWithChildren;
@@ -51,6 +53,8 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
  * {@link TreeWithChildrenUUIDEntity} objects have a parent.
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Getter
 @Setter
 @NoArgsConstructor

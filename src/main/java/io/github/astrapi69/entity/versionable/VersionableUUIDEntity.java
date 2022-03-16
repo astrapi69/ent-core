@@ -31,7 +31,9 @@ import javax.persistence.AccessType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
@@ -40,6 +42,8 @@ import io.github.astrapi69.entity.uniqueable.UUIDEntity;
  * holds an {@link UUID} as primary key with a version property for the optimistic lock value.
  */
 @MappedSuperclass
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @Access(AccessType.FIELD)
 @NoArgsConstructor
 @SuperBuilder
