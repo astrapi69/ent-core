@@ -24,55 +24,60 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.math.BigInteger;
+import java.util.concurrent.atomic.AtomicReference;
+
+import lombok.NonNull;
 
 /**
- * The class {@link SystemTimeIdGenerator} is an base implementation of {@link IdGenerator}
- * interface
- *
+ * The class {@link AtomicBigInteger} holds a {@link BigInteger} value that may be updated
+ * atomically
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
-public class SystemTimeIdGenerator implements IdGenerator
+public final class AtomicBigInteger
 {
 
-	/**
-	 * The instance.
-	 */
-	private static final SystemTimeIdGenerator instance = new SystemTimeIdGenerator();
-	/**
-	 * The atomic id.
-	 */
-	private final AtomicInteger atomicId;
+	private final AtomicReference<BigInteger> atomicReference;
 
 	/**
-	 * Instantiates a new system time id generator.
-	 */
-	private SystemTimeIdGenerator()
-	{
-		atomicId = new AtomicInteger((int)System.currentTimeMillis());
-	}
-
-	/**
-	 * Gets the single instance of SystemTimeIdGenerator.
+	 * Creates a new AtomicInteger with the given initial value.
 	 *
-	 * @return single instance of SystemTimeIdGenerator
+	 * @param initialValue
+	 *            the initial value
 	 */
-	public static SystemTimeIdGenerator getInstance()
+	public AtomicBigInteger(final @NonNull BigInteger initialValue)
 	{
-		return instance;
+		this.atomicReference = new AtomicReference<>(initialValue);
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Atomically increments by one the current value
+	 *
+	 * @return the incremented value
 	 */
-	@Override
-	public int getNextId()
+	public BigInteger incrementAndGet()
 	{
-		int nextId = atomicId.getAndIncrement();
-		if (nextId < 0)
-		{
-			nextId *= -1;
-		}
-		return nextId;
+		return atomicReference.accumulateAndGet(BigInteger.ONE, BigInteger::add);
+	}
+
+	/**
+	 * Atomically increments by one the current value.
+	 *
+	 * @return the previous value
+	 */
+	public BigInteger getAndIncrement()
+	{
+		return atomicReference.getAndAccumulate(BigInteger.ONE, BigInteger::add);
+	}
+
+	/**
+	 * Gets the current value.
+	 *
+	 * @return the current value
+	 */
+	public BigInteger get()
+	{
+		return atomicReference.get();
 	}
 }

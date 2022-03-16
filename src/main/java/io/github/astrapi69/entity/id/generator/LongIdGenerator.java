@@ -24,40 +24,58 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+
+import lombok.NonNull;
+import io.github.astrapi69.data.identifiable.IdGenerator;
 
 /**
- * The class {@link SystemTimeIdGenerator} is an base implementation of {@link IdGenerator}
- * interface
- *
+ * The class {@link LongIdGenerator} is an implementation of {@link IdGenerator} interface with id
+ * type of {@link Long} object
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
-public class SystemTimeIdGenerator implements IdGenerator
+public class LongIdGenerator implements IdGenerator<Long>
 {
 
 	/**
-	 * The instance.
+	 * The default instance with an initial value of 0
 	 */
-	private static final SystemTimeIdGenerator instance = new SystemTimeIdGenerator();
-	/**
-	 * The atomic id.
-	 */
-	private final AtomicInteger atomicId;
+	private static final LongIdGenerator instance = new LongIdGenerator(0L);
 
 	/**
-	 * Instantiates a new system time id generator.
+	 * The atomic id counter
 	 */
-	private SystemTimeIdGenerator()
+	private final AtomicLong atomicIdCounter;
+
+	/**
+	 * Instantiates a new {@link LongIdGenerator}
+	 * 
+	 * @param initialValue
+	 *            the initial value for the generator
+	 */
+	private LongIdGenerator(final @NonNull Long initialValue)
 	{
-		atomicId = new AtomicInteger((int)System.currentTimeMillis());
+		atomicIdCounter = new AtomicLong(initialValue);
 	}
 
 	/**
-	 * Gets the single instance of SystemTimeIdGenerator.
+	 * Factory method for create a new custom {@link LongIdGenerator} with an initial value
 	 *
-	 * @return single instance of SystemTimeIdGenerator
+	 * @param initialValue
+	 *            the initial value for the generator
 	 */
-	public static SystemTimeIdGenerator getInstance()
+	public static LongIdGenerator of(final @NonNull Long initialValue)
+	{
+		return new LongIdGenerator(initialValue);
+	}
+
+	/**
+	 * Gets the single instance of {@link LongIdGenerator} object
+	 *
+	 * @return single instance of {@link LongIdGenerator} object
+	 */
+	public static LongIdGenerator getInstance()
 	{
 		return instance;
 	}
@@ -66,13 +84,8 @@ public class SystemTimeIdGenerator implements IdGenerator
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int getNextId()
+	public Long getNextId()
 	{
-		int nextId = atomicId.getAndIncrement();
-		if (nextId < 0)
-		{
-			nextId *= -1;
-		}
-		return nextId;
+		return atomicIdCounter.getAndIncrement();
 	}
 }

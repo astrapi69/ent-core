@@ -24,40 +24,59 @@
  */
 package io.github.astrapi69.entity.id.generator;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.math.BigInteger;
+
+import lombok.NonNull;
+import io.github.astrapi69.data.identifiable.IdGenerator;
 
 /**
- * The class {@link SystemTimeIdGenerator} is an base implementation of {@link IdGenerator}
- * interface
- *
+ * The class {@link BigIntegerIdGenerator} is an implementation of {@link IdGenerator} interface
+ * with id type of {@link BigInteger} object
+ * 
  * @deprecated use instead the same name class from the module id-generate
  */
-public class SystemTimeIdGenerator implements IdGenerator
+public class BigIntegerIdGenerator implements IdGenerator<BigInteger>
 {
 
 	/**
-	 * The instance.
+	 * The default instance with an initial value of 0
 	 */
-	private static final SystemTimeIdGenerator instance = new SystemTimeIdGenerator();
-	/**
-	 * The atomic id.
-	 */
-	private final AtomicInteger atomicId;
+	private static final BigIntegerIdGenerator instance = new BigIntegerIdGenerator(
+		BigInteger.ZERO);
 
 	/**
-	 * Instantiates a new system time id generator.
+	 * The atomic id counter
 	 */
-	private SystemTimeIdGenerator()
+	private final AtomicBigInteger atomicIdCounter;
+
+	/**
+	 * Instantiates a new {@link BigIntegerIdGenerator}
+	 *
+	 * @param initialValue
+	 *            the initial value for the generator
+	 */
+	private BigIntegerIdGenerator(final @NonNull BigInteger initialValue)
 	{
-		atomicId = new AtomicInteger((int)System.currentTimeMillis());
+		atomicIdCounter = new AtomicBigInteger(initialValue);
 	}
 
 	/**
-	 * Gets the single instance of SystemTimeIdGenerator.
+	 * Factory method for create a new custom {@link BigIntegerIdGenerator} with an initial value
 	 *
-	 * @return single instance of SystemTimeIdGenerator
+	 * @param initialValue
+	 *            the initial value for the generator
 	 */
-	public static SystemTimeIdGenerator getInstance()
+	public static BigIntegerIdGenerator of(final @NonNull BigInteger initialValue)
+	{
+		return new BigIntegerIdGenerator(initialValue);
+	}
+
+	/**
+	 * Gets the single instance of {@link BigIntegerIdGenerator}.
+	 *
+	 * @return single instance of {@link BigIntegerIdGenerator}
+	 */
+	public static BigIntegerIdGenerator getInstance()
 	{
 		return instance;
 	}
@@ -66,13 +85,8 @@ public class SystemTimeIdGenerator implements IdGenerator
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int getNextId()
+	public BigInteger getNextId()
 	{
-		int nextId = atomicId.getAndIncrement();
-		if (nextId < 0)
-		{
-			nextId *= -1;
-		}
-		return nextId;
+		return atomicIdCounter.getAndIncrement();
 	}
 }
