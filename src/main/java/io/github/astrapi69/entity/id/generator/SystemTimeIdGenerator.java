@@ -26,33 +26,28 @@ package io.github.astrapi69.entity.id.generator;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.github.astrapi69.data.identifiable.IdGenerator;
-
 /**
  * The class {@link SystemTimeIdGenerator} is an base implementation of {@link IdGenerator}
  * interface
- * 
- * @deprecated use instead the same name class from the module id-generate
  */
-public class SystemTimeIdGenerator implements IdGenerator<Integer>
+public class SystemTimeIdGenerator implements IdGenerator
 {
 
 	/**
 	 * The instance.
 	 */
 	private static final SystemTimeIdGenerator instance = new SystemTimeIdGenerator();
-
 	/**
-	 * The atomic id counter
+	 * The atomic id.
 	 */
-	private final AtomicInteger atomicIdCounter;
+	private final AtomicInteger atomicId;
 
 	/**
 	 * Instantiates a new system time id generator.
 	 */
 	private SystemTimeIdGenerator()
 	{
-		atomicIdCounter = new AtomicInteger((int)System.currentTimeMillis());
+		atomicId = new AtomicInteger((int)System.currentTimeMillis());
 	}
 
 	/**
@@ -69,9 +64,9 @@ public class SystemTimeIdGenerator implements IdGenerator<Integer>
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Integer getNextId()
+	public int getNextId()
 	{
-		int nextId = atomicIdCounter.getAndIncrement();
+		int nextId = atomicId.getAndIncrement();
 		if (nextId < 0)
 		{
 			nextId *= -1;
