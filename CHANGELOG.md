@@ -4,7 +4,9 @@
 Version 3.3-SNAPSHOT
 -------------
 
+CHANGED:
 
+- removed all classes that are tagged as deprecated
 
 Version 3.2
 -------------
