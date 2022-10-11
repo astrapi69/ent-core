@@ -4,8 +4,16 @@
 Version 4-SNAPSHOT
 -------------
 
+ADDED:
+
+- new module-info.java file for module information
+
 CHANGED:
 
+- update jdk version to 11
+- update gradle version to 7.5.1
+- update of gradle-plugin dependency spotless-plugin-gradle to new minor version 6.11.0
+- update of gradle-plugin dependency grgit-gradle to new minor version 5.0.0
 - moved all base classes from package 'io.github.astrapi69.entity.base.*' to 'io.github.astrapi69.entity.identifiable.*'
 - removed all classes that are tagged as deprecated
 
