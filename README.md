@@ -30,7 +30,7 @@ No animals were harmed in the making of this library.
 
 Replace the variable ${latestVersion} with the current latest version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core)
 
-You can first define the version in your gradle.properties or in the ext section and add than the following gradle 
+You can first define the version in your gradle.properties or in the ext section and add than the following gradle
 dependency to your project `build.gradle` if you want to import the core functionality of ent-core:
 
 define version in file gradle.properties
