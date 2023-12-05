@@ -36,7 +36,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.visibility.IdentifiableVisibility;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the

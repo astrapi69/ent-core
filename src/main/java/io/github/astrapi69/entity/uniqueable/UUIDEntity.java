@@ -34,7 +34,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.base.UniqueableEntity;
+import io.github.astrapi69.entity.identifiable.UniqueableEntity;
 
 /**
  * The abstract class {@link UUIDEntity} is a concrete class of {@link UniqueableEntity} and holds

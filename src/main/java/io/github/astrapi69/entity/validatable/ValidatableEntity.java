@@ -36,7 +36,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.validatable.IdentifiableValidatable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link ValidatableEntity} is a base entity and has a validFrom property and a validTill

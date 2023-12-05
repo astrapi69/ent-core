@@ -36,7 +36,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.creatable.IdentifiableByCreatable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The entity class {@link ByCreation} is keeping the information for the creation of an entity.

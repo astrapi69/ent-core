@@ -37,7 +37,7 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.nameable.IdentifiableNameable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link BasicNameEntity} is a base entity for a table with a single value

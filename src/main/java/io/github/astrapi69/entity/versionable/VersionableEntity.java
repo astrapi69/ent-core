@@ -38,7 +38,7 @@ import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
 import io.github.astrapi69.data.versionable.IdentifiableVersionable;
-import io.github.astrapi69.entity.base.SequenceBaseEntity;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link VersionableEntity} has a version property for the optimistic lock value
