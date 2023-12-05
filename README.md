@@ -28,20 +28,21 @@ No animals were harmed in the making of this library.
 
 ## gradle dependency
 
-You can first define the version in ypur gradle.properties or in the ext section and add than the
-following gradle dependency to your project `build.gradle` if you want to import the core
-functionality of ent-core:
+Replace the variable ${latestVersion} with the current latest version: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/ent-core)
+
+You can first define the version in your gradle.properties or in the ext section and add than the following gradle 
+dependency to your project `build.gradle` if you want to import the core functionality of ent-core:
 
 define version in file gradle.properties
 
 ```
-entCoreVersion=4
+entCoreVersion=${latestVersion}
 ```
 
 or in build.gradle ext area
 
 ```
-    entCoreVersion = '4'
+    entCoreVersion = '${latestVersion}'
 }
 ```
 
@@ -63,7 +64,7 @@ Than you can add the dependency to your dependencies:
     <properties>
             ...
         <!-- ENT-CORE version -->
-        <ent-core.version>4</ent-core.version>
+        <ent-core.version>${latestVersion}</ent-core.version>
             ...
     </properties>
             ...
@@ -77,6 +78,29 @@ Than you can add the dependency to your dependencies:
             </dependency>
             ...
         </dependencies>
+
+## 📸 Snapshots
+
+[![Snapshot](https://img.shields.io/badge/dynamic/xml?url=https://oss.sonatype.org/service/local/repositories/snapshots/content/io/github/astrapi69/ent-core/maven-metadata.xml&label=snapshot&color=red&query=.//versioning/latest)](https://oss.sonatype.org/content/repositories/snapshots/io/github/astrapi69/ent-core/)
+
+This section describes how to import snapshot versions into your project.
+Add the following code snippet to your gradle file in the repositories section:
+```
+repositories {
+   //...
+```
+```groovy
+    maven {
+        name "Sonatype Nexus Snapshots"
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+        mavenContent {
+            snapshotsOnly()
+        }
+    }
+```
+```
+}
+```
 
 # Donations
 
