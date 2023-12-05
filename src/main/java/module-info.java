@@ -20,7 +20,7 @@
  */
 module ent.core
 {
-	requires java.persistence;
+	requires jakarta.persistence;
 	requires lombok;
 	requires data.api;
 

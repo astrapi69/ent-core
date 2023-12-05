@@ -26,12 +26,12 @@ package io.github.astrapi69.entity.treeable;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ForeignKey;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

@@ -26,10 +26,10 @@ package io.github.astrapi69.entity.activatable;
 
 import java.io.Serializable;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Access;
+import jakarta.persistence.AccessType;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

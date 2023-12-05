@@ -4,7 +4,10 @@
 Version 5-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update jdk version to 17
+- upgrade dependency javax.persistence with new jakarta.persistence in version 3.1.0
 
 Version 4.1
 -------------

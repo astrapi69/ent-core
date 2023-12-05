@@ -26,8 +26,8 @@ package io.github.astrapi69.entity.nameable.versionable;
 
 import java.io.Serializable;
 
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Version;
 
 import lombok.AccessLevel;
 import lombok.Getter;

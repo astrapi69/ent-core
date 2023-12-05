@@ -26,8 +26,8 @@ package io.github.astrapi69.entity.nameable.activatable;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

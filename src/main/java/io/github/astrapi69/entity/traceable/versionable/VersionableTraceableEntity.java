@@ -26,8 +26,8 @@ package io.github.astrapi69.entity.traceable.versionable;
 
 import java.io.Serializable;
 
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Version;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
