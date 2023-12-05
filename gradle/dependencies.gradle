@@ -4,7 +4,7 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
     compileOnly("javax.persistence:javax.persistence-api:$persistenceApiVersion")
     implementation("io.github.astrapi69:data-api:$dataApiVersion")
-    testImplementation("org.meanbean:meanbean:$meanbeanVersion")
+    testImplementation("com.github.meanbeanlib:meanbean:$meanbeanVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }

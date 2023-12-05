@@ -6,12 +6,15 @@ Version 4.1-SNAPSHOT
 
 CHANGED:
 
-- update gradle version to 7.6
-- update of gradle-plugin dependency spotless-plugin-gradle to new minor version 6.12.1
-- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 6.6.1
-- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.44.0
+- update gradle version to 8.5
+- update of dependency lombok version to 1.18.30
+- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 8.4
+- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.50.0
+- update of gradle-plugin dependency grgit-gradle to new minor version 5.2.1
+- update of gradle-plugin dependency spotless-plugin-gradle to new minor version 6.23.3
 - update of dependency data-api to new minor version 4.1
-- update of test dependency junit-jupiter version to new patch version 5.9.2
+- update of test dependency junit-jupiter version to new patch version 5.10.1
+- update of test dependency meanbean version to new milestone version 3.0.0-M9
 
 Version 4
 -------------
