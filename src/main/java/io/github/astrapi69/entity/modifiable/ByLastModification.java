@@ -26,8 +26,8 @@ package io.github.astrapi69.entity.modifiable;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Entity;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

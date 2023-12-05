@@ -26,10 +26,10 @@ package io.github.astrapi69.entity.versionable;
 
 import java.util.UUID;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import jakarta.persistence.Access;
+import jakarta.persistence.AccessType;
+import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Version;
 
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

@@ -26,9 +26,9 @@ package io.github.astrapi69.entity.uniqueable;
 
 import java.util.UUID;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.Access;
+import jakarta.persistence.AccessType;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

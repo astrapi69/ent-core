@@ -26,7 +26,7 @@ package io.github.astrapi69.entity.verifiable;
 
 import java.util.UUID;
 
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
 import lombok.Builder;

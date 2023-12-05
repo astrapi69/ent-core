@@ -26,7 +26,7 @@ package io.github.astrapi69.entity.traceable;
 
 import java.io.Serializable;
 
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

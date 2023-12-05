@@ -24,9 +24,9 @@
  */
 package io.github.astrapi69.entity.nameable;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.Column;
+import jakarta.persistence.MappedSuperclass;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
