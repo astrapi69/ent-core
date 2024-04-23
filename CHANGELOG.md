@@ -4,7 +4,17 @@
 Version 5.1-SNAPSHOT
 -------------
 
+CHANGED:
 
+- update gradle version to 8.7
+- update of dependency lombok version to 1.18.32
+- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 8.6
+- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.51.0
+- update of gradle-plugin dependency grgit-gradle to new minor version 5.2.2
+- update of gradle-plugin dependency spotless-plugin-gradle to new minor version 6.25.0
+- update of dependency data-api to new minor version 4.1
+- update of dependency persistence-api to new milestone version 3.2.0-M2
+- update of test dependency junit-jupiter version to new milestone version 5.11.0-M1
 
 Version 5
 -------------
