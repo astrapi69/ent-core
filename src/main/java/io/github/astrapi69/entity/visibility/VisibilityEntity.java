@@ -26,17 +26,16 @@ package io.github.astrapi69.entity.visibility;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.visibility.IdentifiableVisibility;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.visibility.IdentifiableVisibility;
-import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link VisibilityEntity} is a base entity with a flag 'visible' that indicates if the

@@ -26,17 +26,16 @@ package io.github.astrapi69.entity.creatable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.creatable.IdentifiableCreatable;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.creatable.IdentifiableCreatable;
-import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The entity class {@link Creation} is keeping the information for the creation of an entity. This

@@ -27,6 +27,8 @@ package io.github.astrapi69.entity.treeable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import io.github.astrapi69.data.treeable.TreeWithChildren;
+import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ForeignKey;
@@ -34,7 +36,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.OneToMany;
-
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -44,8 +45,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.treeable.TreeWithChildren;
-import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
  * The Entity class {@link TreeWithChildrenUUIDEntity} can keep information for a tree structure.

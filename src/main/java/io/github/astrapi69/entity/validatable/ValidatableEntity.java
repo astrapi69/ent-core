@@ -26,17 +26,16 @@ package io.github.astrapi69.entity.validatable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.validatable.IdentifiableValidatable;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.validatable.IdentifiableValidatable;
-import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link ValidatableEntity} is a base entity and has a validFrom property and a validTill

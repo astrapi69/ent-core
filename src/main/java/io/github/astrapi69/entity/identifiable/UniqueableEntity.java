@@ -26,13 +26,13 @@ package io.github.astrapi69.entity.identifiable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.identifiable.Identifiable;
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -40,7 +40,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.identifiable.Identifiable;
 
 /**
  * The class {@link UniqueableEntity} holds an UUID as primary key

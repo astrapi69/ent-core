@@ -26,9 +26,10 @@ package io.github.astrapi69.entity.nameable.activatable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.nameable.IdentifiableNameableActivatable;
+import io.github.astrapi69.entity.nameable.NameEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -37,8 +38,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.nameable.IdentifiableNameableActivatable;
-import io.github.astrapi69.entity.nameable.NameEntity;
 
 /**
  * The class {@link ActivatableNameEntity} is a base entity for a table with a single value

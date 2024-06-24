@@ -4,6 +4,10 @@
 Version 5.1-SNAPSHOT
 -------------
 
+ADDED:
+
+- new libs.versions.toml file for new automatic catalog versions update
+
 CHANGED:
 
 - update gradle version to 8.7
