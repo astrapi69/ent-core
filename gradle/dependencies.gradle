@@ -1,10 +1,13 @@
-
 dependencies {
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
-    compileOnly("jakarta.persistence:jakarta.persistence-api:$persistenceApiVersion")
-    implementation("io.github.astrapi69:data-api:$dataApiVersion")
-    testImplementation("com.github.meanbeanlib:meanbean:$meanbeanVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+    // Note: use of bundles...
+    annotationProcessor libs.bundles.annotation.processor
+    compileOnly libs.bundles.compile.only
+
+    implementation libs.bundles.core.dependencies
+
+    testAnnotationProcessor libs.bundles.test.annotation.processor
+    testCompileOnly libs.bundles.test.compile.only
+
+    testImplementation libs.bundles.unit.testing
+    testRuntimeOnly libs.bundles.test.runtime.only
 }

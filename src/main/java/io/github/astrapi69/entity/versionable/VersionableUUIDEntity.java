@@ -26,16 +26,15 @@ package io.github.astrapi69.entity.versionable;
 
 import java.util.UUID;
 
+import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Version;
-
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
  * The abstract class {@link VersionableUUIDEntity} is a concrete class of {@link UUIDEntity} and

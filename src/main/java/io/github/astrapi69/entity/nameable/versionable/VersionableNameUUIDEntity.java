@@ -24,16 +24,15 @@
  */
 package io.github.astrapi69.entity.nameable.versionable;
 
+import io.github.astrapi69.entity.nameable.NameUUIDEntity;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Version;
-
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.entity.nameable.NameUUIDEntity;
 
 /**
  * The class {@link VersionableNameUUIDEntity} is a base entity for a table with a single value

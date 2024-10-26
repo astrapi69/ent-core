@@ -26,8 +26,10 @@ package io.github.astrapi69.entity.verifiable;
 
 import java.util.UUID;
 
+import io.github.astrapi69.data.identifiable.Identifiable;
+import io.github.astrapi69.data.verifiable.VerifiableProcessable;
+import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -37,9 +39,6 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.identifiable.Identifiable;
-import io.github.astrapi69.data.verifiable.VerifiableProcessable;
-import io.github.astrapi69.entity.uniqueable.UUIDEntity;
 
 /**
  * The class {@link VerifiableUUIDEntity} is a concrete class of {@link UUIDEntity} and holds an

@@ -1,6 +1,28 @@
 ## Change log
 ----------------------
 
+Version 5.1
+-------------
+
+ADDED:
+
+- new libs.versions.toml file for new automatic catalog versions update
+
+CHANGED:
+
+- rename of module to new name 'io.github.astrapisixtynine.ent.core'
+- update gradle version to 8.10.2
+- update of dependency lombok version to 1.18.34
+- update of gradle-plugin dependency with id 'com.github.ben-manes.versions' to new patch version 0.51.0
+- update of gradle-plugin dependency with id 'org.ajoberstar.grgit' to new patch version 5.3.0
+- update of gradle-plugin dependency with id 'io.freefair.lombok' to new patch version 8.10.2
+- update of gradle-plugin dependency with id 'com.diffplug.spotless' to new beta version 7.0.0.BETA4
+- update of gradle-plugin dependency with id 'nl.littlerobots.version-catalog-update' to new minor version 0.8.5
+- update of dependency data-api to new major version 5
+- update of dependency jakarta.persistence-api to new minor version 3.2.0
+- update of test dependency junit-jupiter to new version 5.11.3
+- dependencies are managed now over bundles
+
 Version 5
 -------------
 

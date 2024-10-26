@@ -26,19 +26,18 @@ package io.github.astrapi69.entity.activatable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.activatable.IdentifiableActivatable;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.activatable.IdentifiableActivatable;
-import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The class {@link ActivatableEntity} is a base entity with a flag 'active' that indicates if an

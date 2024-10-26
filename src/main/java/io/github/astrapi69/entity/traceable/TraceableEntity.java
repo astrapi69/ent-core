@@ -26,19 +26,18 @@ package io.github.astrapi69.entity.traceable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.traceable.IdentifiableTraceable;
+import io.github.astrapi69.entity.creatable.Creation;
+import io.github.astrapi69.entity.deletable.Deletion;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
+import io.github.astrapi69.entity.modifiable.LastModification;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.traceable.IdentifiableTraceable;
-import io.github.astrapi69.entity.creatable.Creation;
-import io.github.astrapi69.entity.deletable.Deletion;
-import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
-import io.github.astrapi69.entity.modifiable.LastModification;
 
 /**
  * The entity class {@link TraceableEntity} is keeping the information for the creation, last

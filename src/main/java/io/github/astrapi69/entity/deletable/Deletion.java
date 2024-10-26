@@ -26,17 +26,16 @@ package io.github.astrapi69.entity.deletable;
 
 import java.io.Serializable;
 
+import io.github.astrapi69.data.deletable.IdentifiableDeletable;
+import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.MappedSuperclass;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
-import io.github.astrapi69.data.deletable.IdentifiableDeletable;
-import io.github.astrapi69.entity.identifiable.SequenceBaseEntity;
 
 /**
  * The entity class {@link Deletion} acts like an deletion flag that keeps the information for the
