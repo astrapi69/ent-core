@@ -10,15 +10,17 @@ ADDED:
 
 CHANGED:
 
-- update gradle version to 8.8
-- update of dependency lombok version to 1.18.32
-- update of gradle-plugin dependency io.freefair.gradle:lombok-plugin to new patch version 8.6
-- update of gradle-plugin dependency com.github.ben-manes.versions.gradle.plugin to new minor version 0.51.0
-- update of gradle-plugin dependency grgit-gradle to new minor version 5.2.2
-- update of gradle-plugin dependency spotless-plugin-gradle to new minor version 6.25.0
-- update of dependency data-api to new minor version 4.1
+- update gradle version to 8.10.2
+- update of dependency lombok version to 1.18.34
+- update of gradle-plugin dependency with id 'com.github.ben-manes.versions' to new patch version 0.51.0
+- update of gradle-plugin dependency with id 'org.ajoberstar.grgit' to new patch version 5.3.0
+- update of gradle-plugin dependency with id 'io.freefair.lombok' to new patch version 8.10.2
+- update of gradle-plugin dependency with id 'com.diffplug.spotless' to new beta version 7.0.0.BETA4
+- update of gradle-plugin dependency with id 'nl.littlerobots.version-catalog-update' to new minor version 0.8.5
+- update of dependency data-api to new major version 5
 - update of dependency jakarta.persistence-api to new minor version 3.2.0
-- update of test dependency junit-jupiter version to new milestone version 5.11.0-M1
+- update of test dependency junit-jupiter to new version 5.11.3
+- dependencies are managed now over bundles
 
 Version 5
 -------------

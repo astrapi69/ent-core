@@ -1,26 +1,51 @@
 [versions]
-data-api-version = "4.1"
-gradle-plugin-grgit-version = "5.2.2"
+data-api-version = "5"
+gradle-plugin-grgit-version = "5.3.0"
 gradle-plugin-license-version = "0.16.1"
-gradle-plugin-lombok-version = "8.6"
-gradle-plugin-spotless-version = "7.0.0.BETA1"
-gradle-plugin-version-catalog-update-version = "0.8.4"
+gradle-plugin-lombok-version = "8.10.2"
+gradle-plugin-spotless-version = "7.0.0.BETA4"
+gradle-plugin-version-catalog-update-version = "0.8.5"
 gradle-plugin-versions-version = "0.51.0"
 jakarta-persistence-api-version = "3.2.0"
-junit-jupiter-version = "5.11.0-M2"
-junit-platform-launcher-version = "1.11.0-M2"
-lombok-version = "1.18.32"
+junit-jupiter-version = "5.11.3"
+lombok-version = "1.18.34"
 meanbean-version = "3.0.0-M9"
 
 [libraries]
 data-api = { module = "io.github.astrapi69:data-api", version.ref = "data-api-version" }
 jakarta-persistence-api = { module = "jakarta.persistence:jakarta.persistence-api", version.ref = "jakarta-persistence-api-version" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher-version" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
 meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean-version" }
 
 [bundles]
+# Dependencies for the annotation processor used during the compilation process
+annotation-processor = [
+    "lombok",
+]
+# Dependencies required only at compile-time and not included in the final artifact
+compile-only = [
+    "jakarta-persistence-api",
+    "lombok",
+]
+# The core dependencies
+core-dependencies = [
+    "data-api",
+]
+# Annotation processor dependencies used specifically for test classes
+test-annotation-processor = [
+    "lombok",
+]
+# Dependencies required only at test compile-time and not included in test runtime
+test-compile-only = [
+    "lombok",
+]
+# Dependencies required only at test runtime, such as test execution platforms
+test-runtime-only = [
+    "junit-platform-launcher",
+]
+# Dependencies required for unit testing
 unit-testing = [
     "junit-jupiter",
     "meanbean",
